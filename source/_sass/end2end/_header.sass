@@ -4,22 +4,19 @@
   margin: 0
   border-bottom: 1px solid rgba($light-gray-color, .5)
   +position(fixed, 0 0 null 0)
-  min-height: 80px
+  min-height: 40px
   width: 100%
   z-index: 1000
 
   @extend %clearfix
-
-  +media($tablet-small)
-    +position(relative, auto)
-    padding: $base-spacing 0
-    min-height: 35px
 
   .logo, a
     text-transform: lowercase
 
   .navbar
     float: right
+    padding-top: 3px
+    padding-bottom: 3px
 
   a
     color: $medium-gray-color
@@ -35,12 +32,8 @@
   float: left
   font-weight: $font-weight-normal
   font-size: rem(20)
-  +position(fixed, $base-spacing null null $base-spacing)
+  +position(fixed, 0.3em null null $base-spacing)
   z-index: 100
-
-  +media($tablet-small)
-    padding: 5px 0
-    +position(relative, auto)
 
   span
     color: $primary-color
