@@ -18,36 +18,32 @@ sass:
   style: compressed # expanded
 
 # SEO settings
-title: end2end
-description: "A free Jekyll theme for download"
-keywords: "Jekyll, theme, free, download, SEO, blog, web"
-url: http://nandomoreira.me
-baseurl: "/end2end"
+title: "Tech blog by Tobias Fenster"
+description: "A tech blog"
+keywords: "tech, technology, blog, mvp, cto, docker, container, azure, devops, dynamics, nav, business central, ax, f&0, crm, ce, d365"
+url: "https://tobiasfenster.io"
+baseurl: ""
 
-google_analytics: UA-52446115-1
-repo: http://github.com/nandomoreirame/end2end
-disqus_shortname: "nandothemes"
-disqus_site_shortname: "nandothemes"
+disqus_shortname: "tfenster"
+disqus_site_shortname: "tobiasfenster-io"
 
 # Author settings
 author:
-  name: Fernando Moreira
-  job: Frontend Engineer
-  bio: "Enthusiast performance, responsive design and usability, always looking for the best project and good coffee."
-  thumb: /images/author.jpg
-  email: nandomoreira.me@gmail.com
-  url: https://nandomoreira.me/
-  github: https://github.com/nandomoreirame
-  twitter: https://twitter.com/umdevux
-  facebook: https://facebook.com/umdevux
-  linkedin: https://linkedin.com/in/nandomoreirame
+  name: Tobias Fenster
+  title: "tech blog"
+  job: CTO at Cosmo Consult and dual Microsoft MVP
+  bio: "I'm a technology enthusiast, working mainly on Microsoft Dynamics 365, Azure and Docker. Always trying to push the boundaries."
+  thumb: /images/author.png
+  email: tobias.fenster@cosmoconsult.com
+  url: https://tobiasfenster.io
+  github: https://github.com/tfenster
+  twitter: https://twitter.com/tobiasfenster
+  linkedin: https://linkedin.com/in/tobiasfenster
 
 # navbar pages
 navbar:
   - slug: about
     title: About
-  - slug: icons
-    title: Icons
   - slug: blog
     title: Blog
 

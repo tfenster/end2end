@@ -1,7 +1,7 @@
 <header class="site-header">
   <div class="container">
     <input type="checkbox" id="toggleNavbar">
-    <h1 class="logo"><a href="{{ "/" | prepend: site.baseurl }}">end2<span>end</span> <small>v2.0</small></a></h1>
+    <h1 class="logo"><a href="{{ "/" | prepend: site.baseurl }}">{{ site.author.title }}</a>, <small>presented by <a href="https://www.cosmoconsult.com"><img src="https://www.cosmoconsult.com/typo3conf/ext/cc_theme/Resources/Public/CSS/Images/bg-logo-symbol.svg" style="max-width:1.5em;"></a></small></h1>
     <label for="toggleNavbar" role="button" class="toggle-navbar-button">
       <i class="icon icon-menu"></i>
       <i class="icon icon-cross"></i>
@@ -12,7 +12,7 @@
         {% for item in site.navbar %}
           <li><a href="{{ '/' | prepend: site.baseurl }}{{ item.slug }}" title="{{ item.title }}">{{ item.title }}</a></li>
         {% endfor %}
-        <li><a href="{{ site.repo }}/archive/master.zip" title="Download">Download</a></li>
+        <li><a href="https://tfenster.github.io/presentations" title="Presentations">Presentations</a></li>
         <li><a href="{{ "/feed.xml" | prepend: site.baseurl }}" target="_blank"><i class="icon icon-rss"></i></a></li>
       </ul>
     </nav>
