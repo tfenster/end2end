@@ -20,20 +20,29 @@ figure
   padding: $base-spacing 0
 
 .container
-  max-width: $phone-large
+  max-width: 90%
   margin-left: auto
   margin-right: auto
   padding-left: $base-spacing
   padding-right: $base-spacing
 
-  +media($tablet-small)
-    max-width: $tablet-small
-
   +media($desktop)
-    max-width: 960px
+    max-width: 1240px
 
 .cosmologo
   max-width: 75%
 
   +media($desktop)
     max-width: 50%
+
+td.code
+  border-bottom: 0px
+  padding: 0
+  
+td.gutter
+  border-bottom: 0px
+  padding: 0
+  width: 2.1em
+
+table.rouge-table
+  margin: 0px

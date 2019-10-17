@@ -12,13 +12,14 @@
 
   pre
     margin: 0
-    padding: $small-spacing $base-spacing
+    padding: .5em .5em
     white-space: pre
     line-height: 23px
-    overflow-x: auto
+    overflow-x: overlay
     margin-bottom: 0
-    word-break: inherit
-    word-wrap: inherit
+    padding-bottom: 20px
+    word-break: break-all
+    word-wrap: break-word
 
     &, code
       color: #eeffdd
@@ -26,11 +27,6 @@
     code
       white-space: pre
       padding: 0 !important
-
-      *
-        white-space: nowrap
-
-        // this sets all children inside to nowrap
 
   .c
     color: #75715e
