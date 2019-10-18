@@ -820,3 +820,34 @@
     type: repost
     content: <p><a href="https://twitter.com/ida1269">Birthe Jørgensen</a> retweeted
       a tweet <a href="https://tobiasfenster.io/blog/2019/welcome-to-my-new-blog/">https://tobiasfenster.io/blog/2019/welcome-to-my-new-blog/</a></p>
+  '714499':
+    id: '714499'
+    uri: https://twitter.com/tobiasfenster/status/1185196137764007941#favorited-by-2247026627
+    source: twitter
+    pubdate: 2019-10-18 21:23:32.000000000 +00:00
+    raw:
+      source: https://brid-gy.appspot.com/like/twitter/tobiasfenster/1185196137764007941/2247026627
+      verified: true
+      verified_date: '2019-10-18T21:23:32+00:00'
+      id: 714499
+      private: false
+      data:
+        author: &27
+          name: Jens Ritter
+          url: https://twitter.com/j_r_111
+          photo: https://webmention.io/avatar/pbs.twimg.com/8e9f5696af4dfc1763be3a8516426e8e6642a40bbc8fb00a6f76fdc9286f0f22.jpg
+        url: https://twitter.com/tobiasfenster/status/1185196137764007941#favorited-by-2247026627
+        name: 
+        content: 
+        published: 
+        published_ts: 
+      activity:
+        type: like
+        sentence: Jens Ritter favorited a tweet https://tobiasfenster.io/blog/2019/welcome-to-my-new-blog/
+        sentence_html: <a href="https://twitter.com/j_r_111">Jens Ritter</a> favorited
+          a tweet <a href="https://tobiasfenster.io/blog/2019/welcome-to-my-new-blog/">https://tobiasfenster.io/blog/2019/welcome-to-my-new-blog/</a>
+      target: https://tobiasfenster.io/blog/2019/welcome-to-my-new-blog/
+    author: *27
+    type: like
+    content: <p><a href="https://twitter.com/j_r_111">Jens Ritter</a> favorited a
+      tweet <a href="https://tobiasfenster.io/blog/2019/welcome-to-my-new-blog/">https://tobiasfenster.io/blog/2019/welcome-to-my-new-blog/</a></p>
