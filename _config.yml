@@ -6,10 +6,13 @@ plugins: [jekyll-paginate-v2]
 
 pagination:
   enabled: true
-  per_page: 3
+  per_page: 5
   permalink: "/page/:num/"
 
-comments: true
+comments: false
+
+webmentions:
+  username: tobiasfenster.io
 
 source: source
 destination: _site
@@ -24,8 +27,7 @@ keywords: "tech, technology, blog, mvp, cto, docker, container, azure, devops, d
 url: "https://tobiasfenster.io"
 baseurl: ""
 
-disqus_shortname: "tfenster"
-disqus_site_shortname: "tobiasfenster-io"
+google_analytics: UA-150365788-1
 
 # Author settings
 author:

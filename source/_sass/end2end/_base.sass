@@ -14,7 +14,7 @@ figure
 
 .main-container
   background: darken($base-background-color, 3%)
-  padding: 50px 0
+  padding: 15px 0
 
 .container
   max-width: 90%
@@ -43,3 +43,95 @@ td.gutter
 
 table.rouge-table
   margin: 0px
+
+
+.webmentions 
+  font-size: 16px
+  font-size: 1rem
+  margin-top: .6875rem
+
+
+.webmentions__list 
+  margin: 0
+  padding: 0
+
+
+.webmentions__item 
+  clear: both
+  border-top: 1px solid #DDD
+  margin: 0
+  padding: .5rem 0 .5rem 4.375rem
+  min-height: 48px
+  min-height: 3rem
+  position: relative
+
+
+.webmentions__item:first-child 
+  border-top: 0
+
+
+.webmention__author 
+  font-size: 14px
+  font-size: .875rem
+  font-weight: 700
+
+.webmention__author__photo 
+  border-radius: 3px
+  display: block
+  width: 48px
+  width: 3rem
+  height: 48px
+  height: 3rem
+  position: absolute
+  top: 22px
+  top: .5rem
+  left: 0
+
+
+.webmention__content, .webmention__meta, .webmention__title 
+  margin: 0
+
+
+.webmention__meta 
+  color: #505050
+  font-size: 14px
+  font-size: .875rem
+
+
+.webmention--activity .webmention__author, .webmention--activity .webmention__title 
+  display: inline
+
+
+.webmention--like, .webmention--repost 
+  border: 0
+  display: inline
+  margin: 0 5px 0 0
+  padding: 0
+
+
+.webmention--like .webmention__author, .webmention--repost .webmention__author 
+  display: inline
+
+
+.webmention--like .webmention__author__photo, .webmention--repost .webmention__author__photo 
+  border: 1px solid
+  border-radius: 50%
+  display: inline
+  max-width: 48px
+  margin: 0
+  position: static
+
+
+.webmention--like .webmention__author a, .webmention--repost .webmention__author a 
+  background-image: none!important
+
+.webmentions__list
+  list-style: none
+
+.webmention--author-starts .h-card .p-name
+  position: absolute!important
+  height: 1px
+  width: 1px
+  overflow: hidden
+  clip: rect(1px 1px 1px 1px)
+  clip: rect(1px, 1px, 1px, 1px)

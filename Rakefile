@@ -4,6 +4,7 @@ require "tmpdir"
 require "bundler/setup"
 require "jekyll"
 require "bourbon"
+require "jekyll-webmention_io"
 
 # Change your GitHub reponame
 GITHUB_REPONAME = "tfenster/tfenster.github.io"

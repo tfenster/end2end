@@ -2,7 +2,7 @@
 layout: post
 title: "Welcome to my new blog"
 date: 2019-10-17 15:15:27
-comments: true
+comments: false
 categories: welcome
 image: https://jekyllrb.com/img/octojekyll.png
 ---

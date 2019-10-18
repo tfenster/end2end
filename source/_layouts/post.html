@@ -21,6 +21,16 @@ layout: pages
       {{ content }}
     </div>
 
+    <hr>
+    Webmentions:<br>
+    {% webmentions page.url posts replies links %}
+
+    Likes:
+    {% webmention_likes page.url %}
+
+    Shares:
+    {% webmention_reposts page.url %}
+
     {% include comments.html %}
   </div>
 
