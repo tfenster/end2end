@@ -1,6 +1,5 @@
-/mnt/c/Users/tfenster8982/GitHub/end2end/source$ rake post title="Welcome to my new blog" 
+rake post title="Welcome to my new blog" 
 
-~/github/end2end$ ./publish.sh
 
 {% highlight powershell linenos %}
 Get-ChildItem -Path "Whoot tf aain"

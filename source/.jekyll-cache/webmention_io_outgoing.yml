@@ -3,3 +3,15 @@ https://tobiasfenster.io/blog/2019/welcome-to-my-new-blog/:
   https://www.cosmoconsult.com: false
   https://www.jekyllrb.com: false
   https://jekyllrb.com/docs/github-pages/: false
+https://tobiasfenster.io/remote-development-for-bc-with-vs-code:
+  http://localhost: false
+  http://localhost:8180/BC: false
+  https://directions4partners.com/: false
+  https://github.com/microsoft/navcontainerhelper: false
+  https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.vscode-remote-extensionpack: false
+  https://github.com/microsoft/vscode-remote-release/issues/445: false
+  https://code.visualstudio.com/insiders/: false
+  https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-ssh-nightly: false
+  https://aka.ms/getbc: false
+  https://docs.microsoft.com/en-us/azure/virtual-machines/linux/ssh-from-windows: false
+  https://github.com/microsoft/AL/issues/5372: false
