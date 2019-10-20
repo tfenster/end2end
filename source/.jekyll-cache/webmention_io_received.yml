@@ -1926,4 +1926,35 @@
     type: like
     content: <p><a href="https://twitter.com/joseso1983">José Ramírez</a> favorited
       a tweet <a href="https://tobiasfenster.io/blog/2019/welcome-to-my-new-blog/">https://tobiasfenster.io/blog/2019/welcome-to-my-new-blog/</a></p>
-"/remote-development-for-bc-with-vs-code": {}
+"/remote-development-for-bc-with-vs-code":
+  '715477':
+    id: '715477'
+    uri: https://twitter.com/tobiasfenster/status/1186029628395274240#favorited-by-1164400665847898112
+    source: twitter
+    pubdate: 2019-10-20 22:01:19.000000000 +00:00
+    raw:
+      source: https://brid-gy.appspot.com/like/twitter/tobiasfenster/1186029628395274240/1164400665847898112
+      verified: true
+      verified_date: '2019-10-20T22:01:19+00:00'
+      id: 715477
+      private: false
+      data:
+        author: &61
+          name: BallerinaNews
+          url: https://twitter.com/ballerinanews
+          photo: https://webmention.io/avatar/pbs.twimg.com/21921b3db197228f61929e04f6a9c05b5f749c755649f15d08be619a21bc4f2a.jpg
+        url: https://twitter.com/tobiasfenster/status/1186029628395274240#favorited-by-1164400665847898112
+        name: 
+        content: 
+        published: 
+        published_ts: 
+      activity:
+        type: like
+        sentence: BallerinaNews favorited a tweet https://tobiasfenster.io/remote-development-for-bc-with-vs-code
+        sentence_html: <a href="https://twitter.com/ballerinanews">BallerinaNews</a>
+          favorited a tweet <a href="https://tobiasfenster.io/remote-development-for-bc-with-vs-code">https://tobiasfenster.io/remote-development-for-bc-with-vs-code</a>
+      target: https://tobiasfenster.io/remote-development-for-bc-with-vs-code
+    author: *61
+    type: like
+    content: <p><a href="https://twitter.com/ballerinanews">BallerinaNews</a> favorited
+      a tweet <a href="https://tobiasfenster.io/remote-development-for-bc-with-vs-code">https://tobiasfenster.io/remote-development-for-bc-with-vs-code</a></p>
