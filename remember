@@ -1,5 +1,6 @@
 rake post title="Welcome to my new blog" 
-
+test: JEKYLL_ENV=production bundle exec jekyll serve --limit_post 50
+prod: rake
 
 {% highlight powershell linenos %}
 Get-ChildItem -Path "Whoot tf aain"

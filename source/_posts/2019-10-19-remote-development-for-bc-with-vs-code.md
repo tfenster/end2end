@@ -89,7 +89,7 @@ The same is true for all other extensions like for Docker that you might want to
         -ArgumentList ('admin', `
         (ConvertTo-SecureString 'My5uperSecretPwd!' -AsPlainText -Force)))
    ```
-   1. Go to the Remote Explorer again, but now open the "Forwarded Ports" section. Hit the + icon and enter 8180, leave the second entry empty. With that we have tunneled the local port 8180 to the VM port 8180, which in turn is mapped to port 80 in the container and therefore gives us access to the WebClient. 
+   1. Go to the Remote Explorer again, but now open the "Forwarded Ports" section. Hit the + icon and enter 8180, leave the second entry empty. With that we have tunneled the local port 8180 to the VM port 8180, which in turn is mapped to port 80 in the container and therefore gives us access to the WebClient. Do the same for port 7149 (the development service port).
    1. Now we need to tell the AL extension where our BC server is: open your launch.json file, add `"port": 7149,` and replace the server instance name with `"BC"`. In the end it should look similar to this if you are using the default AL base template:
    ``` json
    {
