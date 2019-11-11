@@ -1,15 +1,12 @@
-
-
-
-
-
-docker pull microsoft/iis:nanoserver-sac2016
-docker pull microsoft/mssql-server-windows-express
-docker pull microsoft/windowsservercore
-docker pull microsoft/dotnet-framework:4.7.2-sdk-windowsservercore-ltsc2016
-docker pull microsoft/aspnet:4.7.2-windowsservercore-ltsc2016
-docker pull dockersamples/mta-dev-web-builder:4.7.1
-docker pull microsoft/aspnet:4.7.1-windowsservercore-ltsc2016
-docker pull microsoft/bcsandbox:us
-docker pull mcr.microsoft.com/businesscentral/onprem
-docker pull microsoft/dynamics-nav:2018-gb
+docker pull mcr.microsoft.com/windows/servercore:1809
+docker pull mcr.microsoft.com/windows/servercore/iis:windowsservercore-ltsc2019
+docker pull mcr.microsoft.com/businesscentral/sandbox:ltsc2019
+docker pull mcr.microsoft.com/dotnet/core/sdk:2.2-nanoserver-1809
+docker pull mcr.microsoft.com/dotnet/core/aspnet:2.2-nanoserver-1809
+docker pull dshatohin/wordpress-servercore:5.2-1809
+docker pull dshatohin/mysql-servercore:5.7-1809
+docker pull dshatohin/adminer-servercore:4.7-nginx-1809
+docker pull mcr.microsoft.com/businesscentral/onprem:ltsc2019
+docker pull mcr.microsoft.com/dynamicsnav:2018-gb-ltsc2019
+docker pull chrml/mssql-server-windows-express:1809
+docker pull mcr.microsoft.com/businesscentral/onprem:1810-ltsc2019

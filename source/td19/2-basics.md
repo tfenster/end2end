@@ -8,6 +8,18 @@ slug: "td19-2-basics"
 ---
 {::options parse_block_html="true" /}
 
+Table of content
+- [Create a container in interactive mode](#create-a-container-in-interactive-mode)
+- [Show running and all containers](#show-running-and-all-containers)
+- [Show resource consumption and logs](#show-resource-consumption-and-logs)
+- [Get a cmd session inside an already running container](#get-a-cmd-session-inside-an-already-running-container)
+- [Inspect the configuration of a container](#inspect-the-configuration-of-a-container)
+- [Stop and remove containers](#stop-and-remove-containers)
+- [Show and remove images](#show-and-remove-images)
+- [Give your container a name and reference it that way](#give-your-container-a-name-and-reference-it-that-way)
+
+&nbsp;<br />
+
 ### Create a container in interactive mode
 Starting container with param `-ti` creates a terminal inside that container and `cmd` in the end tells it to use cmd as process to start
 ```bash
@@ -105,7 +117,7 @@ C:\>dir
 </details>
 &nbsp;<br />
 
-### Get a PowerShell session inside an already running container
+### Get a cmd session inside an already running container
 With `docker exec` we can execute commands on a container and param `-ti` again gives us an interactive terminal. Get a second session into the container, exit it and see that the container is still running
 ```bash
 docker exec -ti b cmd

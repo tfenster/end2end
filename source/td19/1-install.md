@@ -8,6 +8,13 @@ slug: "td19-1-install"
 ---
 {::options parse_block_html="true" /}
 
+Table of content
+- [Install module and package](#install-module-and-package)
+- [Restart](#restart)
+- [Check if everything works](#check-if-everything-works)
+- [One more preparation step](#one-more-preparation-step)
+
+&nbsp;<br />
 ### Install module and package
 Open the RDP connection to the first, bigger machine. In the future, I'll refer to it as host as it will be our container host<br />
 Start PowerShell as admin (not ISE, as it doesn't work well with Docker)  
