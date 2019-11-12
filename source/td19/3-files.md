@@ -25,7 +25,7 @@ mkdir c:\temp
 
 <details><summary markdown="span">Full output of docker run command</summary>
 ```bash
-PS C:\Users\Verwalter> docker run -ti --name core mcr.microsoft.com/windows/servercore:1809 powershell
+PS C:\Users\AdminTechDays> docker run -ti --name core mcr.microsoft.com/windows/servercore:1809 powershell
 Windows PowerShell
 Copyright (C) Microsoft Corporation. All rights reserved.
 
@@ -51,9 +51,9 @@ get-content temp\temp.txt
 
 <details><summary markdown="span">Full output of copy and check</summary>
 ```bash
-PS C:\Users\Verwalter> "This is a TechDays workshop" | Out-File temp.txt
-PS C:\Users\Verwalter> docker cp temp.txt core:c:\temp\temp.txt
-PS C:\Users\Verwalter> docker exec -ti core powershell
+PS C:\Users\AdminTechDays> "This is a TechDays workshop" | Out-File temp.txt
+PS C:\Users\AdminTechDays> docker cp temp.txt core:c:\temp\temp.txt
+PS C:\Users\AdminTechDays> docker exec -ti core powershell
 Windows PowerShell
 Copyright (C) Microsoft Corporation. All rights reserved.
 
@@ -76,10 +76,10 @@ cat .\temp.txt
 ```bash
 PS C:\> "Hello from inside the container" | Out-File temp\temp.txt
 PS C:\> exit
-PS C:\Users\Verwalter> docker cp core:c:\temp\temp.txt temp_changed.txt
-PS C:\Users\Verwalter> cat .\temp_changed.txt
+PS C:\Users\AdminTechDays> docker cp core:c:\temp\temp.txt temp_changed.txt
+PS C:\Users\AdminTechDays> cat .\temp_changed.txt
 Hello from inside the container
-PS C:\Users\Verwalter> cat .\temp.txt
+PS C:\Users\AdminTechDays> cat .\temp.txt
 This is a TechDays workshop
 ```
 </details>
@@ -95,7 +95,7 @@ dir c:\temp
 
 <details><summary markdown="span">Full output of the container start and folder check</summary>
 ```bash
-PS C:\Users\Verwalter> mkdir c:\bind_mount
+PS C:\Users\AdminTechDays> mkdir c:\bind_mount
 
     Directory: C:\
 
@@ -103,7 +103,7 @@ Mode                LastWriteTime         Length Name
 ----                -------------         ------ ----
 d-----       11/10/2019   6:18 PM                bind_mount
 
-PS C:\Users\Verwalter> docker run -ti --name shared -v c:\bind_mount:c:\temp mcr.microsoft.com/windows/servercore:1809 powershell
+PS C:\Users\AdminTechDays> docker run -ti --name shared -v c:\bind_mount:c:\temp mcr.microsoft.com/windows/servercore:1809 powershell
 Windows PowerShell
 Copyright (C) Microsoft Corporation. All rights reserved.
 
@@ -120,7 +120,7 @@ cd c:\bind_mount\
 
 <details><summary markdown="span">Full output of the file creation</summary>
 ```bash
-PS C:\Users\Verwalter> cd c:\bind_mount\
+PS C:\Users\AdminTechDays> cd c:\bind_mount\
 PS C:\bind_mount> "Hello from the host" | Out-File temp.txt
 ```
 </details>

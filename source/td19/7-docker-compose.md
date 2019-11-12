@@ -16,15 +16,15 @@ Table of content
 As an example we will create a WordPress installation where one container holds WordPress itself and one container holds the MySQL database. Additionally we will add a SQL web interface so that we can check if the WordPress database inside of our MySQL container is created. You can find the docker-compose.yml [here](https://github.com/tfenster/presentation-src/blob/techdays-19/wordpress/docker-compose.yml) and after downloading docker compose, we just call the `up` command to start all three containers.
 ```bash
 Invoke-WebRequest "https://github.com/docker/compose/releases/download/1.24.1/docker-compose-Windows-x86_64.exe" -UseBasicParsing -OutFile $Env:ProgramFiles\Docker\docker-compose.exe
-cd ~\Desktop\sources\presentation-src-techdays-19\wordpress
+cd c:\sources\presentation-src-techdays-19\wordpress
 docker-compose up
 ```
 
 <details><summary markdown="span">Full output of docker-compose up</summary>
 ```bash
-PS C:\Users\Verwalter\Desktop> Invoke-WebRequest "https://github.com/docker/compose/releases/download/1.24.1/docker-compose-Windows-x86_64.exe" -UseBasicParsing -OutFile $Env:ProgramFiles\Docker\docker-compose.exe
-PS C:\Users\Verwalter\Desktop> cd ~\Desktop\sources\presentation-src-techdays-19\wordpress
-PS C:\Users\Verwalter\Desktop\sources\presentation-src-techdays-19\wordpress> docker-compose up
+PS C:\Users\TechDaysAdmin\Desktop> Invoke-WebRequest "https://github.com/docker/compose/releases/download/1.24.1/docker-compose-Windows-x86_64.exe" -UseBasicParsing -OutFile $Env:ProgramFiles\Docker\docker-compose.exe
+PS C:\Users\TechDaysAdmin\Desktop> cd c:\sources\presentation-src-techdays-19\wordpress
+PS c:\sources\presentation-src-techdays-19\wordpress> docker-compose up
 Creating network "wordpress_default" with the default driver
 Creating wordpress_db_1      ... done
 Creating wordpress_adminer_1 ... done
@@ -44,7 +44,7 @@ After that, go to [http://localhost:8000](http://localhost:8000) to access the "
 To see the running containers, open a second PowerShell and call `docker ps`.
 <details><summary markdown="span">Full output of docker ps</summary>
 ```bash
-PS C:\Users\Verwalter> docker ps
+PS C:\Users\TechDaysAdmin> docker ps
 CONTAINER ID        IMAGE                                         COMMAND                  CREATED             STATUS              PORTS                               NAMES
 4461b8151c57        dshatohin/wordpress-servercore:5.2-1809       "powershell -Command…"   10 minutes ago      Up 10 minutes       0.0.0.0:8080->80/tcp                wordpress_wp_1
 bb8f69610ca3        dshatohin/adminer-servercore:4.7-nginx-1809   "powershell -Command…"   10 minutes ago      Up 10 minutes       0.0.0.0:8000->80/tcp                wordpress_adminer_1
@@ -59,7 +59,7 @@ Gracefully stopping... (press Ctrl+C again to force)
 Stopping wordpress_wp_1      ... done
 Stopping wordpress_adminer_1 ... done
 Stopping wordpress_db_1      ... done
-PS C:\Users\Verwalter\Desktop\sources\presentation-src-techdays-19\wordpress> docker-compose down
+PS c:\sources\presentation-src-techdays-19\wordpress> docker-compose down
 Removing wordpress_wp_1      ... done
 Removing wordpress_adminer_1 ... done
 Removing wordpress_db_1      ... done

@@ -13,17 +13,17 @@ Table of content
 &nbsp;<br />
 
 ### Activate the API in AdditionalSetup.ps1 using a custom image
-We have already seen two approaches to activating the API in AdditionalSetup.ps1, but what if you want to publish this e.g. to customers and make sure that it is as easy to consume as possible and very stable after delivery? You can easily create a custom image. We will reuse our AdditionalSetup.ps1 file in c:\temp and just put it into the image. The Dockerfile is available under Desktop\sources\presentation-src-techdays-19\bc-image, so we just copy it over to c:\temp and run `docker build` from there
+We have already seen two approaches to activating the API in AdditionalSetup.ps1, but what if you want to publish this e.g. to customers and make sure that it is as easy to consume as possible and very stable after delivery? You can easily create a custom image. We will reuse our AdditionalSetup.ps1 file in c:\temp and just put it into the image. The Dockerfile is available under c:\sources\presentation-src-techdays-19\bc-image, so we just copy it over to c:\temp and run `docker build` from there
 ```bash
 cd c:\temp
-copy ~\Desktop\sources\presentation-src-techdays-19\bc-image\Dockerfile .
+copy c:\sources\presentation-src-techdays-19\bc-image\Dockerfile .
 docker build -t mcr.microsoft.com/businesscentral/onprem:1810-ltsc2019-activateapi .
 ```
 
 <details><summary markdown="span">Full output of copy and build</summary>
 ```bash
 PS C:\> cd c:\temp
-PS C:\temp> copy ~\Desktop\sources\presentation-src-techdays-19\bc-image\Dockerfile .
+PS C:\temp> copy c:\sources\presentation-src-techdays-19\bc-image\Dockerfile .
 PS C:\temp> docker build -t mcr.microsoft.com/businesscentral/onprem:1810-ltsc2019-activateapi .
 Sending build context to Docker daemon  4.608kB
 Step 1/3 : FROM mcr.microsoft.com/businesscentral/onprem:1810-ltsc2019

@@ -68,7 +68,7 @@ Starting Service Tier
 Registering event sources
 Creating DotNetCore Web Server Instance
 Creating http download site
-Creating Windows user Verwalter
+Creating Windows user TechDaysAdmin
 Setting SA Password and enabling SA
 Creating SUPER user
 Container IP Address: 172.27.1.1
@@ -99,8 +99,8 @@ Navcontainerhelper brings a lot of additional helper functions for dealing with 
 For the container to be able to access the sources, we need to set up a bind mount for that folder. Therefore, remove the first container, create a second one with a bind mount for our little project and then run the compile command. Note the usage of `-additionalParameters` which is the mechanism of navcontainerhelper to add any parameter to the the actual docker run command it generates.
 ```bash
 Remove-BCContainer -containerName helper
-New-BCContainer -accept_eula -imageName mcr.microsoft.com/businesscentral/onprem:ltsc2019 -containerName compile -updateHosts -additionalParameters @("-v c:\users\Verwalter\Documents\AL\ALProject1\:c:\src")
-Compile-AppInBCContainer -containerName compile -appProjectFolder c:\users\Verwalter\Documents\AL\ALProject1\
+New-BCContainer -accept_eula -imageName mcr.microsoft.com/businesscentral/onprem:ltsc2019 -containerName compile -updateHosts -additionalParameters @("-v c:\users\TechDaysAdmin\Documents\AL\ALProject1\:c:\src")
+Compile-AppInBCContainer -containerName compile -appProjectFolder c:\users\TechDaysAdmin\Documents\AL\ALProject1\
 ```
 
 <details><summary markdown="span">Full output of removing and creating the container and then compiling the extension</summary>
@@ -109,7 +109,7 @@ PS C:\> Remove-BCContainer -containerName helper
 Removing container helper
 Removing helper from host hosts file
 Removing C:\ProgramData\NavContainerHelper\Extensions\helper
-PS C:\> New-BCContainer -accept_eula -imageName mcr.microsoft.com/businesscentral/onprem:ltsc2019 -containerName compile -updateHosts -additionalParameters @("-v c:\users\Verwalter\Documents\AL\ALProject1\:c:\src")
+PS C:\> New-BCContainer -accept_eula -imageName mcr.microsoft.com/businesscentral/onprem:ltsc2019 -containerName compile -updateHosts -additionalParameters @("-v c:\users\TechDaysAdmin\Documents\AL\ALProject1\:c:\src")
 NavContainerHelper is version 0.6.4.18
 NavContainerHelper is running as administrator
 Host is Microsoft Windows Server 2019 Datacenter - ltsc2019
@@ -148,7 +148,7 @@ Starting Service Tier
 Registering event sources
 Creating DotNetCore Web Server Instance
 Creating http download site
-Creating Windows user Verwalter
+Creating Windows user TechDaysAdmin
 Setting SA Password and enabling SA
 Creating SUPER user
 Container IP Address: 172.27.4.17
@@ -167,8 +167,8 @@ Ready for connections!
 Reading CustomSettings.config from compile
 Creating Desktop Shortcuts for compile
 Container compile successfully created
-PS C:\> Compile-AppInBCContainer -containerName compile -appProjectFolder c:\users\Verwalter\Documents\AL\ALProject1\
-Using Symbols Folder: c:\users\Verwalter\Documents\AL\ALProject1\.alpackages
+PS C:\> Compile-AppInBCContainer -containerName compile -appProjectFolder c:\users\TechDaysAdmin\Documents\AL\ALProject1\
+Using Symbols Folder: c:\users\TechDaysAdmin\Documents\AL\ALProject1\.alpackages
 Downloading symbols: Microsoft_System_15.0.37769.0.app
 Url : http://172.27.4.17:7049/BC/dev/packages?publisher=Microsoft&appName=System&versionText=15.0.0.0&tenant=default
 Downloading symbols: Microsoft_System Application_15.1.37793.0.app
@@ -185,8 +185,8 @@ Compilation started for project 'ALProject1' containing '1' files at '23:18:47.8
 
 Compilation ended at '23:18:54.276'.
 
-c:\users\Verwalter\Documents\AL\ALProject1\output\Default publisher_ALProject1_1.0.0.0.app successfully created in 29 seconds
-c:\users\Verwalter\Documents\AL\ALProject1\output\Default publisher_ALProject1_1.0.0.0.app
+c:\users\TechDaysAdmin\Documents\AL\ALProject1\output\Default publisher_ALProject1_1.0.0.0.app successfully created in 29 seconds
+c:\users\TechDaysAdmin\Documents\AL\ALProject1\output\Default publisher_ALProject1_1.0.0.0.app
 ```
 </details>
 &nbsp;<br />
@@ -196,7 +196,7 @@ Now the last step is to publish that extension to a container. To make sure we a
 ```bash
 Remove-BCContainer compile
 New-BCContainer -accept_eula -imageName mcr.microsoft.com/businesscentral/onprem:ltsc2019 -containerName publish -updateHosts
-Publish-NavContainerApp -containerName publish -appFile "C:\Users\Verwalter\Documents\AL\ALProject1\output\Default publisher_ALProject1_1.0.0.0.app" -skipVerification -sync -install
+Publish-NavContainerApp -containerName publish -appFile "C:\Users\TechDaysAdmin\Documents\AL\ALProject1\output\Default publisher_ALProject1_1.0.0.0.app" -skipVerification -sync -install
 ```
 
 <details><summary markdown="span">Full output of remove, create and publish</summary>
@@ -244,7 +244,7 @@ Starting Service Tier
 Registering event sources
 Creating DotNetCore Web Server Instance
 Creating http download site
-Creating Windows user Verwalter
+Creating Windows user TechDaysAdmin
 Setting SA Password and enabling SA
 Creating SUPER user
 Container IP Address: 172.27.0.56
@@ -263,7 +263,7 @@ Ready for connections!
 Reading CustomSettings.config from publish
 Creating Desktop Shortcuts for publish
 Container publish successfully created
-PS C:\> Publish-NavContainerApp -containerName publish -appFile "C:\Users\Verwalter\Documents\AL\ALProject1\output\Default publisher_ALProject1_1.0.0.0.app" -skipVerification -sync -install
+PS C:\> Publish-NavContainerApp -containerName publish -appFile "C:\Users\TechDaysAdmin\Documents\AL\ALProject1\output\Default publisher_ALProject1_1.0.0.0.app" -skipVerification -sync -install
 Publishing C:\ProgramData\NavContainerHelper\Extensions\publish\_Default publisher_ALProject1_1.0.0.0.app
 Synchronizing ALProject1 on tenant default
 Installing ALProject1 on tenant default

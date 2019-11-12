@@ -16,17 +16,14 @@ Table of content
 &nbsp;<br />
 
 ### Preparation
-We will need a browser that isn't blocked and we need to make sure the Windows firewall isn't in our way. To achieve that, run the following two commands to disable IE enhanced security and open port 80 on the firewall. Note that this is only the Windows firewall, external access e.g. from your laptop is still blocked by the Azure firewall.
-If you want to use your favourite browser, now is a good moment to install that as well.
+We will need to make sure the Windows firewall isn't in our way. To achieve that, run the following command to open port 80 on the firewall. Note that this is only the Windows firewall, external access e.g. from your laptop is still blocked by the Azure firewall.
 ```bash
-Set-ItemProperty "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System" -Name "ConsentPromptBehaviorAdmin" -Value 00000000
 netsh advfirewall firewall add rule name="Open Port 80" dir=in action=allow protocol=TCP localport=80
 ```
 
 <details><summary markdown="span">Full output of the preparation steps</summary>
 ```bash
-PS C:\Users\Verwalter> Set-ItemProperty "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System" -Name "ConsentPromptBehaviorAdmin" -Value 00000000
-PS C:\Users\Verwalter> netsh advfirewall firewall add rule name="Open Port 80" dir=in action=allow protocol=TCP localport=80
+PS C:\Users\AdminTechDays> netsh advfirewall firewall add rule name="Open Port 80" dir=in action=allow protocol=TCP localport=80
 Ok.
 ```
 </details>
@@ -41,9 +38,9 @@ docker exec iis ipconfig
 
 <details><summary markdown="span">Full output of the start and IP check</summary>
 ```bash
-PS C:\Users\Verwalter> docker run --name iis -d mcr.microsoft.com/windows/servercore/iis:windowsservercore-ltsc2019
+PS C:\Users\AdminTechDays> docker run --name iis -d mcr.microsoft.com/windows/servercore/iis:windowsservercore-ltsc2019
 91ce3644c78a85fb16899deac7e991d4c16909bf3cd7198a1c9bbe95286e78a6
-PS C:\Users\Verwalter> docker exec iis ipconfig
+PS C:\Users\AdminTechDays> docker exec iis ipconfig
 
 Windows IP Configuration
 
@@ -60,16 +57,16 @@ Ethernet adapter vEthernet (Ethernet):
 
 Now open your browser and connect to the IPv4 address you just got, in my case http://172.27.8.251. You should see the default IIS start page.
 
-We already know that it doesn't work and what the reason for that is, but just to make sure: Connect to the small VM (I'll call it "client" from now on), disable Enhanced IE Security with the `Set-ItemProperty` command from above and try to connect to the same IP, which should give you a connection error.
+We already know that it doesn't work and what the reason for that is, but if you want to make sure: Connect to the small VM (I'll call it "client" from now on), disable Enhanced IE Security with the `Set-ItemProperty` command from above and try to connect to the same IP, which should give you a connection error.
 
-Now let's try to connect to port 80 on the host. Again, we already know it doesn't work and why, just to make sure. For that, run `ipconfig` on the host and note the IPv4 Address that starts with 10.1, not the one starts with 127.27. In my case, and very likely in yours as well, this is 10.1.0.4
+Again, we already know it doesn't work and why, but if you want to make sure, try to connect to port 80 on the host. For that, run `ipconfig` on the host and note the IPv4 Address that starts with 10.1, not the one starts with 127.27. In my case, and very likely in yours as well, this is 10.1.0.4
 ```bash
 ipconfig
 ```
 
 <details><summary markdown="span">Full output of ipconfig</summary>
 ```bash
-PS C:\Users\Verwalter> ipconfig
+PS C:\Users\AdminTechDays> ipconfig
 
 Windows IP Configuration
 
@@ -102,9 +99,9 @@ docker run --name iis -d -p 80:80 mcr.microsoft.com/windows/servercore/iis:windo
 
 <details><summary markdown="span">Full output of the remove and create commands</summary>
 ```bash
-PS C:\Users\Verwalter> docker rm -f iis
+PS C:\Users\AdminTechDays> docker rm -f iis
 iis
-PS C:\Users\Verwalter> docker run --name iis -d -p 80:80 mcr.microsoft.com/windows/servercore/iis:windowsservercore-ltsc2019
+PS C:\Users\AdminTechDays> docker run --name iis -d -p 80:80 mcr.microsoft.com/windows/servercore/iis:windowsservercore-ltsc2019
 75cb71070bf87a778f638625dc72fd642bf651f2ec164a75e3b16a306ad5ef25
 ```
 </details>
@@ -124,13 +121,13 @@ docker exec iis ipconfig
 
 <details><summary markdown="span">Full output of the transparent networking setup</summary>
 ```bash
-PS C:\Users\Verwalter> docker network create -d transparent --subnet=10.1.0.0/24 --gateway=10.1.0.1 MyTransparentNetwork
+PS C:\Users\AdminTechDays> docker network create -d transparent --subnet=10.1.0.0/24 --gateway=10.1.0.1 MyTransparentNetwork
 a0c6a3d35c065eebd88135b8fa8325ffd16dac4a80a2acb7ed1040118e0841cf
-PS C:\Users\Verwalter> docker rm -f iis
+PS C:\Users\AdminTechDays> docker rm -f iis
 iis
-PS C:\Users\Verwalter> docker run --name iis -d --network MyTransparentNetwork mcr.microsoft.com/windows/servercore/iis:windowsservercore-ltsc2019
+PS C:\Users\AdminTechDays> docker run --name iis -d --network MyTransparentNetwork mcr.microsoft.com/windows/servercore/iis:windowsservercore-ltsc2019
 034dc559f78ec8356496c6d2811bd2ef7739f34e8d7534f379e3d59668013797
-PS C:\Users\Verwalter> docker exec iis ipconfig
+PS C:\Users\AdminTechDays> docker exec iis ipconfig
 
 Windows IP Configuration
 

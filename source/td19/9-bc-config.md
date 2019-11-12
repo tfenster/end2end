@@ -74,12 +74,12 @@ Don't stop this container as we will be usig it again in a later part of the lab
 ### Use Windows authentication and enable ClickOnce
 The second example is a bit more old-school as it will allow us to use ClickOnce (param `clickonce=y`) to get the old Windows Client and also use Windows authentication (params `username` and `password`). Make sure to use your username and password as provided for the VM. As ClickOnce and SSO are sensitive to the network names, we also add `--name sso --hostname sso`.
 ```bash
-docker run -e accept_eula=y --name sso --hostname sso -e auth=windows -e username=Verwalter -e password=Passw0rd*123 -e clickonce=y
+docker run -e accept_eula=y --name sso --hostname sso -e auth=windows -e username=TechDaysAdmin -e password=Passw0rd*123 -e clickonce=y
 ```
 
 <details><summary markdown="span">Full output of details</summary>
 ```bash
-PS C:\> docker run -e accept_eula=y --name sso --hostname sso -e auth=windows -e username=Verwalter -e password=Passw0rd*123 -e clickonce=y mcr.microsoft.com/dynamicsnav:2018-gb-ltsc2019
+PS C:\> docker run -e accept_eula=y --name sso --hostname sso -e auth=windows -e username=TechDaysAdmin -e password=Passw0rd*123 -e clickonce=y mcr.microsoft.com/dynamicsnav:2018-gb-ltsc2019
 Initializing...
 Starting Container
 Hostname is sso
@@ -92,7 +92,7 @@ Starting Service Tier
 Registering event sources
 Creating DotNetCore Web Server Instance
 Creating http download site
-Creating Windows user Verwalter
+Creating Windows user TechDaysAdmin
 Setting SA Password and enabling SA
 Creating SUPER user
 Creating ClickOnce Manifest
@@ -238,7 +238,7 @@ sql
 PS C:\> docker rm -f custom
 custom
 PS C:\> cd ~\Desktop\sources\presentation-src-techdays-19\bc-compose
-PS C:\Users\Verwalter\Desktop\sources\presentation-src-techdays-19\bc-compose> docker-compose up
+PS C:\Users\TechDaysAdmin\Desktop\sources\presentation-src-techdays-19\bc-compose> docker-compose up
 Creating temp_sql_1 ... done
 Creating temp_nav_1 ... done
 Attaching to temp_sql_1, temp_nav_1
@@ -307,7 +307,7 @@ docker-compose -f docker-compose.extended.yml up
 
 <details><summary markdown="span">Full output of the extended run</summary>
 ```bash
-PS C:\Users\Verwalter\Desktop\sources\presentation-src-techdays-19\bc-compose> docker-compose -f docker-compose.extended.yml up
+PS C:\Users\TechDaysAdmin\Desktop\sources\presentation-src-techdays-19\bc-compose> docker-compose -f docker-compose.extended.yml up
 Creating bc-compose_sql_1 ... done
 Creating bc-compose_nav-test_1 ... done
 Creating bc-compose_nav_1      ... done

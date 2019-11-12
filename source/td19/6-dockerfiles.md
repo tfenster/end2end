@@ -17,15 +17,15 @@ Table of content
 ### Create an Apache web server image
 In this lab we will create an image for the popular open source web server Apache. The installation process is very simple: We download a .zip file and expand it and install the neccessary .NET prerequisite library. Check the [Dockerfile](https://github.com/tfenster/presentation-src/blob/techdays-19/apache-httpd/Dockerfile) to get the details. The sources have been downloaded to your host VM already, so you can just run the following steps to build your image and run a container:
 ```bash
-cd ~\Desktop\sources\presentation-src-techdays-19\apache-httpd\
+cd c:\sources\presentation-src-techdays-19\apache-httpd\
 docker build -t myapache .
 docker run -p 80:80 --name apache myapache
 ```
 
 <details><summary markdown="span">Full output of details</summary>
 ```bash
-PS C:\> cd ~\Desktop\sources\presentation-src-techdays-19\apache-httpd\
-PS C:\Users\Verwalter\Desktop\sources\presentation-src-techdays-19\apache-httpd> docker build -t myapache .
+PS C:\> cd c:\sources\presentation-src-techdays-19\apache-httpd\
+PS c:\sources\presentation-src-techdays-19\apache-httpd> docker build -t myapache .
 Sending build context to Docker daemon  3.584kB
 Step 1/7 : FROM mcr.microsoft.com/windows/servercore:ltsc2019
 ltsc2019: Pulling from windows/servercore
@@ -60,7 +60,7 @@ Removing intermediate container 911f2692e61b
  ---> 6e9ba57f7698
 Successfully built 6e9ba57f7698
 Successfully tagged myapache:latest
-PS C:\Users\Verwalter\Desktop\sources\presentation-src-techdays-19\apache-httpd> docker run -p 80:80 --name apache myapache
+PS c:\sources\presentation-src-techdays-19\apache-httpd> docker run -p 80:80 --name apache myapache
 
 ```
 </details>
@@ -72,15 +72,15 @@ Make sure you remove the container in the end with `docker rm -f apache`
 ### Create an image by building a custom solution 
 The second scenario is one where we have the sources because the application is open source or built in-house. To make sure that we have a standardized build process, we put that in the image as well. Check the [Dockerfile](https://github.com/tfenster/presentation-src/blob/techdays-19/webapp/Dockerfile) to see the details. To run that particular build and then the container, do the following:
 ```bash
-cd ~\Desktop\sources\presentation-src-techdays-19\webapp\
+cd c:\sources\presentation-src-techdays-19\webapp\
 docker build -t mywebapp .
 docker run -p 80:80 --name webapp mywebapp
 ```
 
 <details><summary markdown="span">Full output of the build and run commands</summary>
 ```bash
-PS C:\Users\Verwalter\Desktop> cd ~\Desktop\sources\presentation-src-techdays-19\webapp\
-PS C:\Users\Verwalter\Desktop\sources\presentation-src-techdays-19\webapp> docker build -t mywebapp .
+PS C:\Users\AdminTechDays\Desktop> cd c:\sources\presentation-src-techdays-19\webapp\
+PS c:\sources\presentation-src-techdays-19\webapp> docker build -t mywebapp .
 Sending build context to Docker daemon  65.54kB
 Step 1/10 : FROM mcr.microsoft.com/dotnet/core/sdk:2.2-nanoserver-1809 AS build
  ---> 3e706675d42e
@@ -138,7 +138,7 @@ Removing intermediate container 68d02f41846f
  ---> 52338cd1515f
 Successfully built 52338cd1515f
 Successfully tagged mywebapp:latest
-PS C:\Users\Verwalter\Desktop\sources\presentation-src-techdays-19\webapp> docker run -p 80:80 --name webapp mywebapp
+PS c:\sources\presentation-src-techdays-19\webapp> docker run -p 80:80 --name webapp mywebapp
 Hosting environment: Production
 Content root path: C:\app\publish
 Now listening on: http://[::]:80
@@ -159,7 +159,7 @@ docker run -p 80:80 --name webapp multistagewebapp
 
 <details><summary markdown="span">Full output of multi-stage build and run</summary>
 ```bash
-PS C:\Users\Verwalter\Desktop\sources\presentation-src-techdays-19\webapp> docker build -t multistagewebapp -f Dockerfile.multistage .
+PS c:\sources\presentation-src-techdays-19\webapp> docker build -t multistagewebapp -f Dockerfile.multistage .
 Sending build context to Docker daemon  65.54kB
 Step 1/12 : FROM mcr.microsoft.com/dotnet/core/sdk:2.2-nanoserver-1809 AS build
  ---> 3e706675d42e
@@ -221,7 +221,7 @@ Removing intermediate container 8473e68a161b
  ---> b5132ec417a5
 Successfully built b5132ec417a5
 Successfully tagged multistagewebapp:latest
-PS C:\Users\Verwalter\Desktop\sources\presentation-src-techdays-19\webapp> docker run -p 80:80 --name webapp multistagewebapp
+PS c:\sources\presentation-src-techdays-19\webapp> docker run -p 80:80 --name webapp multistagewebapp
 Hosting environment: Production
 Content root path: C:\app
 Now listening on: http://[::]:80
@@ -236,7 +236,7 @@ docker images
 
 <details><summary markdown="span">Full output of images</summary>
 ```bash
-PS C:\Users\Verwalter\Desktop\sources\presentation-src-techdays-19\webapp> docker images
+PS c:\sources\presentation-src-techdays-19\webapp> docker images
 REPOSITORY                                  TAG                          IMAGE ID            CREATED             SIZE
 multistagewebapp                            latest                       b5132ec417a5        4 minutes ago       402MB
 mywebapp                                    latest                       52338cd1515f        18 minutes ago      1.68GB

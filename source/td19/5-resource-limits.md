@@ -30,7 +30,7 @@ fb6ded834a19        bc                  0.00%               1.859GiB            
 </details>
 <details><summary markdown="span">Full output of BC run</summary>
 ```bash
-PS C:\Users\Verwalter> docker run -e accept_eula=y --name bc mcr.microsoft.com/businesscentral/sandbox:ltsc2019
+PS C:\Users\AdminTechDays> docker run -e accept_eula=y --name bc mcr.microsoft.com/businesscentral/sandbox:ltsc2019
 Initializing...
 Starting Container
 Hostname is fb6ded834a19
@@ -76,9 +76,9 @@ docker run -e accept_eula=y --name bc --cpu-percent 3 mcr.microsoft.com/business
 
 <details><summary markdown="span">Full output of BC run with resource limit</summary>
 ```bash
-PS C:\Users\Verwalter> docker rm -f 8
+PS C:\Users\AdminTechDays> docker rm -f 8
 8
-PS C:\Users\Verwalter> docker run -e accept_eula=y --name bc --cpu-percent 3 mcr.microsoft.com/businesscentral/sandbox:ltsc2019
+PS C:\Users\AdminTechDays> docker run -e accept_eula=y --name bc --cpu-percent 3 mcr.microsoft.com/businesscentral/sandbox:ltsc2019
 Initializing...
 Starting Container
 Hostname is ab4b2b4481ed

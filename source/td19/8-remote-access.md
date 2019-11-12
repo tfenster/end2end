@@ -37,8 +37,8 @@ docker info
 ```
 <details><summary markdown="span">Full output of remote access to the engine</summary>
 ```bash
-PS C:\Users\Verwalter> $env:DOCKER_HOST="10.1.0.4"
-PS C:\Users\Verwalter> docker info
+PS C:\Users\TechDaysAdmin> $env:DOCKER_HOST="10.1.0.4"
+PS C:\Users\TechDaysAdmin> docker info
 Client:
  Debug Mode: false
 

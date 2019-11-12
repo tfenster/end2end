@@ -30,13 +30,16 @@ Install-Package -Name docker -ProviderName DockerMsftProvider
 
 <details><summary markdown="span">Full output of the install commands</summary>
 ```bash
-PS C:\Users\Verwalter> Install-Module -Name DockerMsftProvider -Repository PSGallery -Force
+PS C:\Users\TechDaysAdmin> Install-Module -Name DockerMsftProvider -Repository PSGallery -Force
 
 NuGet provider is required to continue
-PowerShellGet requires NuGet provider version '2.8.5.201' or newer to interact with NuGet-based repositories. The NuGet provider must be available in 'C:\Program Files\PackageManagement\ProviderAssemblies' or 'C:\Users\Verwalter\AppData\Local\PackageManagement\ProviderAssemblies'. You can also install the NuGet
-provider by running 'Install-PackageProvider -Name NuGet -MinimumVersion 2.8.5.201 -Force'. Do you want PowerShellGet to install and import the NuGet provider now?
+PowerShellGet requires NuGet provider version '2.8.5.201' or newer to interact with NuGet-based repositories. The NuGet
+ provider must be available in 'C:\Program Files\PackageManagement\ProviderAssemblies' or
+'C:\Users\TechDaysAdmin\AppData\Local\PackageManagement\ProviderAssemblies'. You can also install the NuGet provider by
+ running 'Install-PackageProvider -Name NuGet -MinimumVersion 2.8.5.201 -Force'. Do you want PowerShellGet to install
+and import the NuGet provider now?
 [Y] Yes  [N] No  [S] Suspend  [?] Help (default is "Y"): Y
-PS C:\Users\Verwalter> Install-Package -Name docker -ProviderName DockerMsftProvider
+PS C:\Users\TechDaysAdmin> Install-Package -Name docker -ProviderName DockerMsftProvider
 
 The package(s) come(s) from a package source that is not marked as trusted.
 Are you sure you want to install software from 'DockerDefault'?
@@ -67,7 +70,7 @@ docker version
 
 <details><summary markdown="span">Full output of the version command</summary>
 ```bash
-PS C:\Users\Verwalter> docker version
+PS C:\Users\TechDaysAdmin> docker version
 Client: Docker Engine - Enterprise
  Version:           19.03.4
  API version:       1.40
@@ -95,7 +98,7 @@ docker run hello-world:nanoserver
 ```
 <details><summary markdown="span">Full output of the sample command</summary>
 ```bash
-PS C:\Users\Verwalter> docker run hello-world:nanoserver
+PS C:\Users\TechDaysAdmin> docker run hello-world:nanoserver
 Unable to find image 'hello-world:nanoserver' locally
 nanoserver: Pulling from library/hello-world
 9ff41eda0887: Pull complete
@@ -128,6 +131,6 @@ For more examples and ideas, visit:
 </details>
 &nbsp;<br />
 ### One more preparation step
-To be quicker for the next samples, please download the script from [here](/techdays19-pullall.bat) and run it as this will pull all necessary images and we don't need to wait for the downloads!
+To be quicker for the next samples, please run the script C:\sources\presentation-src-techdays-19\techdays19-pullall.bat as this will pull all necessary images and we don't need to wait for the downloads later on!
 
 {::options parse_block_html="false" /}

@@ -24,10 +24,11 @@ Table of content
 Starting container with param `-ti` creates a terminal inside that container and `cmd` in the end tells it to use cmd as process to start
 ```bash
 docker run -ti mcr.microsoft.com/windows/nanoserver:1809 cmd
+dir
 ```
 <details><summary markdown="span">Full output of the interactive command</summary>
 ```bash
-PS C:\Users\Verwalter> docker run -ti mcr.microsoft.com/windows/nanoserver:1809 pwsh
+PS C:\Users\AdminTechDays> docker run -ti mcr.microsoft.com/windows/nanoserver:1809 pwsh
 Unable to find image 'mcr.microsoft.com/windows/nanoserver:1809' locally
 1809: Pulling from windows/nanoserver
 9ff41eda0887: Already exists
@@ -58,7 +59,7 @@ docker ps
 ```
 <details><summary markdown="span">Full output of the container list</summary>
 ```bash
-PS C:\Users\Verwalter> docker ps
+PS C:\Users\AdminTechDays> docker ps
 CONTAINER ID        IMAGE                                       COMMAND             CREATED             STATUS              PORTS               NAMES
 bee7f05d3210        mcr.microsoft.com/windows/nanoserver:1809   "cmd"               2 minutes ago       Up 2 minutes                            sharp_edison
 ```
@@ -71,7 +72,7 @@ docker ps -a
 ```
 <details><summary markdown="span">Full output of the container list</summary>
 ```bash
-PS C:\Users\Verwalter> docker ps -a
+PS C:\Users\AdminTechDays> docker ps -a
 CONTAINER ID        IMAGE                                       COMMAND                   CREATED             STATUS                   PORTS               NAMES
 bee7f05d3210        mcr.microsoft.com/windows/nanoserver:1809   "cmd"                     4 minutes ago       Up 4 minutes                                 sharp_edison
 46013aca11a1        hello-world:nanoserver                      "cmd /C 'type C:\\hel…"   6 hours ago         Exited (0) 6 hours ago                       amazing_pike
@@ -86,7 +87,7 @@ docker stats
 ```
 <details><summary markdown="span">Full output of the resource view</summary>
 ```bash
-PS C:\Users\Verwalter> docker stats
+PS C:\Users\AdminTechDays> docker stats
 CONTAINER ID        NAME                CPU %               PRIV WORKING SET    NET I/O             BLOCK I/O
 bee7f05d3210        sharp_edison        0.00%               25.2MiB             202kB / 29.1kB      5.23MB / 6.05MB
 ```
@@ -131,7 +132,7 @@ Microsoft Windows [Version 10.0.17763.802]
 (c) 2018 Microsoft Corporation. All rights reserved.
 
 C:\>exit
-PS C:\Users\Verwalter> docker ps
+PS C:\Users\AdminTechDays> docker ps
 CONTAINER ID        IMAGE                                       COMMAND             CREATED             STATUS              PORTS               NAMES
 bee7f05d3210        mcr.microsoft.com/windows/nanoserver:1809   "cmd"               18 minutes ago      Up 18 minutes                           sharp_edison
 ```
@@ -146,7 +147,7 @@ docker ps
 <details><summary markdown="span">Full output of the exit and container status</summary>
 ```bash
 C:\>exit
-PS C:\Users\Verwalter> docker ps
+PS C:\Users\AdminTechDays> docker ps
 CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
 ```
 </details>
@@ -160,9 +161,9 @@ docker inspect b
 ```
 <details><summary markdown="span">Full configuration output</summary>
 ```bash
-PS C:\Users\Verwalter> docker start b
+PS C:\Users\AdminTechDays> docker start b
 b
-PS C:\Users\Verwalter> docker inspect b
+PS C:\Users\AdminTechDays> docker inspect b
 [
     {
         "Id": "bee7f05d3210417371c2d17005cbbc2a551e26acf1e1a5de3dfc0d926b54a9dc",
@@ -349,7 +350,7 @@ docker inspect --format='{{ .NetworkSettings.Networks.nat.IPAddress }}' b
 <details><summary markdown="span">Network address output</summary>
 {% raw %}
 ```bash
-PS C:\Users\Verwalter> docker inspect --format='{{ .NetworkSettings.Networks.nat.IPAddress }}' b
+PS C:\Users\AdminTechDays> docker inspect --format='{{ .NetworkSettings.Networks.nat.IPAddress }}' b
 172.27.8.29
 ```
 {% endraw %}
@@ -364,11 +365,11 @@ docker rm 4
 ```
 <details><summary markdown="span">Full ouptut of the removal</summary>
 ```bash
-PS C:\Users\Verwalter> docker ps -a
+PS C:\Users\AdminTechDays> docker ps -a
 CONTAINER ID        IMAGE                                       COMMAND                   CREATED             STATUS                   PORTS               NAMES
 bee7f05d3210        mcr.microsoft.com/windows/nanoserver:1809   "cmd"                     36 minutes ago      Up 10 minutes                                sharp_edison
 46013aca11a1        hello-world:nanoserver                      "cmd /C 'type C:\\hel…"   6 hours ago         Exited (0) 6 hours ago                       amazing_pike
-PS C:\Users\Verwalter> docker rm 4
+PS C:\Users\AdminTechDays> docker rm 4
 4
 ```
 </details>
@@ -382,29 +383,29 @@ docker rm b
 ```
 <details><summary markdown="span">Full ouptut of the removal, first with an error message</summary>
 ```bash
-PS C:\Users\Verwalter> docker rm b
+PS C:\Users\AdminTechDays> docker rm b
 Error response from daemon: You cannot remove a running container bee7f05d3210417371c2d17005cbbc2a551e26acf1e1a5de3dfc0d926b54a9dc. Stop the container before attempting removal or force remove
-PS C:\Users\Verwalter> docker stop b
+PS C:\Users\AdminTechDays> docker stop b
 b
-PS C:\Users\Verwalter> docker rm b
+PS C:\Users\AdminTechDays> docker rm b
 b
 ```
 </details>
 &nbsp;<br />
 
 ### Show and remove images
-You use the `docker images` command to show all locally available images. To remove an image, you do `docker rmi` and give it the id of the image you want to remove. This only works if there is no container referencing that image
+You use the `docker images` command to show all locally available images. To remove an image, you do `docker rmi` and give it the id of the image you want to remove. This only works if there is no container referencing that image. Look for the hello-world image and use that one to delete.
 ```bash
 docker images
-docker rmi 
+docker rmi 1
 ```
 <details><summary markdown="span">Full ouptut of the image list and removal commands</summary>
 ```bash
-PS C:\Users\Verwalter> docker images
+PS C:\Users\AdminTechDays> docker images
 REPOSITORY                             TAG                 IMAGE ID            CREATED             SIZE
 hello-world                            nanoserver          158c64d77ced        4 weeks ago         251MB
 mcr.microsoft.com/windows/nanoserver   1809                8a09fa9e06cd        4 weeks ago         250MB
-PS C:\Users\Verwalter> docker rmi 1
+PS C:\Users\AdminTechDays> docker rmi 1
 Untagged: hello-world:nanoserver
 Untagged: hello-world@sha256:6923ba909bd4b9b8ee22e434a8353a77ceafb6a5dfa24cde98ec8e5371e25588
 Deleted: sha256:158c64d77ced2c0887665320be9a0875daa0438c550dce56ba66de6689ad1d4f
@@ -424,7 +425,7 @@ docker logs test
 ```
 <details><summary markdown="span">Full ouptut of the docker run in the first powershell</summary>
 ```bash
-PS C:\Users\Verwalter> docker run -ti --name test mcr.microsoft.com/windows/nanoserver:1809 cmd
+PS C:\Users\AdminTechDays> docker run -ti --name test mcr.microsoft.com/windows/nanoserver:1809 cmd
 Microsoft Windows [Version 10.0.17763.802]
 (c) 2018 Microsoft Corporation. All rights reserved.
 
@@ -443,7 +444,7 @@ C:\>dir
 </details>
 <details><summary markdown="span">Full ouptut of the docker logs in the second powershell</summary>
 ```bash
-PS C:\Users\Verwalter> docker logs test
+PS C:\Users\AdminTechDays> docker logs test
 Microsoft Windows [Version 10.0.17763.802]
 (c) 2018 Microsoft Corporation. All rights reserved.
 
