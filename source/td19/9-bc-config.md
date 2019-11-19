@@ -220,14 +220,14 @@ Monitoring EventSources from EventLog[Application]:
 ```
 </details>
 &nbsp;<br />
-This is now a multi-container environment, so it makes sense to put it into a compose file. You can either try to create it yourself or find the solution under Desktop\sources\presentation-src-techdays-19\bc-compose where the [docker-compose.yml](https://github.com/tfenster/presentation-src/blob/techdays-19/bc-compose/docker-compose.yml) is stored.
+This is now a multi-container environment, so it makes sense to put it into a compose file. You can either try to create it yourself or find the solution under c:\sources\presentation-src-techdays-19\bc-compose where the [docker-compose.yml](https://github.com/tfenster/presentation-src/blob/techdays-19/bc-compose/docker-compose.yml) is stored.
 &nbsp;<br />
 Stop the other containers and then call `docker-compose up` to start them again, this time using the definition in the compose file
 
 ```bash
 docker rm -f sql
 docker rm -f custom
-cd ~\Desktop\sources\presentation-src-techdays-19\bc-compose
+cd c:\sources\presentation-src-techdays-19\bc-compose
 docker-compose up
 ```
 
@@ -237,8 +237,8 @@ PS C:\> docker rm -f sql
 sql
 PS C:\> docker rm -f custom
 custom
-PS C:\> cd ~\Desktop\sources\presentation-src-techdays-19\bc-compose
-PS C:\Users\TechDaysAdmin\Desktop\sources\presentation-src-techdays-19\bc-compose> docker-compose up
+PS C:\> cd c:\sources\presentation-src-techdays-19\bc-compose
+PS C:\sources\presentation-src-techdays-19\bc-compose> docker-compose up
 Creating temp_sql_1 ... done
 Creating temp_nav_1 ... done
 Attaching to temp_sql_1, temp_nav_1
@@ -307,7 +307,7 @@ docker-compose -f docker-compose.extended.yml up
 
 <details><summary markdown="span">Full output of the extended run</summary>
 ```bash
-PS C:\Users\TechDaysAdmin\Desktop\sources\presentation-src-techdays-19\bc-compose> docker-compose -f docker-compose.extended.yml up
+PS C:\sources\presentation-src-techdays-19\bc-compose> docker-compose -f docker-compose.extended.yml up
 Creating bc-compose_sql_1 ... done
 Creating bc-compose_nav-test_1 ... done
 Creating bc-compose_nav_1      ... done
