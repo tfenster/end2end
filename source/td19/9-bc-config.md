@@ -131,6 +131,7 @@ Connecting a container to an already existing database is a common use case, so 
 docker exec -ti custom powershell
 stop-service MSSQL`$SQLEXPRESS
 exit
+cd c:\
 docker cp custom:c:\databases\ .
 dir .\databases\
 ```
@@ -143,6 +144,7 @@ Copyright (C) Microsoft Corporation. All rights reserved.
 
 PS C:\> stop-service MSSQL`$SQLEXPRESS
 PS C:\> exit
+PS C:\> cd c:\
 PS C:\> docker cp custom:c:\databases\ .
 PS C:\> dir .\databases\
 
