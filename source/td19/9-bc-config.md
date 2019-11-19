@@ -74,7 +74,7 @@ Don't stop this container as we will be usig it again in a later part of the lab
 ### Use Windows authentication and enable ClickOnce
 The second example is a bit more old-school as it will allow us to use ClickOnce (param `clickonce=y`) to get the old Windows Client and also use Windows authentication (params `username` and `password`). Make sure to use your username and password as provided for the VM. As ClickOnce and SSO are sensitive to the network names, we also add `--name sso --hostname sso`.
 ```bash
-docker run -e accept_eula=y --name sso --hostname sso -e auth=windows -e username=TechDaysAdmin -e password=Passw0rd*123 -e clickonce=y
+docker run -e accept_eula=y --name sso --hostname sso -e auth=windows -e username=TechDaysAdmin -e password=Passw0rd*123 -e clickonce=y mcr.microsoft.com/dynamicsnav:2018-gb-ltsc2019
 ```
 
 <details><summary markdown="span">Full output of details</summary>
