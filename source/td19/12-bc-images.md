@@ -13,7 +13,7 @@ Table of content
 &nbsp;<br />
 
 ### Activate the API in AdditionalSetup.ps1 using a custom image
-We have already seen two approaches to activating the API in AdditionalSetup.ps1, but what if you want to publish this e.g. to customers and make sure that it is as easy to consume as possible and very stable after delivery? You can easily create a custom image. We will reuse our AdditionalSetup.ps1 file in c:\temp and just put it into the image. The Dockerfile is available under c:\sources\presentation-src-techdays-19\bc-image, so we just copy it over to c:\temp and run `docker build` from there
+We have already seen two approaches to activating the API in AdditionalSetup.ps1, but what if you want to publish this e.g. to customers and make sure that it is as easy to consume as possible and very stable after delivery? You can easily create a custom image. We will reuse our AdditionalSetup.ps1 file in c:\temp and just put it into the image. The [Dockerfile](https://github.com/tfenster/presentation-src/blob/techdays-19/bc-image/Dockerfile) is available under c:\sources\presentation-src-techdays-19\bc-image, so we just copy it over to c:\temp and run `docker build` from there
 ```bash
 cd c:\temp
 copy c:\sources\presentation-src-techdays-19\bc-image\Dockerfile .
