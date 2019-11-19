@@ -67,5 +67,5 @@ Monitoring EventSources from EventLog[Application]:
 </details>
 &nbsp;<br />
 
-During startup you will see the line `initialize API Services` appear, coming from out script. After the contaier is ready, open e.g. http://&lt;ip&gt;:7048/NAV/api/beta/companyInformation in your browser. It should ask you to provide username and password and the you will get a JSON response from the API.
+During startup you will see the line `initialize API Services` appear, coming from out script. After the container is ready, open e.g. http://&lt;ip&gt;:7048/NAV/api/beta/companyInformation in your browser. It should ask you to provide username and password and the you will get a JSON response from the API.
 {::options parse_block_html="true" /}
