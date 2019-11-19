@@ -245,4 +245,6 @@ myapache                                    latest                       6e9ba57
 ```
 </details>
 &nbsp;<br />
+Again, remove the container in the end with `docker rm -f webapp`
+&nbsp;<br />
 {::options parse_block_html="true" /}
