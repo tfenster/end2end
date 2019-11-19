@@ -57,7 +57,7 @@ Ethernet adapter vEthernet (Ethernet):
 
 Now open your browser and connect to the IPv4 address you just got, in my case http://172.27.8.251. You should see the default IIS start page.
 
-We already know that it doesn't work and what the reason for that is, but if you want to make sure: Connect to the small VM (I'll call it "client" from now on), disable Enhanced IE Security with the `Set-ItemProperty` command from above and try to connect to the same IP, which should give you a connection error.
+We already know that it doesn't work and what the reason for that is, but if you want to make sure: Connect to the small VM (I'll call it "client" from now on) and try to connect to the same IP, which should give you a connection error.
 
 Again, we already know it doesn't work and why, but if you want to make sure, try to connect to port 80 on the host. For that, run `ipconfig` on the host and note the IPv4 Address that starts with 10.1, not the one starts with 127.27. In my case, and very likely in yours as well, this is 10.1.0.4
 ```bash
