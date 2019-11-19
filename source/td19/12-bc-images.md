@@ -25,23 +25,12 @@ docker build -t mcr.microsoft.com/businesscentral/onprem:1810-ltsc2019-activatea
 PS C:\> cd c:\temp
 PS C:\temp> copy c:\sources\presentation-src-techdays-19\bc-image\Dockerfile .
 PS C:\temp> docker build -t mcr.microsoft.com/businesscentral/onprem:1810-ltsc2019-activateapi .
-Sending build context to Docker daemon  4.608kB
-Step 1/3 : FROM mcr.microsoft.com/businesscentral/onprem:1810-ltsc2019
+Sending build context to Docker daemon  3.072kB
+Step 1/2 : FROM mcr.microsoft.com/businesscentral/onprem:1810-ltsc2019
  ---> 0bf96c1268ea
-Step 2/3 : RUN mkdir c:/run/my
- ---> Running in 7570ca3efd39
-
-    Directory: C:\run
-
-Mode                LastWriteTime         Length Name
-----                -------------         ------ ----
-d-----       11/11/2019   7:43 PM                my
-
-Removing intermediate container 7570ca3efd39
- ---> 5153666d84b9
-Step 3/3 : COPY AdditionalSetup.ps1 c:/run/my
- ---> e13575a90ba9
-Successfully built e13575a90ba9
+Step 2/2 : COPY AdditionalSetup.ps1 c:/run/
+ ---> 76861d99a369
+Successfully built 76861d99a369
 Successfully tagged mcr.microsoft.com/businesscentral/onprem:1810-ltsc2019-activateapi
 ```
 </details>
