@@ -85,15 +85,13 @@ WARNING: API is accessible on http://0.0.0.0:2375 without encryption.
 With that in place, you can do all the Docker commands on the client that we did on the host, but the containers will still be running on the host. In fact, on the client only the Docker CLI is installed, but not the engine.
 
 ### Use Portainer
-Portainer is a very nice web GUI for Docker that you can use to do almost everything Docker-related. See [https://portainer.io](https://portainer.io) for documentation. It is of course distributed as container image itself, so spinning it up is very easy.
+Portainer is a very nice web GUI for Docker that you can use to do almost everything Docker-related. See [https://portainer.io](https://portainer.io) for documentation. It is of course distributed as container image itself, so spinning it up is very easy. Go back to the big VM and run the following command:
 ```bash
 docker run -d -p 9000:9000 --name portainer -v \\.\pipe\docker_engine:\\.\pipe\docker_engine portainer/portainer
 ```
 
 <details><summary markdown="span">Full output of portainer startup</summary>
 ```bash
-PS C:\> netsh advfirewall firewall add rule name="Open Port 9000" dir=in action=allow protocol=TCP localport=9000
-Ok.
 PS C:\> docker run -d -p 9000:9000 --name portainer -v \\.\pipe\docker_engine:\\.\pipe\docker_engine portainer/portainer
 75b9f606caede81af67640c955cb04e74718e6c927b9f5e4c4ae45913ac0b419
 ```
