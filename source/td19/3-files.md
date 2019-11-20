@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "3 File handling and volumes"
+title: "3 File handling and bind mounts"
 description: ""
 keywords: ""
 permalink: "td19-3-files"
