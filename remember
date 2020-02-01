@@ -5,6 +5,8 @@ prod: rake
 Get-ChildItem -Path "Whoot tf aain"
 {% endhighlight %}
 
+[^1] footnote
+
 rake post title="Welcome to my new blog" 
 rake page name="test.md"
 rake page name="what/test.md"
