@@ -169,7 +169,7 @@ begin
 end;
 {% endhighlight %}
 
-This is a) ugly and b) very problematic if you want to add additional ball colors in another extension because the `IdentifyBallColor` procedure will always return "unknown" for anything other than Tennis, Basketball and Soccer. The idea introduced at TechDays now is to make an enum extensible defining which interface the enum elements need to implement. So to make use of our `IBallColorIdentifier` interface and the codeunits we already have in place, we would do something like this:
+This is a) ugly and b) very problematic if you want to add additional ball colors in another extension because the `IdentifyBallColor` procedure will always return "unknown" for anything other than Tennis, Basketball and Soccer. The idea introduced at TechDays now is to make an enum extensible and defining which interface the enum elements need to implement. So to make use of our `IBallColorIdentifier` interface and the codeunits we already have in place, we would do something like this:
 
 {% highlight c# linenos %}
 enum 50100 BallColors implements IBallColorIdentifier
@@ -259,7 +259,7 @@ The substitution of components can happen either at design time or at runtime. F
 }
 {% endhighlight %}
 
-Now if some code wants to get a number sequence if would just ask the platform for the current implementation of the `INumberSequence` interface and use that. If the default is still in place, that is used and if some extension has replaced it, the replacement is used. This would also require some kind of dependency injection mechanism, but that also is something that becomes possible now that we have interfaces! Maybe it could be something like this:
+Now if some code wants to get a number sequence, it would just ask the platform for the current implementation of the `INumberSequence` interface and use that. If the default is still in place, that is used and if some extension has replaced it, the replacement is used. This would also require some kind of dependency injection mechanism, but that also is something that becomes possible now that we have interfaces! Maybe it could be something like this:
 
 {% highlight c# linenos %}
 local procedure CreateInvoice()
@@ -273,7 +273,7 @@ begin
 end;
 {% endhighlight %}
 
-Overall, I am still very happy to once again see Microsoft invest into the future of Business Central, in this case by making AL a stronger language that allows us to build better software. I can't wait to stay how far and in which direction they take interfaces and the various scenarios that are now enabled.
+Overall, I am still very happy to once again see Microsoft invest into the future of Business Central, in this case by making AL a stronger language that allows us to build better software. I can't wait to see how far and in which direction they take interfaces and the various scenarios that are now enabled.
 
 [^1]: There is a bit of a pushback for microservice architectures as some have found it difficult to handle the added complexity in some scenarios, but all successful modern programming languages have some kind of a component model
 [^2]: including Erich Gamma, on of the persons responsible for VS Code
