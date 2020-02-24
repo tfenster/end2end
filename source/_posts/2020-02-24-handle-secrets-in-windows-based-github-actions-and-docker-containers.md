@@ -47,8 +47,8 @@ jobs:
     
     - uses: azure/docker-login@v1
       with:
-        username: ${{ secrets.docker_user }}
-        password: ${{ secrets.docker_pwd }}
+        username: $ { { secrets.docker_user } }
+        password: $ { { secrets.docker_pwd } }
 
     ...
 
@@ -84,7 +84,7 @@ jobs:
     - name: Decrypt nuget config
       run: Invoke-Expression "docker run --rm -v $(pwd)\web:c:\crypt tobiasfenster/rijndaelfileenc:0.1-1809 --action decrypt --password $env:crypt_pwd --file c:\crypt\nuget.config.enc"
       env:
-        crypt_pwd: ${{ secrets.crypt_pwd }}
+        crypt_pwd: $ { { secrets.crypt_pwd } }
     
     ...  
 
