@@ -57,7 +57,7 @@ jobs:
 This example logs in to the Docker hub using the provided username and password, so that in the next steps a Docker image can be created and pushed (see [this][build] for the full code). With that setup, the username and password are well protected and your automated builds still work well
 
 ## The details for private files
-The second example (a file with private content) is a bit more complicated. They [recommended][limits-secrets] approach is to encrypt that file using gpg and add the encrypted file to your repository. That way it is available during build, but you are not sharing private content. During the build process, you just decrypt the file again, using the password set up as GitHub secret, and use it as needed. On Linux this can be done out of the box using gpg, but that is not available by default on Windows, so I created a little [helper tool][rijndael] that allows you to encrypt and decrypt a file with a provided password.
+The second example (a file with private content) is a bit more complicated. The [recommended][limits-secrets] approach is to encrypt that file using gpg and add the encrypted file to your repository. That way it is available during build, but you are not sharing private content. During the build process, you just decrypt the file again, using the password set up as GitHub secret, and use it as needed. On Linux this can be done out of the box using gpg, but that is not available by default on Windows, so I created a little [helper tool][rijndael] that allows you to encrypt and decrypt a file with a provided password.
 
 To make this easily transferable and useable, I created a Docker image, so you can just run the following Docker command to encrypt a file. In that example, it would encrypt a file called `nuget.config` which is stored in the folder `c:\sources`. That folder is available to the container as a bind mount, set up through the `-v` parameter, the desired action is to encrypt (param `--action`) and the password is SuperSecret! (param `--password`):
 
@@ -90,7 +90,7 @@ jobs:
 
 {% endhighlight %}
 
-Note that this time I am using `tobiasfenster/rijndaelfileenc:0.1-1809` because the action runs on a Windows Server 2019 LTSC machine while before on my laptop I had used `tobiasfenster/rijndaelfileenc:0.1-1909`. That doesn't matter because the implemented algorithm is still the same. You can also see, that no the `--action` parameter has the value decrypt and the `--file` parameter points to the .enc file. As a result, we get the decrypted file, which can then be used during the build process, in that case a Docker image build as well.
+Note that this time I am using `tobiasfenster/rijndaelfileenc:0.1-1809` because the action runs on a Windows Server 2019 LTSC machine while before on my laptop I had used `tobiasfenster/rijndaelfileenc:0.1-1909`. That doesn't matter because the implemented algorithm is still the same. You can also see, that now the `--action` parameter has the value decrypt and the `--file` parameter points to the .enc file. As a result, we get the decrypted file, which can then be used during the build process, in that case a Docker image build as well.
 
 Now all you need to do is make sure that this decrypted file is only part of the build process, but never actually delivered. In Docker that is quite easy, as you can use a concept called multi-stage builds[^2]. Basically the idea is to have a build stage, where the build itself happens and in our scenario the decrypted file is used. After that the image creation enters a second stage and only the results of the build (without the decrypted file) are copied to the second stage. That way the file can be used as needed during the build, but it never gets delivered to the outside world.
 
@@ -107,14 +107,14 @@ As I struggled to find that information, I also want to add a note about my actu
 </configuration>
 {% endhighlight %}
 
-With that setup and the two mechanisms of multi-stage Docker builds and encrypted files in GitHub actions ans introduced above, I was able to set up the automated build process securely.
+With that setup and the two mechanisms of multi-stage Docker builds and encrypted files in GitHub actions as introduced above, I was able to set up the automated build process securely.
 
 [^1]: If you don't know what GitHub actions are, you can find an introduction [here][actions]. If you are familiar with Azure DevOps, think pipelines and you are very close.
 [^2]: I've written a very quick introduction [here][intro-multistage] or you can read more about it in the [official documentation][multistage-docs]. 
 
 [actions]: https://github.com/features/actions
 [limits-secrets]: https://help.github.com/en/actions/configuring-and-managing-workflows/creating-and-storing-encrypted-secrets#limits-for-secrets
-[this]: https://github.com/tfenster/azdevops-wi-reader/blob/e2867818065a994d3ab1c1eeb1f3c2d8dc17a277/.github/workflows/build-image.yml
+[build]: https://github.com/tfenster/azdevops-wi-reader/blob/e2867818065a994d3ab1c1eeb1f3c2d8dc17a277/.github/workflows/build-image.yml
 [rijndael]: https://github.com/tfenster/RijndaelFileEncryption/blob/master/Program.cs
 [intro-multistage]: https://www.axians-infoma.de/techblog/optimize-ci-build-appveyor-multi-stage-image/
 [multistage-docs]: https://docs.docker.com/develop/develop-images/multistage-build/
