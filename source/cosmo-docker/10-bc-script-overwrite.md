@@ -15,6 +15,7 @@ Table of content
 ### Activate the API in AdditionalSetup.ps1 using a c:\run\my bind mount
 In order to activate the external API in a BC OnPrem 13 instance, we need to enable a NST setting and also run Codeunit 5465. This can easily be automated with a script like the one [here](https://raw.githubusercontent.com/tfenster/nav-docker-samples/initialize-api/AdditionalSetup.ps1). In order to use it, just download it into e.g. c:\temp and bind mount that to c:\run\my when starting the container
 ```bash
+mkdir c:\temp
 wget -UseBasicParsing -Uri https://raw.githubusercontent.com/tfenster/nav-docker-samples/initialize-api/AdditionalSetup.ps1 -OutFile c:\temp\AdditionalSetup.ps1
 docker run --name api -e accept_eula=y -e usessl=n -v c:\temp:c:\run\my -e customNavSettings="ApiServicesEnabled=true" mcr.microsoft.com/businesscentral/onprem:1810-ltsc2019
 ```

@@ -299,7 +299,7 @@ nav_1  | - MSSQL$SQLEXPRESS
 ```
 </details>
 &nbsp;<br />
-Verify that you can connect by going to http://&lt;ip&gt;/BC and logging in. Now that we have everything in place, we can easily extend this, e.g. to also include a test environment. All we need to do is copy the database files to a new folder, tell the SQL container about that and add a second BC container connected to the test database. To be able to reach them easier, we'll also map the ports to host ports. And to make sure we always now which environment we are using, we set the Product name property accordingly. Those changes are already done in the [docker-compose.extended.yml](https://github.com/tfenster/presentation-src/blob/cosmo-docker/bc-compose/docker-compose.extended.yml) file
+Verify that you can connect by going to http://&lt;ip&gt;/BC and logging in. Now that we have everything in place, we can easily extend this, e.g. to also include a test environment. All we need to do is copy the database files to a new folder, tell the SQL container about that and add a second BC container connected to the test database. To be able to reach them easier, we'll also map the ports to host ports. And to make sure we always know which environment we are using, we set the Product name property accordingly. Those changes are already done in the [docker-compose.extended.yml](https://github.com/tfenster/presentation-src/blob/cosmo-docker/bc-compose/docker-compose.extended.yml) file
 
 ```bash
 docker-compose down
