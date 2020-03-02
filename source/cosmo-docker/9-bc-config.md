@@ -67,9 +67,9 @@ Monitoring EventSources from EventLog[Application]:
 ```
 </details>
 &nbsp;<br />
-After that, open your local browser at http://&lt;ip&gt;/BC and enter username and password as provided. You should see "COSMO" in the top left corner and if you open a report and select "Send to...", you should see onl "PDF Document" and "Schedule..." as we disabled Word and Excel export.
+After that, open your local browser at http://&lt;ip&gt;/BC and enter username and password as you can see in the startup log of the container. You should see "COSMO" in the top left corner and if you open a report and select "Send to...", you should see only "PDF Document" and "Schedule..." as we disabled Word and Excel export.
 &nbsp;<br />
-Don't stop this container as we will be usig it again in a later part of the lab. Also note down the password as we will need that later as well.
+Don't stop this container as we will be using it again in a later part of the lab. Also note down the password as we will need that later as well.
 
 ### Use Windows authentication and enable ClickOnce
 The second example is a bit more old-school as it will allow us to use ClickOnce (param `clickonce=y`) to get the old Windows Client and also use Windows authentication (params `username` and `password`). Make sure to use your username and password as provided for the VM. As ClickOnce and SSO are sensitive to the network names, we also add `--name sso --hostname sso`.
@@ -181,12 +181,12 @@ VERBOSE: Started SQL Server.
 
 With our SQL Server container ready for connections, we can now start our BC container again, but this time tell it to connect to the container. You will see that the ouput no longer shows "Starting local SQL Server" as it is now connecting to our SQL container instead.
 ```bash
-docker run -e usessl=n -e accept_eula=y -e databaseusername=sa -e databasepassword=Passw0rd*123 -e databaseserver=sql -e databasename=Cronus --name custom mcr.microsoft.com/businesscentral/onprem:ltsc2019
+docker run -e usessl=n -e accept_eula=y -e databaseusername=sa -e databasepassword=Passw0rd*123 -e databaseserver=sql -e databasename=Cronus -e databaseinstance= --name custom mcr.microsoft.com/businesscentral/onprem:ltsc2019
 ```
 
 <details><summary markdown="span">Full output of the docker run</summary>
 ```bash
-PS C:\> docker run -e usessl=n -e accept_eula=y -e databaseusername=sa -e databasepassword=Passw0rd*123 -e databaseserver=sql -e databasename=Cronus --name custom mcr.microsoft.com/businesscentral/onprem:ltsc2019
+PS C:\> docker run -e usessl=n -e accept_eula=y -e databaseusername=sa -e databasepassword=Passw0rd*123 -e databaseserver=sql -e databasename=Cronus -e databaseinstance= --name custom mcr.microsoft.com/businesscentral/onprem:ltsc2019
 Initializing...
 Starting Container
 Hostname is dbaf0b667ef5
