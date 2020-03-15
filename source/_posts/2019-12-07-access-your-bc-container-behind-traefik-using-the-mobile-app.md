@@ -3,7 +3,7 @@ layout: post
 title: "Access your BC container behind traefik using the mobile app"
 permalink: access-your-bc-container-behind-traefik-using-the-mobile-app
 date: 2019-12-07 21:37:19
-comments: true
+comments: false
 description: "Access your BC container behind traefik using the mobile app"
 keywords: ""
 categories:

@@ -3,7 +3,7 @@ layout: post
 title: "Interfaces in AL and why that matters"
 permalink: interfaces-in-al-and-why-that-matters
 date: 2020-02-01 21:59:56
-comments: true
+comments: false
 description: "Interfaces in AL and why that matters"
 keywords: ""
 categories:

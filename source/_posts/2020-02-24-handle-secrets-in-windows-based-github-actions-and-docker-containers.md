@@ -3,7 +3,7 @@ layout: post
 title: "Handle secrets in Windows based GitHub actions and Docker containers"
 permalink: handle-secrets-in-windows-based-github-actions-and-docker-containers
 date: 2020-02-24 22:02:46
-comments: true
+comments: false
 description: "Handle secrets in Windows-based GitHub actions and Docker containers"
 keywords: ""
 categories:

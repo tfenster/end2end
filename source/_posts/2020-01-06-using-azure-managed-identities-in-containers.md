@@ -3,7 +3,7 @@ layout: post
 title: "Using Azure Managed Identities in containers"
 permalink: using-azure-managed-identities-in-containers
 date: 2020-01-06 10:30:05
-comments: true
+comments: false
 description: "Using Azure Managed Identities in containers"
 keywords: ""
 categories:

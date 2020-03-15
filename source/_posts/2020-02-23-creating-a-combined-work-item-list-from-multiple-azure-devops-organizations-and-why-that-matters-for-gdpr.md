@@ -3,7 +3,7 @@ layout: post
 title: "Creating a combined work item list from multiple Azure DevOps organizations and why that matters for GDPR"
 permalink: creating-a-combined-work-item-list-from-multiple-azure-devops-organizations-and-why-that-matters-for-gdpr
 date: 2020-02-23 15:26:57
-comments: true
+comments: false
 description: "Creating a combined work item list from multiple Azure DevOps organizations and why that matters for GDPR"
 keywords: ""
 categories:

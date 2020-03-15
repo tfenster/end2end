@@ -3,7 +3,7 @@ layout: post
 title: "Debugging BC when using VS Code's Remote Development (SSH) feature"
 permalink: debugging-with-remote-development
 date: 2019-11-04 11:38:04
-comments: true
+comments: false
 description: "debugging with remote development"
 keywords: ""
 categories:
