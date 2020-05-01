@@ -37,9 +37,9 @@ The setup is about as easy as it gets for an Azure VM:
 ![interface-base](/images/remote dev overview.png)
 {: .centered}
 
-You can see the VM, which is connected to the network using a network interface, which in turn is connected to a virtual network, secured by a network security group and reachable from the outside through a public IP address. The virtual machine also has a schedule, which shuts it down at 3 a.m. German time if you don't do something about it. You will get an email half an hour before that (that's why the template is asking for your email address) and can then decide to keep it running. But[^4] code written after 3 a.m. has a tendency to look something in between funny, embarrassing and completely useless at the next day, so if you get this email and are still working, it would probably be a good idea to stop working anyway. The last element is an extension which actually just runs a [script][script] that does the setup of the machine.
+You can see the VM, which is connected to the network using a network interface, which in turn is connected to a virtual network, secured by a network security group and reachable from the outside through a public IP address. The virtual machine also has a schedule, which shuts it down at 3 a.m. German time if you don't do something about it. You will get an email half an hour before that (that's why the template is asking for your email address) and can then decide to keep it running. But code written after 3 a.m.[^4] has a tendency to look something in between funny, embarrassing and completely useless at the next day, so if you get this email and are still working, it would probably be a good idea to stop working anyway. The last element is an extension which actually just runs a [script][script] that does the setup of the machine.
 
-It first [installs chocolatey and uses that to install git, vim and OpenSSH][https://github.com/cosmoconsult/remote-dev/blob/master/InitVM.ps1#L11,L16]. It then downloads my [SSH daemon config][ssh] which enables key-based authentication and disables password-based authentication. This is also the reason why I am pre-generating a password and don't show it in clear text because password-based authentication will be disabled anyway. The last step is to put the provided SSH public key into the right file in the right folder [folder][[https://github.com/cosmoconsult/remote-dev/blob/master/InitVM.ps1#L18,L21]] so that public key authentication works with SSH, directly and through the Remote Dev extension. 
+It first [installs chocolatey and uses that to install git, vim and OpenSSH][installs-choco]. It then downloads my [SSH daemon config][ssh] which enables key-based authentication and disables password-based authentication. This is also the reason why I am pre-generating a password and don't show it in clear text because password-based authentication will be disabled anyway. The last step is to put the provided SSH public key into the right file in the right folder [folder][] so that public key authentication works with SSH, directly and through the Remote Dev extension. 
 
 The ARM template does a couple of quite opinionated things and if you want to change them, you will need to change the template.json file, most likely somewhere in the [variables][variables] section. Some of those decisions are:
 
@@ -65,8 +65,10 @@ Happy coding!
 [variables]: https://github.com/cosmoconsult/remote-dev/blob/master/InitVM.ps1#L38,L81
 [dotnetcore-sdk]: https://chocolatey.org/packages/dotnetcore-sdk
 [node]: https://chocolatey.org/packages/nodejs-lts
-
+[installs-choco]: https://github.com/cosmoconsult/remote-dev/blob/master/InitVM.ps1#L11,L16]
+[folder]: https://github.com/cosmoconsult/remote-dev/blob/master/InitVM.ps1#L18,L21
 
 [^1]: by my standards, most of my work these days is not dev but that actually makes development more fun when I get to do it
 [^2]: You know the quote about the Cloud, right? "There is still hardware in the Cloud, it is just owned by someone else and located somewhere else". Which immediately brings me to my favorite explanation about serverless computing: "Serverless doesn't mean that there are no servers, same as using a taxi doesn't mean there's no car". But I am getting sidetracked...
 [^3]: Funny how far Microsoft has come :)
+[^4]: Written at 2:30...
