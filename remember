@@ -5,6 +5,9 @@ prod: rake
 Get-ChildItem -Path "Whoot tf aain"
 {% endhighlight %}
 
+![interface-base](/images/traefik2.png)
+{: .centered}
+
 [^1] footnote
 
 rake post title="Welcome to my new blog" 
