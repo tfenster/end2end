@@ -6,7 +6,7 @@ plugins: [jekyll-paginate-v2]
 
 pagination:
   enabled: true
-  per_page: 5
+  per_page: 10
   permalink: "/page/:num/"
   sort_field: date
   sort_reverse: true
@@ -36,7 +36,7 @@ author:
   name: Tobias Fenster
   title: "tech blog"
   job: CTO at Cosmo Consult and dual Microsoft MVP
-  bio: "I'm a technology enthusiast, working mainly on Microsoft Dynamics 365, Azure and Docker. Always trying to push the boundaries."
+  bio: "I'm a technology enthusiast, working mainly on Microsoft Dynamics 365, Azure and Docker. Always trying to push the limits."
   thumb: /images/author.png
   email: tobias.fenster@cosmoconsult.com
   url: https://tobiasfenster.io

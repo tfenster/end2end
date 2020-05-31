@@ -13,7 +13,7 @@ tags:
 
 ---
 
-I previously wrote about [remote dev][remote-dev] and why I think this might be a game change. At that time, it was quite a number of burning hoops you had to jump through, but that really has become easier with the VS Code February 2020 release (1.43). I usually look quite closely at the VS Code release notes, but somehow I missed this and only became aware a couple of weeks ago. To quote from the [release notes][release-notes]: 
+I previously wrote about [remote dev][remote-dev] and why I think this might be a game changer. At that time, it was quite a number of burning hoops you had to jump through, but that really has become easier with the VS Code February 2020 release (1.43). I usually look quite closely at the VS Code release notes, but somehow I missed this and only became aware a couple of weeks ago. To quote from the [release notes][release-notes]: 
 
 *Stabilized support for Windows hosts
 We have had experimental support for Windows hosts in VS Code Insiders for a few months, but we are now ready to add this support to the VS Code Stable release!*
