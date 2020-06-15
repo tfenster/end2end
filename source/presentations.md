@@ -1,10 +1,7 @@
 ---
 layout: page
-title: "Presentations"
-description: ""
-keywords: ""
-permalink: "presentations"
-slug: "presentations"
+title: "My Presentations"
+permalink: /presentations/
 ---
 
 Just my presentations and source code which worked at the time I did them, but no guarantees that any of this works anymore. Also recordings, if available
