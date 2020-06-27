@@ -50,5 +50,5 @@ Just my presentations and source code which worked at the time I did them, but n
 [D365SatSpain2020]: https://powerplatformyamigos.com/dynamicspowerspainonline/
 [202006d365satpres]: https://github.com/tfenster/presentations/raw/master/docs/202006-d365spaininterfaces/2020-06%20Interfaces%20in%20AL.pdf
 [202006d365satrec]: https://www.youtube.com/watch?v=2WsU5TWPqXs
-[202006areopapres]: https://github.com/tfenster/presentations/raw/master/docs/202006-areopadevopsapi/2020-06-23%20Automating%20and%20extending%20Azure%20Devops.pdf
+[202006areopapres]: https://github.com/tfenster/presentations/raw/master/docs/202006-areopadevopsapi/2020-06-23%20Automating%20and%20extending%20Azure%20DevOps.pdf
 [202006areoparec]: https://www.youtube.com/watch?v=B5MGP2coXQI
