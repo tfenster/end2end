@@ -41,23 +41,23 @@ As I am not yet sure, if and how I can share those images on the Docker hub or o
 As I already wrote, I decided to go with the artifact cmdlets in navcontainerhelper instead of just using the code because it's more convenient. But because I need the artifacts in a container image and I don't want to rely on anything on the host, navcontainerhelper needs to run in a container. Fortunately, creating am image for that purpose is quite easy by using the following Dockerfile:
 
 {% highlight dockerfile linenos %}
-# escape='
+# escape=`
 ARG BASE
 FROM mcr.microsoft.com/windows/servercore:$BASE
 ARG NCHVERSION
 SHELL ["powershell", "-Command", "$ErrorActionPreference = 'Stop';"]
 
-RUN Install-PackageProvider -Name NuGet -MinimumVersion 2.8.5.201 -Force; '
+RUN Install-PackageProvider -Name NuGet -MinimumVersion 2.8.5.201 -Force; `
 Install-Module navcontainerhelper -MinimumVersion $env:NCHVERSION -MaximumVersion $env:NCHVERSION -Force;
 {% endhighlight %}
 
-The interesting part is in lines 7 and 8 where the right package provider as well as the right navcontainerhelper version is installed. With that in place, we can run a command like 'docker build -t tobiasfenster/navcontainerhelper:0.7.0.9-1809 --build-arg BASE=1809 .' to create the image. Navcontainerhelper online adds 40MB to the image, so that doesn't really hurt, especially considering how big the standard Windows image is.
+The interesting part is in lines 7 and 8 where the right package provider as well as the right navcontainerhelper version is installed. With that in place, we can run a command like `docker build -t tobiasfenster/navcontainerhelper:0.7.0.9-1809 --build-arg BASE=1809 .` to create the image. Navcontainerhelper online adds 40MB to the image, so that doesn't really hurt, especially considering how big the standard Windows image is.
 
 ## The details, part 2: The artifacts image
 With navcontainerhelper in place, we can now go ahead and download the artifacts that we need. In order to get the right artifacts, I have added build args for type, country and version (similar to the artifact cmdlets). The artifacts are downloaded, the AL language .vsix file is extracted to get the compiler (alc.exe) and the System.app file is put in the same folder as the other symbol files.
 
 {% highlight dockerfile linenos %}
-# escape='
+# escape=`
 ARG BASE
 ARG NCHVERSION
 FROM tobiasfenster/navcontainerhelper:$NCHVERSION-$BASE
@@ -67,20 +67,20 @@ ARG COUNTRY
 ARG VERSION
 SHELL ["powershell", "-Command", "$ErrorActionPreference = 'Stop';"]
 
-RUN Import-Module navcontainerhelper; '
+RUN Import-Module navcontainerhelper; `
 Download-Artifacts -artifactUrl (Get-BCArtifactUrl -type $env:TYPE -country $env:COUNTRY -version $env:VERSION) -includePlatform;
-RUN Copy-Item "C:\bcartifacts.cache\$env:TYPE\$env:VERSION\platform\ModernDev\program' files\Microsoft' Dynamics' NAV\*\AL' Development' Environment\ALLanguage.vsix" "C:\bcartifacts.cache\$env:TYPE\$env:VERSION\ALLanguage.zip"; '
-Copy-Item "C:\bcartifacts.cache\$env:TYPE\$env:VERSION\platform\ModernDev\program' files\Microsoft' Dynamics' NAV\*\AL' Development' Environment\System.app" "C:\bcartifacts.cache\$env:TYPE\$env:VERSION\$env:COUNTRY\Applications.$env:COUNTRY"; '
+RUN Copy-Item "C:\bcartifacts.cache\$env:TYPE\$env:VERSION\platform\ModernDev\program` files\Microsoft` Dynamics` NAV\*\AL` Development` Environment\ALLanguage.vsix" "C:\bcartifacts.cache\$env:TYPE\$env:VERSION\ALLanguage.zip"; `
+Copy-Item "C:\bcartifacts.cache\$env:TYPE\$env:VERSION\platform\ModernDev\program` files\Microsoft` Dynamics` NAV\*\AL` Development` Environment\System.app" "C:\bcartifacts.cache\$env:TYPE\$env:VERSION\$env:COUNTRY\Applications.$env:COUNTRY"; `
 Expand-Archive "C:\bcartifacts.cache\$env:TYPE\$env:VERSION\ALLanguage.zip" "C:\bcartifacts.cache\$env:TYPE\$env:VERSION\ALLanguage";
 {% endhighlight %}
 
-Again, to build the image, all that is needed is a build command with all the necessary args: 'docker build -t tobiasfenster/bc-artifacts:sandbox-16.2.13509.14155-de-1809 --build-arg NCHVERSION=0.7.0.9 --build-arg BASE=1809 --build-arg TYPE=Sandbox --build-arg COUNTRY=de --build-arg VERSION=16.2.13509.14155 .'. The artifacts (including the platform) are rather big and add 2.35 GB to the image size.
+Again, to build the image, all that is needed is a build command with all the necessary args: `docker build -t tobiasfenster/bc-artifacts:sandbox-16.2.13509.14155-de-1809 --build-arg NCHVERSION=0.7.0.9 --build-arg BASE=1809 --build-arg TYPE=Sandbox --build-arg COUNTRY=de --build-arg VERSION=16.2.13509.14155 .`. The artifacts (including the platform) are rather big and add 2.35 GB to the image size.
 
 ## The details, part 3: The "SDK" image
 Now everything is prepared for the last step, the "SDK" image. It needs to have the alc compiler as well as the symbols, so those need to be copied from an artifacts image to the target image:
 
 {% highlight dockerfile linenos %}
-# escape='
+# escape=`
 ARG BASE
 ARG TYPE
 ARG COUNTRY
@@ -104,7 +104,7 @@ CMD c:\bin\win32\alc.exe /project:c:\src /packagecachepath:c:\symbols /out:c:\sr
 
 The last line shows the compilation command that is executed when you run the image, so you need to make sure to bind mount your project folder to c:\src.
 
-After running something like 'docker build -t tobiasfenster/bc-sdk:sandbox-16.2.13509.14155-de-1809 --build-arg BASE=1809 --build-arg TYPE=sandbox --build-arg COUNTRY=de --build-arg VERSION=16.2.13509.14155 -f Dockerfile .', we now have an image with the alc compiler and all the standard symbols we might need. Because I have used nanoserver, the image is very small in total with the Business Central stuff adding 330 MB to the image.
+After running something like `docker build -t tobiasfenster/bc-sdk:sandbox-16.2.13509.14155-de-1809 --build-arg BASE=1809 --build-arg TYPE=sandbox --build-arg COUNTRY=de --build-arg VERSION=16.2.13509.14155 -f Dockerfile .`, we now have an image with the alc compiler and all the standard symbols we might need. Because I have used nanoserver, the image is very small in total with the Business Central stuff adding 330 MB to the image.
 
 Because of this and as we don't need to wait for SQL and BC to start, the compilation is very quick. Of course, to run e.g. automated tests, you still need all the other components, but if you only want to compile, maybe because it is just a push to a feature branch and you run the whole story including tests only nightly but are fine with just a compilation for the push. And 5.5 seconds to find out if your code still compiles in a pristine environment seems quite fair.
 
