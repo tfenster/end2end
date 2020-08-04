@@ -7,9 +7,10 @@ permalink: /presentations/
 Just my presentations and source code which worked at the time I did them, but no guarantees that any of this works anymore. Also recordings, if available
 
 ## 2020
-- 2019-06 **Automating and extending Azure DevOps** as webinar for [Areopa][Areopa]: [presentation][202006areopapres] and [recording][202006areoparec]
-- 2019-06 **Interfaces in AL** at [Dynamics Power Spain Online 2020][D365SatSpain2020]: [presentation][202006d365satpres] and [recording][202006d365satrec]
-- 2019-05 **Interfaces in AL** as webinar for [Areopa][Areopa]: [presentation][202005areopapres] and [recording][202005areoparec]
+- 2020-07 **The MVP Show** hosted by [Mark Smith][nz365guy]: [recording][202007mvpshowrec]
+- 2020-06 **Automating and extending Azure DevOps** as webinar for [Areopa][Areopa]: [presentation][202006areopapres] and [recording][202006areoparec]
+- 2020-06 **Interfaces in AL** at [Dynamics Power Spain Online 2020][D365SatSpain2020]: [presentation][202006d365satpres] and [recording][202006d365satrec]
+- 2020-05 **Interfaces in AL** as webinar for [Areopa][Areopa]: [presentation][202005areopapres] and [recording][202005areoparec]
 
 ## 2019
 <ul>
@@ -52,3 +53,5 @@ Just my presentations and source code which worked at the time I did them, but n
 [202006d365satrec]: https://www.youtube.com/watch?v=2WsU5TWPqXs
 [202006areopapres]: https://github.com/tfenster/presentations/raw/master/docs/202006-areopadevopsapi/2020-06-23%20Automating%20and%20extending%20Azure%20DevOps.pdf
 [202006areoparec]: https://www.youtube.com/watch?v=B5MGP2coXQI
+[nz365guy]: https://www.nz365guy.com/
+[202007mvpshowrec]: https://www.nz365guy.com/tobias-fenster-on-the-mvp-show/
