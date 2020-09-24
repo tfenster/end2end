@@ -7,7 +7,10 @@ permalink: /presentations/
 Just my presentations and source code which worked at the time I did them, but no guarantees that any of this works anymore. Also recordings, if available
 
 ## 2020
-- 2020-07 **The MVP Show** hosted by [Mark Smith][nz365guy]: [recording][202007mvpshowrec]
+- 2020-09 Interview on **digitization and agility in customer projects** at [Unhide the Champions X Industrial Software][unhidethechampions]: [trailer][202009unhidethechampionstrailer]
+- 2020-09 **Automatisierung und Erweiterung von Azure DevOps** (German) at the [German Dynamics 365 Power Platform Summit 2020][2020powerthon]: [presentation][202009powerthonpres] and [recording][202009powerthonrec]
+- 2020-08 **Interfaces in AL** at [DynamicsCon][dynamicscon]: [presentation][202008dynamicsconpres] and [recording][202008dynamicsconrec] 
+- 2020-07 Guest on **The MVP Show** hosted by [Mark Smith][nz365guy]: [recording][202007mvpshowrec]
 - 2020-06 **Automating and extending Azure DevOps** as webinar for [Areopa][Areopa]: [presentation][202006areopapres] and [recording][202006areoparec]
 - 2020-06 **Interfaces in AL** at [Dynamics Power Spain Online 2020][D365SatSpain2020]: [presentation][202006d365satpres] and [recording][202006d365satrec]
 - 2020-05 **Interfaces in AL** as webinar for [Areopa][Areopa]: [presentation][202005areopapres] and [recording][202005areoparec]
@@ -55,3 +58,11 @@ Just my presentations and source code which worked at the time I did them, but n
 [202006areoparec]: https://www.youtube.com/watch?v=B5MGP2coXQI
 [nz365guy]: https://www.nz365guy.com/
 [202007mvpshowrec]: https://www.nz365guy.com/tobias-fenster-on-the-mvp-show/
+[202008dynamicsconrec]: https://www.youtube.com/watch?v=NxAZGZOnFZU&list=PLihbooUf2JIyMd_Iopr5-JSoxQE_TFMEF&index=9
+[202008dynamicsconpres]: https://github.com/tfenster/presentations/raw/master/docs/202008dynamicscon/202008dynamicsconpres.pdf
+[dynamicscon]: https://dynamicscon.com/
+[202009powerthonrec]: https://www.youtube.com/watch?v=hJVUAKZvFtk
+[202009powerthonpres]: https://github.com/tfenster/presentations/raw/master/docs/202009powerthon/202009powerthonpres.pdf
+[2020powerthon]: https://events.powercommunity.com/deutschland-powerthon/
+[202009unhidethechampionstrailer]: https://www.linkedin.com/posts/unhidethechampions_tobias-fenster-cto-cosmo-consult-au-unhide-activity-6706881143922274304-ttM4
+[unhidethechampions]: https://unhide-the-champions.eu/
