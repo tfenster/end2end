@@ -61,7 +61,7 @@ Just my presentations and source code which worked at the time I did them, but n
 [202008dynamicsconrec]: https://www.youtube.com/watch?v=NxAZGZOnFZU&list=PLihbooUf2JIyMd_Iopr5-JSoxQE_TFMEF&index=9
 [202008dynamicsconpres]: https://github.com/tfenster/presentations/raw/master/docs/202008dynamicscon/202008dynamicsconpres.pdf
 [dynamicscon]: https://dynamicscon.com/
-[202009powerthonrec]: https://www.youtube.com/watch?v=hJVUAKZvFtk
+[202009powerthonrec]: https://www.youtube.com/watch?v=S9UnD-RO2ew
 [202009powerthonpres]: https://github.com/tfenster/presentations/raw/master/docs/202009powerthon/202009powerthonpres.pdf
 [2020powerthon]: https://events.powercommunity.com/deutschland-powerthon/
 [202009unhidethechampionstrailer]: https://www.linkedin.com/posts/unhidethechampions_tobias-fenster-cto-cosmo-consult-au-unhide-activity-6706881143922274304-ttM4
