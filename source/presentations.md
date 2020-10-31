@@ -7,6 +7,7 @@ permalink: /presentations/
 Just my presentations and source code which worked at the time I did them, but no guarantees that any of this works anymore. Also recordings, if available
 
 ## 2020
+- 2020-10 Presenting the overall **Microsoft roadmap** (German) at [COSMO CONSULT Digital Summit 2020][2020digitalsummit]: [recording][2020digitalsummitrec]
 - 2020-09 Interview on **digitization and agility in customer projects** at [Unhide the Champions X Industrial Software][unhidethechampions]: [trailer][202009unhidethechampionstrailer]
 - 2020-09 **Automatisierung und Erweiterung von Azure DevOps** (German) at the [German Dynamics 365 Power Platform Summit 2020][2020powerthon]: [presentation][202009powerthonpres] and [recording][202009powerthonrec]
 - 2020-08 **Interfaces in AL** at [DynamicsCon][dynamicscon]: [presentation][202008dynamicsconpres] and [recording][202008dynamicsconrec] 
@@ -66,3 +67,5 @@ Just my presentations and source code which worked at the time I did them, but n
 [2020powerthon]: https://events.powercommunity.com/deutschland-powerthon/
 [202009unhidethechampionstrailer]: https://www.linkedin.com/posts/unhidethechampions_tobias-fenster-cto-cosmo-consult-au-unhide-activity-6706881143922274304-ttM4
 [unhidethechampions]: https://unhide-the-champions.eu/
+[2020digitalsummit]: https://de.cosmoconsult.com/digital-summit-2020-aufgezeichnete-videos/
+[2020digitalsummitrec]: https://register.gotowebinar.com/register/8191512670046515983
