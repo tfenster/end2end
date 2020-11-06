@@ -7,9 +7,11 @@ permalink: /presentations/
 Just my presentations and source code which worked at the time I did them, but no guarantees that any of this works anymore. Also recordings, if available
 
 ## 2020
-- 2020-10 Presenting the overall **Microsoft roadmap** (German) at [COSMO CONSULT Digital Summit 2020][2020digitalsummit]: [recording][2020digitalsummitrec]
+- 2020-11 **Automating and extending Azure DevOps** at [Directions4Partners Virtual 2020][2020directions]: [presentation][2020directions1pres]
+- 2020-11 **Using the BC artifacts to create a lightning fast compiler Docker image** at [Directions4Partners Virtual 2020][2020directions]: [presentation][2020directions2pres]
+- 2020-09 Presenting the overall **Microsoft roadmap** (German) at [COSMO CONSULT Digital Summit 2020][2020digitalsummit]: [presentation][2020digitalsummitpres] and [recording][2020digitalsummitrec]
 - 2020-09 Interview on **digitization and agility in customer projects** at [Unhide the Champions X Industrial Software][unhidethechampions]: [trailer][202009unhidethechampionstrailer]
-- 2020-09 **Automatisierung und Erweiterung von Azure DevOps** (German) at the [German Dynamics 365 Power Platform Summit 2020][2020powerthon]: [presentation][202009powerthonpres] and [recording][202009powerthonrec]
+- 2020-09 **Automating and extending Azure DevOps** (German) at the [German Dynamics 365 Power Platform Summit 2020][2020powerthon]: [presentation][202009powerthonpres] and [recording][202009powerthonrec]
 - 2020-08 **Interfaces in AL** at [DynamicsCon][dynamicscon]: [presentation][202008dynamicsconpres] and [recording][202008dynamicsconrec] 
 - 2020-07 Guest on **The MVP Show** hosted by [Mark Smith][nz365guy]: [recording][202007mvpshowrec]
 - 2020-06 **Automating and extending Azure DevOps** as webinar for [Areopa][Areopa]: [presentation][202006areopapres] and [recording][202006areoparec]
@@ -69,3 +71,7 @@ Just my presentations and source code which worked at the time I did them, but n
 [unhidethechampions]: https://unhide-the-champions.eu/
 [2020digitalsummit]: https://de.cosmoconsult.com/digital-summit-2020-aufgezeichnete-videos/
 [2020digitalsummitrec]: https://register.gotowebinar.com/register/8191512670046515983
+[2020digitalsummitpres]: https://github.com/tfenster/presentations/raw/master/docs/202009digitalsummit/2020digitalsummitpres.pdf
+[2020directions]: https://directions4partners.com/events/virtual-2020/
+[2020directions1pres]: https://github.com/tfenster/presentations/raw/master/docs/202011directions/2020directions1pres.pdf
+[2020directions2pres]: https://github.com/tfenster/presentations/raw/master/docs/202011directions/2020directions2pres.pdf
