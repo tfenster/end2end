@@ -319,6 +319,8 @@ The tool allows you to specify the resources and configurations that you want in
 
 If you run the tool against this config, it will read and parse the data, make the necessary calls against the Pricing API and then output a file containing the different resource configuration with the different price configurations and to make it easy to compare, everything with monthly pricing. As we have two pricing configs and two resource configs, we get four result objects, containing a description, the resources with prices and totals including and excluding optional resources. You can then bring this into Excel, transform it with Power Query and with that you have all the data you might need from the Pricing API and can get to start on it. It's Excel, so it will never actually be beautiful, but you can work with it :)
 
+Most importantly for me, if I want to e.g. compare against 3-year cost, I can just add a new price config and everything is done. Or adding and removing a resource needs just to be done once, not for every possible combination of config and resource like it is the case if you use the calculator website.
+
 ![calc](/images/calc.png)
 {: .centered}
 
