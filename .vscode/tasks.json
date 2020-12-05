@@ -8,7 +8,15 @@
                 "exec",
                 "jekyll",
                 "serve",
-                "-w"
+                "--incremental"
+            ],
+            "type": "shell",
+            "problemMatcher": []
+        },
+        {
+            "label": "Push to production",
+            "command": "rake",
+            "args": [
             ],
             "type": "shell",
             "problemMatcher": []
