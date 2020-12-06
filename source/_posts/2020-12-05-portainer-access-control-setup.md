@@ -13,7 +13,7 @@ tags:
 
 ---
 
-[Portainer][portainer] is a great tool to simplify container management, that I've been using for quite some time by now. In fact, my first blog post [on that topic][old-blog] is from July 2017, and we are now relying on it as part of our Azure DevOps & Docker self-service offering. I had a blog post about the setup of access control in Portainer in my blog backlog for a while now, because it took me a long time to figure out how it works through the API as it is way more complicated than necessary and needs ugly workarounds. Or at least I thought that, until I came across this [pull request][pr] because of a discussion on the Portainer slack.
+[Portainer][portainer] is a great tool to simplify container management, that I've been using for quite some time by now. In fact, my first blog post [on that topic][old-blog] is from July 2017, and we are today relying on it as part of our Azure DevOps & Docker self-service offering. I had a blog post about the setup of access control in Portainer in my blog backlog for a while, because it took me a long time to figure out how it works through the API as it is way more complicated than necessary and needs ugly workarounds. Or at least I thought that, until I came across this [pull request][pr] because of a discussion on the Portainer slack.
 
 ## The TL;DR
 
