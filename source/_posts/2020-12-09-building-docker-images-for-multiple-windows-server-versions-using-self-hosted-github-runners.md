@@ -314,9 +314,9 @@ As you can see in the second part, lines 16 and 17, we can even create multiple 
 
 It has taken quite some time to get everything in place and help or input by [Stefan Scherer][scherer], [Jakub Vanak][vanak] and my colleague [Markus Lippert][lippert]. Thanks for that! Now it seems so far like a pretty convenient and stable setup for creating and using Docker images for different Windows Server versions.
 
-[^1] actually the same image with multiple tags, but let's not split hairs
-[^2] org-scoped runners actually are currently not able to pick up jobs as described in [this issue][org-issue], but I would hope that this is fixed soon
-[^3] the PAT needs `repo` access for repository scoped runners and `admin:org` for organization scoped runners
+[^1]: actually the same image with multiple tags, but let's not split hairs
+[^2]: org-scoped runners actually are currently not able to pick up jobs as described in [this issue][org-issue], but I would hope that this is fixed soon
+[^3]: the PAT needs `repo` access for repository scoped runners and `admin:org` for organization scoped runners
 
 [manifests]: https://docs.docker.com/engine/reference/commandline/manifest/
 [linux]: https://www.axians-infoma.de/techblog/creating-a-multi-arch-docker-image-with-azure-devops/
