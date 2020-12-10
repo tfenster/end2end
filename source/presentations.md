@@ -7,15 +7,18 @@ permalink: /presentations/
 Just my presentations and source code which worked at the time I did them, but no guarantees that any of this works anymore. Also recordings, if available
 
 ## 2020
-- 2020-11 **Automating and extending Azure DevOps** at [Directions4Partners Virtual 2020][2020directions]: [presentation][2020directions1pres]
+- 2020-12 **Faster on Azure, easier updates: The Terraform Azure provider** (German) at [HashiTalks DACH][2020hashitalksdach]: [presentation][2020hashitalksdachpres], [recording][2020hashitalksdachrec] and [sources][2020hashitalksdachsrc]
+- 2020-12 **Easily deploy and maintain your Azure infrastructure using Terraform** at [BC TechTalk][2020bctechtalk]: [presentation][2020bctechtalkpres], [recording][2020bctechtalkrec] and [sources][2020bctechtalksrc]
+- 2020-12 **Azure DevOps & Docker made easy: Just use it** (sponsoring session) at [BC TechTalk][2020bctechtalk]: [recording][2020bctechtalkrec2]
+- 2020-11 **Automating and extending Azure DevOps** at [Directions4Partners Virtual][2020directions]: [presentation][2020directions1pres]
 - 2020-11 **Using the BC artifacts to create a lightning fast compiler Docker image** at [Directions4Partners Virtual 2020][2020directions]: [presentation][2020directions2pres]
-- 2020-09 Presenting the overall **Microsoft roadmap** (German) at [COSMO CONSULT Digital Summit 2020][2020digitalsummit]: [presentation][2020digitalsummitpres] and [recording][2020digitalsummitrec]
+- 2020-09 Presenting the overall **Microsoft roadmap** (German) at [COSMO CONSULT Digital Summit][2020digitalsummit]: [presentation][2020digitalsummitpres] and [recording][2020digitalsummitrec]
 - 2020-09 Interview on **digitization and agility in customer projects** at [Unhide the Champions X Industrial Software][unhidethechampions]: [trailer][202009unhidethechampionstrailer]
-- 2020-09 **Automating and extending Azure DevOps** (German) at the [German Dynamics 365 Power Platform Summit 2020][2020powerthon]: [presentation][202009powerthonpres] and [recording][202009powerthonrec]
+- 2020-09 **Automating and extending Azure DevOps** (German) at the [German Dynamics 365 Power Platform Summit][2020powerthon]: [presentation][202009powerthonpres] and [recording][202009powerthonrec]
 - 2020-08 **Interfaces in AL** at [DynamicsCon][dynamicscon]: [presentation][202008dynamicsconpres] and [recording][202008dynamicsconrec] 
 - 2020-07 Guest on **The MVP Show** hosted by [Mark Smith][nz365guy]: [recording][202007mvpshowrec]
 - 2020-06 **Automating and extending Azure DevOps** as webinar for [Areopa][Areopa]: [presentation][202006areopapres] and [recording][202006areoparec]
-- 2020-06 **Interfaces in AL** at [Dynamics Power Spain Online 2020][D365SatSpain2020]: [presentation][202006d365satpres] and [recording][202006d365satrec]
+- 2020-06 **Interfaces in AL** at [Dynamics Power Spain Online][D365SatSpain2020]: [presentation][202006d365satpres] and [recording][202006d365satrec]
 - 2020-05 **Interfaces in AL** as webinar for [Areopa][Areopa]: [presentation][202005areopapres] and [recording][202005areoparec]
 
 ## 2019
@@ -75,3 +78,12 @@ Just my presentations and source code which worked at the time I did them, but n
 [2020directions]: https://directions4partners.com/events/virtual-2020/
 [2020directions1pres]: https://github.com/tfenster/presentations/raw/master/docs/202011directions/2020directions1pres.pdf
 [2020directions2pres]: https://github.com/tfenster/presentations/raw/master/docs/202011directions/2020directions2pres.pdf
+[2020bctechtalk]: https://bctechtalk.com
+[2020bctechtalkpres]: https://github.com/tfenster/presentations/raw/master/docs/202012bctechtalk/2020bctechtalkpres.pdf
+[2020bctechtalksrc]: https://github.com/tfenster/presentations/tree/master/202011bctechtalk
+[2020bctechtalkrec]: https://www.youtube.com/watch?v=TVYU9qMHXGY
+[2020bctechtalkrec2]: https://www.youtube.com/watch?v=dHM4qgJVemE
+[2020hashitalksdach]: https://events.hashicorp.com/hashitalksdach
+[2020hashitalksdachpres]: https://github.com/tfenster/presentations/raw/master/docs/202012hashitalksdach/2020hashitalksdachpres.pdf
+[2020hashitalksdachsrc]: https://github.com/tfenster/presentations/tree/master/202012hashitalksdach
+[2020hashitalksdachrec]: https://www.youtube.com/watch?v=ppDfZLaFoSE&feature=youtu.be&t=6820
