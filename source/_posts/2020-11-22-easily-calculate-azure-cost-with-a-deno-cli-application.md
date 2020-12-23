@@ -32,7 +32,7 @@ The basic usage is quite easy and well explained in the [documentation][prices-a
 GET https://prices.azure.com/api/retail/prices?$filter=productName eq 'Virtual Machines Edsv4 Series' and skuName eq 'E4ds v4'
 {% endhighlight %}
 
-to get prices for the E4ds v4 VM size. As you can see, the API allows anonymous requests and you need to use standard OData filters to get the results you want, in this case prices for VMs in the Edsv4 series and particularly the E4ds v4 size. If the `skuName` is unique, you could also remove the `productName` filter, but during my tests I often good more results than expected with only the `skuName`, so I would say it is a good practice to always keep the `productName` filter as well. To further narrow it down to you region and pricing model, you could do something like this
+to get prices for the E4ds v4 VM size. As you can see, the API allows anonymous requests and you need to use standard OData filters to get the results you want, in this case prices for VMs in the Edsv4 series and particularly the E4ds v4 size. If the `skuName` is unique, you could also remove the `productName` filter, but during my tests I often got more results than expected with only the `skuName`, so I would say it is a good practice to always keep the `productName` filter as well. To further narrow it down to you region and pricing model, you could do something like this
 
 {% highlight http linenos %}
 GET https://prices.azure.com/api/retail/prices?$filter=productName eq 'Virtual Machines Edsv4 Series' and skuName eq 'E4ds v4' and armRegionName eq 'westeurope' and priceType eq 'Consumption'
@@ -319,10 +319,10 @@ The tool allows you to specify the resources and configurations that you want in
 
 If you run the tool against this config, it will read and parse the data, make the necessary calls against the Pricing API and then output a file containing the different resource configuration with the different price configurations and to make it easy to compare, everything with monthly pricing. As we have two pricing configs and two resource configs, we get four result objects, containing a description, the resources with prices and totals including and excluding optional resources. You can then bring this into Excel, transform it with Power Query and with that you have all the data you might need from the Pricing API and can get to start on it. It's Excel, so it will never actually be beautiful, but you can work with it :)
 
-Most importantly for me, if I want to e.g. compare against 3-year cost, I can just add a new price config and everything is done. Or adding and removing a resource needs just to be done once, not for every possible combination of config and resource like it is the case if you use the calculator website.
-
 ![calc](/images/calc.png)
 {: .centered}
+
+Most importantly for me, if I want to e.g. compare against 3-year cost, I can just add a new price config and everything is done. Or adding and removing a resource needs just to be done once, not for every possible combination of config and resource like it is the case if you use the calculator website.
 
 With this running perfectly fine on Linux and my WSL2 subsystem working good as well, I also decided to develop this in a [dev container][dev-container]. For that I can only say that it is extremely easy to set up and works rock solid, simply a pleasure.
 
