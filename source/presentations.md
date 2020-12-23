@@ -1,17 +1,20 @@
 ---
 layout: page
-title: "My Presentations"
+title: "My Presentations / publications"
 permalink: /presentations/
 ---
 
-Just my presentations and source code which worked at the time I did them, but no guarantees that any of this works anymore. Also recordings, if available
+Just my presentations, publications (from 2020 on) and source code which worked at the time I did them, but no guarantees that any of this works anymore. Also recordings, if available
 
 ## 2020
+- 2020-12 **Easily calculate Azure cost with a Deno CLI application, developed in a VS Code dev container** (German) at [Microsoft Germany Cloud Native Community Blog][techwiese-cncb]: [blog post][202012techwiese]
 - 2020-12 **Faster on Azure, easier updates: The Terraform Azure provider** (German) at [HashiTalks DACH][2020hashitalksdach]: [presentation][2020hashitalksdachpres], [recording][2020hashitalksdachrec] and [sources][2020hashitalksdachsrc]
 - 2020-12 **Easily deploy and maintain your Azure infrastructure using Terraform** at [BC TechTalk][2020bctechtalk]: [presentation][2020bctechtalkpres], [recording][2020bctechtalkrec] and [sources][2020bctechtalksrc]
 - 2020-12 **Azure DevOps & Docker made easy: Just use it** (sponsoring session) at [BC TechTalk][2020bctechtalk]: [recording][2020bctechtalkrec2]
+- 2020-11 **Server Jobs in Azure Pipelines** (German) at [Microsoft Germany Cloud Native Community Blog][techwiese-cncb]: [blog post][202011techwiese]
 - 2020-11 **Automating and extending Azure DevOps** at [Directions4Partners Virtual][2020directions]: [presentation][2020directions1pres]
 - 2020-11 **Using the BC artifacts to create a lightning fast compiler Docker image** at [Directions4Partners Virtual 2020][2020directions]: [presentation][2020directions2pres]
+- 2020-10 **Creating a Windows Docker Swarm on Azure using terraform, part I** (German) at [Microsoft Germany Cloud Native Community Blog][techwiese-cncb]: [blog post][202010techwiese]
 - 2020-09 Presenting the overall **Microsoft roadmap** (German) at [COSMO CONSULT Digital Summit][2020digitalsummit]: [presentation][2020digitalsummitpres] and [recording][2020digitalsummitrec]
 - 2020-09 Interview on **digitization and agility in customer projects** at [Unhide the Champions X Industrial Software][unhidethechampions]: [trailer][202009unhidethechampionstrailer]
 - 2020-09 **Automating and extending Azure DevOps** (German) at the [German Dynamics 365 Power Platform Summit][2020powerthon]: [presentation][202009powerthonpres] and [recording][202009powerthonrec]
@@ -87,3 +90,7 @@ Just my presentations and source code which worked at the time I did them, but n
 [2020hashitalksdachpres]: https://github.com/tfenster/presentations/raw/master/docs/202012hashitalksdach/2020hashitalksdachpres.pdf
 [2020hashitalksdachsrc]: https://github.com/tfenster/presentations/tree/master/202012hashitalksdach
 [2020hashitalksdachrec]: https://www.youtube.com/watch?v=ppDfZLaFoSE&feature=youtu.be&t=6820
+[techwiese-cncb]: https://www.microsoft.com/de-de/techwiese/cloud-native-community-blog/default.aspx
+[202010techwiese]: https://www.microsoft.com/de-de/techwiese/cloud-native-community-blog/einfache-berechnung-der-azure-kosten-mit-einer-deno-cli-anwendung-entwickelt-in-einem-vs-code-dev-container.aspx
+[202011techwiese]: https://www.microsoft.com/de-de/techwiese/cloud-native-community-blog/server-jobs-in-azure-pipelines.aspx
+[202012techwiese]: https://www.microsoft.com/de-de/techwiese/cloud-native-community-blog/einfache-berechnung-der-azure-kosten-mit-einer-deno-cli-anwendung-entwickelt-in-einem-vs-code-dev-container.aspx
