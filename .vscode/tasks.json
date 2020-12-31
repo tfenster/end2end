@@ -14,6 +14,19 @@
             "problemMatcher": []
         },
         {
+            "label": "Start jekyll (include future posts)",
+            "command": "bundle",
+            "args": [
+                "exec",
+                "jekyll",
+                "serve",
+                "--incremental",
+                "--future"
+            ],
+            "type": "shell",
+            "problemMatcher": []
+        },
+        {
             "label": "Push to production",
             "command": "rake",
             "args": [
