@@ -16,6 +16,7 @@ comments: false
 webmentions:
   username: tobiasfenster.io
 
+future: false
 source: source
 destination: _site
 sass:
