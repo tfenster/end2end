@@ -14,7 +14,7 @@ Just my presentations, publications (from 2020 on) and source code which worked 
 - 2020-11 **Server Jobs in Azure Pipelines** (German) at [Microsoft Germany Cloud Native Community Blog][techwiese-cncb]: [blog post][202011techwiese]
 - 2020-11 **Automating and extending Azure DevOps** at [Directions4Partners Virtual][2020directions]: [presentation][2020directions1pres]
 - 2020-11 **Using the BC artifacts to create a lightning fast compiler Docker image** at [Directions4Partners Virtual 2020][2020directions]: [presentation][2020directions2pres]
-- 2020-10 **Creating a Windows Docker Swarm on Azure using terraform, part I** (German) at [Microsoft Germany Cloud Native Community Blog][techwiese-cncb]: [blog post][202010techwiese]
+- 2020-10 **Creating a Windows Docker Swarm on Azure using Terraform, part I** (German) at [Microsoft Germany Cloud Native Community Blog][techwiese-cncb]: [blog post][202010techwiese]
 - 2020-09 Presenting the overall **Microsoft roadmap** (German) at [COSMO CONSULT Digital Summit][2020digitalsummit]: [presentation][2020digitalsummitpres] and [recording][2020digitalsummitrec]
 - 2020-09 Interview on **digitization and agility in customer projects** at [Unhide the Champions X Industrial Software][unhidethechampions]: [trailer][202009unhidethechampionstrailer]
 - 2020-09 **Automating and extending Azure DevOps** (German) at the [German Dynamics 365 Power Platform Summit][2020powerthon]: [presentation][202009powerthonpres] and [recording][202009powerthonrec]

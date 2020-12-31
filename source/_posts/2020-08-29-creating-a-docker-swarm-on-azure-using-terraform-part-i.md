@@ -1,10 +1,10 @@
 ---
 layout: post
-title: "Creating a Windows Docker Swarm on Azure using terraform, part I"
+title: "Creating a Windows Docker Swarm on Azure using Terraform, part I"
 permalink: creating-a-docker-swarm-on-azure-using-terraform-part-i
 date: 2020-08-29 14:12:38
 comments: false
-description: "Creating a Windows Docker Swarm on Azure using terraform, part I"
+description: "Creating a Windows Docker Swarm on Azure using Terraform, part I"
 keywords: ""
 categories:
 image: /images/terraform-azure-swarm.png
@@ -16,18 +16,18 @@ tags:
 This post has taken a very long time. Two years and one day ago I wrote about [Windows authentication in Docker Swarm][win-auth-swarm] and nine months[^1] ago I showed a Docker Swarm at [NAV TechDays][techdays]. However, I was not completely happy with my setup and — as is probably true with every tech project — there still is room for improvement, but I am satisfied enough with it to share it. Also, we have been using a Swarm created with what am sharing today for a couple of months now and it works well, so that probably is a good sign.
 
 ## The TL;DR
-[Docker Swarm][docker-swarm] is the container orchestrator provided by Docker itself and allows you to bring multiple virtual[^2] machines together to form a cluster called “swarm” on which you can run Docker containers. By using [Azure Virtual Machine Scale Sets][az-vmss] in the background, I can very easily add and remove machines (or “nodes”) to and from that swarm or even let it [auto-scale][auto-scale]. To automate the deployment, I have used [terraform][terraform][^3], an Infrastructure as Code (IaC) tool which allows me to define the Azure infrastructure I need, run `terraform apply`, wait a bit and then have my swarm up and running. The whole architecture is a bit more complex as it also includes among others an [Azure Files][az-files] share, an [Azure Load Balancer][az-lb] and an [Azure Key Vault][az-kv], but overall, that's it. I am assuming that whoever uses this will want to expose something over the web and some kind of management interface for the swarm should come in handy, so I have by default added [Traefik][traefik] as reverse proxy and [Portainer][portainer] as container management interface.
+[Docker Swarm][docker-swarm] is the container orchestrator provided by Docker itself and allows you to bring multiple virtual[^2] machines together to form a cluster called “swarm” on which you can run Docker containers. By using [Azure Virtual Machine Scale Sets][az-vmss] in the background, I can very easily add and remove machines (or “nodes”) to and from that swarm or even let it [auto-scale][auto-scale]. To automate the deployment, I have used [Terraform][terraform][^3], an Infrastructure as Code (IaC) tool which allows me to define the Azure infrastructure I need, run `terraform apply`, wait a bit and then have my swarm up and running. The whole architecture is a bit more complex as it also includes among others an [Azure Files][az-files] share, an [Azure Load Balancer][az-lb] and an [Azure Key Vault][az-kv], but overall, that's it. I am assuming that whoever uses this will want to expose something over the web and some kind of management interface for the swarm should come in handy, so I have by default added [Traefik][traefik] as reverse proxy and [Portainer][portainer] as container management interface.
 
 To just use it as is, do the following:
 - Prereqs: 
-  - Make sure you have the [Azure CLI][azure-cli] [installed][azure-cli-install] as well as [terraform][tf-install].
+  - Make sure you have the [Azure CLI][azure-cli] [installed][azure-cli-install] as well as [Terraform][tf-install].
   - Make sure you have a public SSH key available in `$HOME\.ssh\id_rsa.pub` as this will be uploaded. If you don't have one, you can follow the instructions [here][ssh] to create one. Note that the documentation talks about Linux VMs, but it works with the Windows VMs in my setup as well.
 - Run `git clone https://github.com/cosmoconsult/azure-swarm` to get my setup
 - Open the file `variables.tf` in subfolder `tf` and change the default value for the variable `eMail` to your eMail address.
 - Open a cmd or PowerShell and go to the `tf` subfolder
 - Run `az login` to log in to your Azure account
 - If you have multiple subscriptions, you can run `az account set --subscription="<subscription-id>"` to select the one you want to use
-- Run `terraform init` to initialize terraform
+- Run `terraform init` to initialize Terraform
 - Run `terraform apply -auto-approve` to create the infrastructure
 
 After a couple of minutes, you should see something like this:
@@ -50,7 +50,7 @@ I don't want to introduce you to the base components that I used because each of
 
 - Docker gives an introduction to the [key concepts of a Swarm][swarm-key]
 - Getting an overview of Azure is a bit of a daunting task because of the sheer size of it but you can find good overviews of the components that I mainly used above
-- Terraform has a very good [intro][tf-intro] to give you an idea and then you can check out the information and examples for the Azure provider either [by terraform][az-terraform] or [by Microsoft][az-terraform2]
+- Terraform has a very good [intro][tf-intro] to give you an idea and then you can check out the information and examples for the Azure provider either [by Terraform][az-terraform] or [by Microsoft][az-terraform2]
 - Traefik has a very nice [documentation][traefik-docs] to get you started quickly
 - Portainer actually is a bit thin on the [documentation][portainer-docs] side, but very intuitive to use
 
@@ -64,7 +64,7 @@ Sorry, I could not resist showing this :) Of course this isn't a simplified over
 ![swarm-overview](/images/swarm-overview.png)
 {: .centered}
 
-You can see that I am using a jumpbox for administrative access, which means that I have a dedicated VM to get access to the terminal on any of the involved virtual machines because none of them can be directly reached. This is a security measure to make it harder for attackers to get access to the system. As a most basic but also most efficient way to secure your environment, you can shut down the jumpbox when it isn't needed and then there literally is no direct way to any of the machines. To further improve the security setup, the jumpbox can only be reached using SSH with a private/public key combination. As part of the terraform deployment, your public key is uploaded into the Azure Key Vault and when the jumpbox starts, it downloads the key from the Vault and puts it into the right place, so that when you later try to connect using your private key, it's as easy as using the `ssh-to-jumpbox` command shown in line 8 above to connect without having to specify a password. That also means that no one can guess or brute force your password...
+You can see that I am using a jumpbox for administrative access, which means that I have a dedicated VM to get access to the terminal on any of the involved virtual machines because none of them can be directly reached. This is a security measure to make it harder for attackers to get access to the system. As a most basic but also most efficient way to secure your environment, you can shut down the jumpbox when it isn't needed and then there literally is no direct way to any of the machines. To further improve the security setup, the jumpbox can only be reached using SSH with a private/public key combination. As part of the Terraform deployment, your public key is uploaded into the Azure Key Vault and when the jumpbox starts, it downloads the key from the Vault and puts it into the right place, so that when you later try to connect using your private key, it's as easy as using the `ssh-to-jumpbox` command shown in line 8 above to connect without having to specify a password. That also means that no one can guess or brute force your password...
 
 ![swarm-overview](/images/swarm-ssh.gif)
 {: .centered}
@@ -110,4 +110,4 @@ With that I hope you got a good overview of my setup. In a following post, I'll 
 [arm-viewer]: https://marketplace.visualstudio.com/items?itemName=bencoleman.armview
 [^1]: It actually feels like way longer but without a lot of experience, I would guess that pandemics have that effect
 [^2]: or physical, if anyone is still doing that
-[^3]: or to be precise, mostly the [Azure Provider][az-terraform] for terraform, also [documented by Microsoft][az-terraform2]
+[^3]: or to be precise, mostly the [Azure Provider][az-terraform] for Terraform, also [documented by Microsoft][az-terraform2]
