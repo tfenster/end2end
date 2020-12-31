@@ -43,5 +43,13 @@
 			"&nbsp;<br />",
 			"{::options parse_block_html=\"true\" /}"
 		]
+	},
+	"Source code": {
+		"prefix": "sourcecode",
+		"body": [
+			"{% highlight $1 linenos %}",
+			"$0",
+			"{% endhighlight %}"
+		]
 	}
 }
