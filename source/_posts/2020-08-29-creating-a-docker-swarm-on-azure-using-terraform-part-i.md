@@ -1,10 +1,10 @@
 ---
 layout: post
-title: "Creating a Windows Docker Swarm on Azure using Terraform, part I"
+title: "Creating a Windows Docker Swarm on Azure using Terraform, part I: Overview"
 permalink: creating-a-docker-swarm-on-azure-using-terraform-part-i
 date: 2020-08-29 14:12:38
 comments: false
-description: "Creating a Windows Docker Swarm on Azure using Terraform, part I"
+description: "Creating a Windows Docker Swarm on Azure using Terraform, part I: Overview"
 keywords: ""
 categories:
 image: /images/terraform-azure-swarm.png
