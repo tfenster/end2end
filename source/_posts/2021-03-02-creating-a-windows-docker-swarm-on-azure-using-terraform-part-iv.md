@@ -24,8 +24,8 @@ If you are more experienced with SSH, this likely will be nothing new but given 
 ## The details on connecting to the nodes from the jumpbox
 If you want to be able to connect from the jumpbox to the other nodes in the swarm without a password, you can do the following. Please note that this means that anyone with access to the jumpbox directly has access to all other nodes as well. IMHO this is ok, but you need to make that decision for your own
  
-1. Create a key pair without a password on the jumpbox: Run ssh-keygen on the jumpbox and accept all passwords including an empty password
-1. Copy the public key to all other nodes. Note that your worker nodes might have different names, you can easily find out with docker node ls
+1. Create a key pair without a password on the jumpbox: Run `ssh-keygen` on the jumpbox and accept all default parameters including an empty password
+1. Copy the public key to all other nodes. Note that your worker nodes might have different names, you can easily find out with `docker node ls`
 {% highlight powershell linenos %}
 $pub = Get-Content .\.ssh\id_rsa.pub
 ssh -l VM-Administrator mgr1 "'$pub' | Out-File 'c:\ProgramData\ssh\administrators_authorized_keys' -Encoding utf8"
@@ -36,13 +36,13 @@ ssh -l VM-Administrator worker000003 "'$pub' | Out-File 'c:\ProgramData\ssh\admi
 {% endhighlight %}
 
 ## The details on connecting directly to the nodes from somewhere else
-If you have the setup as explained above, you can do the following to make it even more convenient and have seemingly direct access. I am assuming that I take to the swarm "swarm-vfsedbuv", this will of course be different for you and you need to change it
+If you have the setup as explained above, you can do the following to make it even more convenient and have seemingly direct access. I am assuming that I talk to the Swarm `swarm-vfsedbuv`, this will of course be different for you and you need to change it
  
 1. Download the private key from the jumpbox to your machine. Make sure that you append the name of the swarm to the local file, so that it doesn't override your own key
 {% highlight powershell linenos %}
 scp vm-administrator@swarm-vfsedbuv-ssh.westeurope.cloudapp.azure.com:c:\users\vm-administrator\.ssh\id_rsa .\.ssh\id_rsa_swarm-vfsedbuv
 {% endhighlight %}
-1. Open (or create, if it doesn't exist) a file called "config" (no extension) in the subfolder .ssh of your home folder
+1. Open (or create, if it doesn't exist) a file called `config` (no extension) in the subfolder `.ssh` of your home folder
 1. Create a section like this and replicate for mgr2 and mgr3
 {% highlight none linenos %}
 Host mgr1.se

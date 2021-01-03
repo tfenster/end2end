@@ -42,7 +42,7 @@ locals {
 }
 {% endhighlight %}
 
-The random string is defined in the [common.tf][common.tf] file like this, including the `random` provider that we need to reference to use this functionality and the output so that we can get the password in the end:
+The random string is defined in the [common.tf][common.tf] file like this, including the `random` provider that we need to reference to use this functionality. You can also see that we use the same provider to generate a random password and the output so that we can get the password in the end:
 
 {% highlight hcl linenos %}
 provider "random" {
@@ -110,7 +110,7 @@ resource "azurerm_key_vault_secret" "sshPubKey" {
 ## The details about deploying the infrastructure with Terraform: Shared components
 Some components of the infrastructure are shared between the others: Storage in [storage.tf][storage.tf], the Azure load balancer in [loadbalancer.tf][loadbalancer.tf] and the jumpbox in [jumpbox.tf][jumpbox.tf]. All of that is fairly straightforward as well, just a couple of things to mention:
 
-The jumpbox has two security rules, one to open up for SSH traffic and one to explicitely deny RDP traffic. The second one is in place if for whatever reason SSH fails and you want to have a fallback. Then you can simply go to the network configuration in the Azure portal and change that rule from `deny` to `allow`.
+The jumpbox has two security rules, one to allow SSH traffic and one to explicitely deny RDP traffic. The second one is in place if for whatever reason SSH fails and you want to have a fallback. Then you can simply go to the network configuration in the Azure portal and change that rule from `deny` to `allow` or change it in Terraform and apply again.
 
 {% highlight hcl linenos %}
 resource "azurerm_network_security_rule" "ssh" {
@@ -156,7 +156,7 @@ resource "azurerm_key_vault_access_policy" "jumpbox" {
 }
 {% endhighlight %}
 
-For the load balancer, I want to mention a mechanism which is used in other places as well to make a resource "conditional". This is currently not possible straightforward in Terraform with something like an `enabled` flag. The workaround is to the `count` property which is intended to be used for deploying multiple resource with the same configuration. In this case, I am setting the count either to 1 or to 0, essentially making it an optional component. I have a variable called `managerVmSettings.useThree` which configures if you have one or three managers (three is preferable as it gives you fault tolerance, but for a simple dev or test scenario, one might be enough). If that variable is true, the count is 1. If it is false, the count is 0. For this, we can conveniently use a ternary if, e.g. for the association of the second manager to the backend address pool of the load balancer:
+For the load balancer, I want to mention a mechanism which is used in other places as well to make a resource "conditional". This is currently not possible straightforward in Terraform with something like an `enabled` flag. The workaround is to use the `count` property which is intended to be used for deploying multiple resource with the same configuration. In this case, I am setting the `count` either to `1` or to `0`, essentially making it an optional component. I have a variable called `managerVmSettings.useThree` which configures if you have one or three managers (three is preferable as it gives you fault tolerance, but for a simple dev or test scenario, one might be enough). If that variable is `true`, the `count` is `1`. If it is `false`, the count is `0`. For this, we can conveniently use a ternary if, e.g. for the association of the second manager to the backend address pool of the load balancer:
 
 {% highlight hcl linenos %}
 resource "azurerm_network_interface_backend_address_pool_association" "mgr2" {
@@ -174,7 +174,7 @@ The managers are three (or one) separately configured VMs, defined in [managers.
 
 - The first manager needs to do something different[^2] than the others. This is realized as a script param, again explained in more detail in the next post, but the only good way to set that up was a different configuration for the first manager.
 - Also, the first manager needs a dedicated, static IP address to advertise when creating and when joining the Swarm.
-- The second manager can only come start its configuration when the first one is completely done. This is easily accomplished with a `depends_on` setting that tells the second manager to start only after the initialization script of the first one is finished and I couldn't find a good way to get that implemented when using a `count`-based setup.
+- The second manager can only start its configuration when the first one is completely done. This is easily accomplished with a `depends_on` setting that tells the second manager to start only after the initialization script of the first one is finished and I couldn't find a good way to get that implemented when using a `count`-based setup.
 
 {% highlight hcl linenos %}
 resource "azurerm_windows_virtual_machine" "mgr2" {
@@ -187,7 +187,7 @@ resource "azurerm_windows_virtual_machine" "mgr2" {
 - If the second and third manager start the Swarm join process at the same time, I sometimes got errors that there wasn't a majority of managers available. It looked to me like the second one was not fully there but already registered and then the third couldn't join. It wasn't completely reliably succeeding or failing, so it seems to be some kind of race condition. The solution again was a `depends_on` property.
 - The first manager needs to write the Swarm join tokens for managers and workers to the Azure key vault, so it needs `Set` permission and in case of a re-create also `Delete`, while the other managers (and workers) only need `Get`
 
-Apart from that, the managers have no special setup in Terraform. The workers are defined in [workers.tf][workers.tf] implemented with a Virtual Machine Scale Set as explained in part one of this blog post series, so the Terraform file only has that and the number of workers can simply configred through the SKU capacity:
+Apart from that, the managers have no special setup in Terraform. The workers are defined in [workers.tf][workers.tf] implemented with a Virtual Machine Scale Set as explained in [part one][one] of this blog post series, so the Terraform file only has that and the number of workers can simply be configured through the SKU capacity:
 
 {% highlight hcl linenos %}
 resource "azurerm_virtual_machine_scale_set" "worker" {
@@ -200,7 +200,7 @@ resource "azurerm_virtual_machine_scale_set" "worker" {
 }
 {% endhighlight %}
 
-The rest is again nothing sepcial.
+The rest is again nothing special.
 
 ## The details: Configuring OpenSSH
 The OpenSSH configuration has two different variants: The jumpbox is the only machine where SSH is publicly available, so it only has public key authentication enabled with password authentication disabled in its [configuration][sshd_config_wopwd]. I had some issues with connections failing after a couple of minutes, so I also added `ClientAliveInterval` of 60 (seconds) as explained [here][ClientAliveInterval], the rest is once again pretty standard:
@@ -215,31 +215,37 @@ Match Group administrators
        AuthorizedKeysFile __PROGRAMDATA__/ssh/administrators_authorized_keys
 {% endhighlight %}
 
-The managers and workers have password authentication enabled, so that you can log in from the jumbpox using a password. The fourth part of this blog post series will show you how you can instead use a private/public SSH key setup on the jumpbox. Therefore, the only line different in the [configuration][sshd_config_wpwd] for that setup is this:
+The managers and workers have password authentication enabled, so that you can log in from the jumbpox using a password. Therefore, the only line different in the [configuration][sshd_config_wpwd] for that setup is this:
 
 {% highlight none linenos %}
 PasswordAuthentication yes
 {% endhighlight %}
 
+The fourth part of this blog post series will show you how you can instead use a private/public SSH key setup on the jumpbox. 
+
 ## The details: Using a Docker Compose file to deploy Traefik and Portainer as Swarm service
 With all of the above, the infrastructure is in place, and we have a Docker Swarm with one or three managers and a configurable number of workers. Now it's time to deploy Swarm services, basically Docker containers with a configurable number of replicas and placement (e.g. "everywhere" or "only on managers"). For that, I used a Docker Compose file to define a stack, which is a collection of services. The [configuration file][docker-compose.yml.template] is a template file with a couple of placeholders like `$email` and `$externaldns` which are also replaced through the scripts so that something like 
 
-`- --certificatesresolvers.myresolver.acme.email=$email`
+{% highlight yaml linenos %}
+- --certificatesresolvers.myresolver.acme.email=$email
+{% endhighlight %}
 
 becomes
 
-`- --certificatesresolvers.myresolver.acme.email=tobias.fenster@cosmoconsult.com`
+{% highlight  linenos %}
+- --certificatesresolvers.myresolver.acme.email=tobias.fenster@cosmoconsult.com
+{% endhighlight %}
 
 The Traefik configuration has those notable parts:
 
-- It uses a custom generated image because I wanted the ability to have a multi-arch image as explained [here][multi-arch] and Docker library images like `traefik` can't do that. Weird, but I [asked][library] and got that as answer. Therefore I don't reference the standard image:
+- It uses a custom generated image for Traefik because I wanted the ability to have a multi-arch image as explained [here][multi-arch] and Docker library images like `traefik` can't do that. Weird, but I [asked][library] and got that as answer. Therefore I don't reference the standard image:
 {% highlight yaml linenos %}
 services:
   traefik:
     image: tobiasfenster/french-reverse-proxy:2.3.4-windowsservercore
 ...
 {% endhighlight %}
-- The configuration to make the Traefik API and dashboard available throught Traefik itself is already there, but handling is disabled. In case you need, you only need to switch that boolean in line 2 to true:
+- The configuration to make the Traefik API and dashboard available throught Traefik itself is already there, but handling is disabled. In case you need it e.g. for debugging, you only need to switch that boolean in line 3 to true:
 {% highlight yaml linenos %}
 ...
       labels:
@@ -251,7 +257,7 @@ services:
         - traefik.http.services.api.loadBalancer.server.port=8080
 ...
 {% endhighlight %}
-- I have a shared Azure File Share as s: in all nodes of the Swarm, so I can store the [Let's Encrypt cert for Traefik][traefik-le] there and don't need to worry on which manager the Traefik container comes up. And of course, Traefik needs to work in [Docker Swarm mode][traefik-swarm]:
+- I have a shared Azure File Share as drive `s:` in all nodes of the Swarm, so I can store the [Let's Encrypt cert for Traefik][traefik-le] there and don't need to worry on which manager the Traefik container comes up. And of course, Traefik needs to work in [Docker Swarm mode][traefik-swarm]:
 {% highlight yaml linenos %}
 services:
   traefik:
@@ -295,7 +301,7 @@ secrets:
     external: true
 {% endhighlight %}
 
-The Portainer agent has only one notable setting: The path for the Docker volumes needs to be configured differently if you move it away from the standard path of `C:\ProgramData\docker\volumes`. I am creating a bigger data disk for that purpose, so this becomes `f:\dockerdata\volumes`. As the agents need to run on all nodes, this also means that we need an f: drive on the managers although I didn't move the Docker data path there. In the configuration it looks like this:
+The Portainer agent has only one notable setting: The path for the Docker volumes needs to be configured differently if you move it away from the standard path of `C:\ProgramData\docker\volumes`. I am creating a bigger data disk on the workers for that purpose, so this becomes `f:\dockerdata\volumes`. As the agents need to run on all nodes, this also means that we need an `f:` drive on the managers although I didn't move the Docker data path there. In the configuration it looks like this:
 
 {% highlight yaml linenos %}
 services:
@@ -311,7 +317,7 @@ services:
 ...
 {% endhighlight %}
 
-This should hopefully explain all relevant, non-standard aspects of my setup. The next part will cover the PowerShell scripts used to set up and configured the VMs and Docker Swarm.
+This should hopefully explain all relevant, non-standard aspects of my setup. The next part will cover the PowerShell scripts used to set up and configure the VMs and Docker Swarm.
 
 [one]: https://tobiasfenster.io/creating-a-docker-swarm-on-azure-using-terraform-part-i
 [docker-swarm]: https://docs.docker.com/engine/swarm/

@@ -52,7 +52,7 @@ resource "azurerm_virtual_machine_extension" "initMgr1" {
 }
 {% endhighlight %}
 
-You can see that quite some parameters are used to configure everything as needed, and you can see that almost all are read from Terraform variables like `$var.eMail` or properties of Terraform resources like `${azurerm_storage_account.main.name}`.
+You can see that quite some parameters are used to configure everything as needed, and you can see that almost all are read from Terraform variables like `${var.eMail}` or properties of Terraform resources like `${azurerm_storage_account.main.name}`.
 
 ## The details: Initializing and configuring the managers
 The manager initialization and configuration happens in two parts: First the Swarm itself is set up in [mgrInitSwarmAndSetupTasks.ps1][mgrInitSwarmAndSetupTasks.ps1]and then a task for everything else in [mgrConfig.ps1][mgrConfig.ps1] is started, as explained in the TL;DR. On all managers (and workers, as we will see later), the firewall needs to have three ports open, so that happens before initializing the Swarm itself:
@@ -164,7 +164,7 @@ Set-Acl -Path $path -AclObject $acl
 {% endhighlight %}
 
 ## The details: Initializing and configuring the workers
-The initialization and configuration of the workers is also split into the first part in [workerSetupTasks.ps1][workerSetupTasks.ps1] which more or less only sets up the scheduled task to call [workerConfig.ps1][workerConfig.ps1]. The config script does the same Swarm networking setup and SSH install with chocolatey. Joining the Swarm also looks very similar to what happens on the manager, of course using the worker join token, not the manager join token. It also has an option to pull images when the worker comes up, so that if you know in advance that you will run a specific workload, the images are already pulled when the request comes in.
+The initialization and configuration of the workers is also split into the first part in [workerSetupTasks.ps1][workerSetupTasks.ps1] which more or less only sets up the scheduled task to call [workerConfig.ps1][workerConfig.ps1]. The config script does the same Swarm networking setup and SSH install with chocolatey as on the managers. Joining the Swarm also looks very similar to what happens on the manager, of course using the worker join token, not the manager join token. It also has an option to pull images when the worker comes up, so that if you know in advance that you will run a specific workload, the images are already pulled when the request comes in.
 
 {% highlight powershell linenos %}
 Write-Host "pull $images"
@@ -178,7 +178,7 @@ if (-not [string]::IsNullOrEmpty($images)) {
 {% endhighlight %}
 
 ## The details: Configuring the jumpbox, setting up the PowerShell profiles and mounting the Azure File Share
-The jumpbox initialization in [jumpboxConfig.ps1][jumpboxConfig.ps1] is even simpler, it only sets up SSH and does the following three things which are also happening on the workers and managers:
+The jumpbox initialization in [jumpboxConfig.ps1][jumpboxConfig.ps1] is even simpler, it only sets up SSH and does the following three common things which are also happening on the workers and managers:
 - It sets up the PowerShell profile so that it shows the current hostname because otherwise it can become very confusing if you are jumping between the different machines. For that, it downloads the following script [profile.ps1][profile.ps1] and puts it into the special place `$PROFILE.AllUsersAllHosts` which means it is executed whenever a PowerShell sessions starts on that machine:
 {% highlight powershell linenos %}
 function prompt { "PS [$env:COMPUTERNAME]:$($executionContext.SessionState.Path.CurrentLocation)$('>' * ($nestedPromptLevel + 1)) " }
@@ -187,7 +187,7 @@ function prompt { "PS [$env:COMPUTERNAME]:$($executionContext.SessionState.Path.
 {% highlight powershell linenos %}
 New-ItemProperty -Path "HKLM:\SOFTWARE\OpenSSH" -Name DefaultShell -Value "C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe" -PropertyType String -Force
 {% endhighlight %}
-- It mounts the Azure File Share that is common storage between all nodes with the following script [mountAzFileShare.ps1][mountAzFileShare.ps1]. It is important to set the access rights with icacls.exe as seen below because otherwise the containers might not have then necessary access
+- It mounts the Azure File Share that is common storage between all nodes with the following script [mountAzFileShare.ps1][mountAzFileShare.ps1]. It is important to set the access rights with `icacls` as seen below because otherwise the containers might not have the necessary access which leads to weird errors after the container is running for some time.
 {% highlight powershell linenos %}
 $secpassword = ConvertTo-SecureString $storageAccountKey -AsPlainText -Force
 $creds = New-Object System.Management.Automation.PSCredential("Azure\$storageAccountName", $secpassword)
@@ -196,7 +196,7 @@ Invoke-Expression "icacls.exe $($driveLetter):\ /grant 'Everyone:(OI)(CI)(F)'"
 {% endhighlight %}
 
 ## The details: Setting up additional scripts
-The last thing to mention is that there are hook points for additional scripts in for all the different machines (jumpbox, workers, managers). To accomplish this, all scripts have something similar to the following in the beginning:
+The last thing to mention is that there are hook points for additional scripts for all the different machines (jumpbox, workers, managers). It allows you do build on top of my infrastructure and run addtional functionality like deploying additional services or making special configurations. To accomplish this, all scripts have something similar to the following in the beginning:
 
 {% highlight powershell linenos %}
 if ($additionalPreScript -ne "") {
@@ -222,7 +222,7 @@ else {
 }
 {% endhighlight %}
 
-As you can see, I implemented my own download function which is embedded in every script instead of using one of the default Cmdlets, mainly for two reasons:
+As you can see, I implemented my own download function which is embedded in every script instead of using one of the default cmdlets, mainly for two reasons:
 
 - Sometimes the external download fails when the machine is just starting, so I needed a retry and that becomes available in PowerShell only in V6 and later while I am mostly stuck with V5.1.
 - I wanted an easy way to add an auth token. If the parameter is set, it will try to download using the auth token and also retry without, in case you have more than one download location, maybe one with auth and one without.
