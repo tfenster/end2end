@@ -2,7 +2,7 @@
 layout: post
 title: "Creating a Windows Docker Swarm on Azure using Terraform, part III: PowerShell scripts"
 permalink: creating-a-windows-docker-swarm-on-azure-using-terraform-part-iii
-date: 2021-02-02 09:00:00
+date: 2021-02-02 08:00:00
 comments: false
 description: "Creating a Windows Docker Swarm on Azure using Terraform, part III: PowerShell scripts"
 keywords: ""
