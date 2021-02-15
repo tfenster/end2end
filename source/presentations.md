@@ -6,6 +6,9 @@ permalink: /presentations/
 
 Just my presentations, publications (from 2020 on) and source code which worked at the time I did them, but no guarantees that any of this works anymore. Also recordings, if available
 
+## 2021
+- 2021-02 **Creating a Windows Docker Swarm on Azure using Terraform, part II** (German) at [Microsoft Germany Cloud Native Community Blog][techwiese-cncb]: [blog post][202102techwiese]
+
 ## 2020
 - 2020-12 **Easily calculate Azure cost with a Deno CLI application, developed in a VS Code dev container** (German) at [Microsoft Germany Cloud Native Community Blog][techwiese-cncb]: [blog post][202012techwiese]
 - 2020-12 **Faster on Azure, easier updates: The Terraform Azure provider** (German) at [HashiTalks DACH][2020hashitalksdach]: [presentation][2020hashitalksdachpres], [recording][2020hashitalksdachrec] and [sources][2020hashitalksdachsrc]
@@ -91,6 +94,7 @@ Just my presentations, publications (from 2020 on) and source code which worked 
 [2020hashitalksdachsrc]: https://github.com/tfenster/presentations/tree/master/202012hashitalksdach
 [2020hashitalksdachrec]: https://www.youtube.com/watch?v=ppDfZLaFoSE&feature=youtu.be&t=6820
 [techwiese-cncb]: https://www.microsoft.com/de-de/techwiese/cloud-native-community-blog/default.aspx
-[202010techwiese]: https://www.microsoft.com/de-de/techwiese/cloud-native-community-blog/einfache-berechnung-der-azure-kosten-mit-einer-deno-cli-anwendung-entwickelt-in-einem-vs-code-dev-container.aspx
+[202010techwiese]: https://www.microsoft.com/de-de/techwiese/cloud-native-community-blog/erstellen-eines-docker-swarms-auf-azure-mit-terraform-teil-1.aspx
 [202011techwiese]: https://www.microsoft.com/de-de/techwiese/cloud-native-community-blog/server-jobs-in-azure-pipelines.aspx
 [202012techwiese]: https://www.microsoft.com/de-de/techwiese/cloud-native-community-blog/einfache-berechnung-der-azure-kosten-mit-einer-deno-cli-anwendung-entwickelt-in-einem-vs-code-dev-container.aspx
+[202102techwiese]: https://www.microsoft.com/de-de/techwiese/cloud-native-community-blog/erstellen-eines-docker-swarms-auf-azure-mit-terraform-teil-2.aspx
