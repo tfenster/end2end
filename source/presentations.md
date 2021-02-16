@@ -7,6 +7,7 @@ permalink: /presentations/
 Just my presentations, publications (from 2020 on) and source code which worked at the time I did them, but no guarantees that any of this works anymore. Also recordings, if available
 
 ## 2021
+- 2021-02 Guest on the **#MVPBuzzChat** by [Christian Buckley][buckleyplanet]: [recording][202102mvpbuzzchat]
 - 2021-02 **Creating a Windows Docker Swarm on Azure using Terraform, part II** (German) at [Microsoft Germany Cloud Native Community Blog][techwiese-cncb]: [blog post][202102techwiese]
 
 ## 2020
@@ -98,3 +99,5 @@ Just my presentations, publications (from 2020 on) and source code which worked 
 [202011techwiese]: https://www.microsoft.com/de-de/techwiese/cloud-native-community-blog/server-jobs-in-azure-pipelines.aspx
 [202012techwiese]: https://www.microsoft.com/de-de/techwiese/cloud-native-community-blog/einfache-berechnung-der-azure-kosten-mit-einer-deno-cli-anwendung-entwickelt-in-einem-vs-code-dev-container.aspx
 [202102techwiese]: https://www.microsoft.com/de-de/techwiese/cloud-native-community-blog/erstellen-eines-docker-swarms-auf-azure-mit-terraform-teil-2.aspx
+[buckleyplanet]: https://www.buckleyplanet.com/
+[202102mvpbuzzchat]: https://www.buckleyplanet.com/2021/02/mvpbuzzchat-with-tobias-fenster.html
