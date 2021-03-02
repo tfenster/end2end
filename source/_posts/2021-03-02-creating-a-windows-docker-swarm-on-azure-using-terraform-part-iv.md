@@ -2,7 +2,7 @@
 layout: post
 title: "Creating a Windows Docker Swarm on Azure using Terraform, part IV: Easily navigate the nodes with SSH"
 permalink: creating-a-windows-docker-swarm-on-azure-using-terraform-part-iv
-date: 2021-03-02 09:00:00
+date: 2021-03-02 08:30:00
 comments: false
 description: "Creating a Windows Docker Swarm on Azure using Terraform, part IV: Easily navigate the nodes with SSH"
 keywords: ""
