@@ -7,6 +7,7 @@ permalink: /presentations/
 Just my presentations, publications (from 2020 on) and source code which worked at the time I did them, but no guarantees that any of this works anymore. Also recordings, if available
 
 ## 2021
+- 2021-03 Interview about **digitization in the context of Cloud and business applications** (German) in [manage it][manageit]: [link][202103manageit]
 - 2021-02 Speaker about the **benefits of SaaS** as part of a webinar by [COSMO CONSULT Sweden][cosmo]: [recording][202102webinarse]
 - 2021-02 Panel member on **TCO of Dynamics 365 Business Central: Is it Better to Invest In-House or Trust a Hosting Partner?**, a discussion on hosting options for BC by [1ClickFactory][1cf]: [recording][2021021cf]
 - 2021-02 Guest on the **#MVPBuzzChat** by [Christian Buckley][buckleyplanet]: [recording][202102mvpbuzzchat]
@@ -107,3 +108,5 @@ Just my presentations, publications (from 2020 on) and source code which worked 
 [2021021cf]: https://www.youtube.com/watch?v=KjUMGc7R_Io
 [202102webinarse]: https://www.youtube.com/watch?v=v47u8ieGcus&t=77s
 [cosmo]: https://www.cosmoconsult.com
+[202103manageit]: https://ap-verlag.de/digitalisierung-von-der-einzelanwendung-bis-zum-end-to-end-loesungskonzept-plattform-cloud-und-end-to-end/67120/
+[manageit]: https://ap-verlag.de
