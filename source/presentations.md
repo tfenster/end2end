@@ -7,6 +7,7 @@ permalink: /presentations/
 Just my presentations, publications (from 2020 on) and source code which worked at the time I did them, but no guarantees that any of this works anymore. Also recordings, if available
 
 ## 2021
+- 2021-03 **Creating a Windows Docker Swarm on Azure using Terraform, part III** (German) at [Microsoft Germany Cloud Native Community Blog][techwiese-cncb]: [blog post][202103techwiese]
 - 2021-03 Interview about **digitization in the context of Cloud and business applications** (German) in [manage it][manageit]: [link][202103manageit]
 - 2021-02 Speaker about the **benefits of SaaS** as part of a webinar by [COSMO CONSULT Sweden][cosmo]: [recording][202102webinarse]
 - 2021-02 Panel member on **TCO of Dynamics 365 Business Central: Is it Better to Invest In-House or Trust a Hosting Partner?**, a discussion on hosting options for BC by [1ClickFactory][1cf]: [recording][2021021cf]
@@ -110,3 +111,4 @@ Just my presentations, publications (from 2020 on) and source code which worked 
 [cosmo]: https://www.cosmoconsult.com
 [202103manageit]: https://ap-verlag.de/digitalisierung-von-der-einzelanwendung-bis-zum-end-to-end-loesungskonzept-plattform-cloud-und-end-to-end/67120/
 [manageit]: https://ap-verlag.de
+[202103techwiese]: https://www.microsoft.com/de-de/techwiese/cloud-native-community-blog/erstellen-eines-docker-swarms-auf-azure-mit-terraform-teil-3.aspx
