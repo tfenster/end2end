@@ -7,6 +7,8 @@ permalink: /presentations/
 Just my presentations, publications (from 2020 on) and source code which worked at the time I did them, but no guarantees that any of this works anymore. Also recordings, if available
 
 ## 2021
+- 2021-03 Guest on the **Portainer Ambassador** video series by [Portainer][portainer]: [recording][202103portainer]
+- 2021-03 Panelist at the **"Expanding Microsoft's Partner Service Economy" TweetJam** by [Christian Buckley][buckleyplanet]: [link][202103tweetjam]
 - 2021-03 **Creating a Windows Docker Swarm on Azure using Terraform, part III** (German) at [Microsoft Germany Cloud Native Community Blog][techwiese-cncb]: [blog post][202103techwiese]
 - 2021-03 Interview about **digitization in the context of Cloud and business applications** (German) in [manage it][manageit]: [link][202103manageit]
 - 2021-02 Speaker about the **benefits of SaaS** as part of a webinar by [COSMO CONSULT Sweden][cosmo]: [recording][202102webinarse]
@@ -112,3 +114,6 @@ Just my presentations, publications (from 2020 on) and source code which worked 
 [202103manageit]: https://ap-verlag.de/digitalisierung-von-der-einzelanwendung-bis-zum-end-to-end-loesungskonzept-plattform-cloud-und-end-to-end/67120/
 [manageit]: https://ap-verlag.de
 [202103techwiese]: https://www.microsoft.com/de-de/techwiese/cloud-native-community-blog/erstellen-eines-docker-swarms-auf-azure-mit-terraform-teil-3.aspx
+[202103tweetjam]: https://www.buckleyplanet.com/2021/03/expanding-the-mspartners-service-economy.html
+[portainer]: https://portainer.io
+[202103portainer]: https://www.youtube.com/watch?v=dN2o9QNlb_E
