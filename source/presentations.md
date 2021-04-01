@@ -15,7 +15,7 @@ Just my presentations, publications (from 2020 on) and source code which worked 
 - 2021-02 Panel member on **TCO of Dynamics 365 Business Central: Is it Better to Invest In-House or Trust a Hosting Partner?**, a discussion on hosting options for BC by [1ClickFactory][1cf]: [recording][2021021cf]
 - 2021-02 Guest on the **#MVPBuzzChat** by [Christian Buckley][buckleyplanet]: [recording][202102mvpbuzzchat]
 - 2021-02 **Creating a Windows Docker Swarm on Azure using Terraform, part II** (German) at [Microsoft Germany Cloud Native Community Blog][techwiese-cncb]: [blog post][202102techwiese]
-- 2021-02 **Using the terraform Azure provider to deploy your solutions to Azure** at [Azure Saturday Hamburg 2021][202102azhh]
+- 2021-02 **Using the terraform Azure provider to deploy your solutions to Azure** at [Azure Saturday Hamburg 2021][202102azhh]: [presentation][202102azhhpres]
 
 ## 2020
 - 2020-12 **Easily calculate Azure cost with a Deno CLI application, developed in a VS Code dev container** (German) at [Microsoft Germany Cloud Native Community Blog][techwiese-cncb]: [blog post][202012techwiese]
