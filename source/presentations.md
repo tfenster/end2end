@@ -7,6 +7,7 @@ permalink: /presentations/
 Just my presentations, publications (from 2020 on) and source code which worked at the time I did them, but no guarantees that any of this works anymore. Also recordings, if available
 
 ## 2021
+- 2021-04 Interview about **Move2SaaS - The future** in [Unternehmen&Trends DIGITAL][unternehmentrends]: [English][202104uten] and [German][202104utde]
 - 2021-03 Guest on the **Portainer Ambassador** video series by [Portainer][portainer]: [recording][202103portainer]
 - 2021-03 Panelist at the **"Expanding Microsoft's Partner Service Economy" TweetJam** by [Christian Buckley][buckleyplanet]: [link][202103tweetjam]
 - 2021-03 **Creating a Windows Docker Swarm on Azure using Terraform, part III** (German) at [Microsoft Germany Cloud Native Community Blog][techwiese-cncb]: [blog post][202103techwiese]
@@ -120,3 +121,6 @@ Just my presentations, publications (from 2020 on) and source code which worked 
 [202103portainer]: https://www.youtube.com/watch?v=dN2o9QNlb_E
 [202102azhh]: https://www.eventleaf.com/azuresaturdayhamburg
 [202102azhhpres]: https://github.com/tfenster/presentations/raw/master/docs/202102azhh/202102azhhpres.pdf
+[unternehmentrends]: https://www.vek-onlineservice.de/publikation/unternehmen-trends-2021 
+[202104uten]: https://www.vek-onlineservice.de/publikation/unternehmen-trends-2021/28/
+[202104utde]: https://www.vek-onlineservice.de/publikation/unternehmen-trends-2021/20/
