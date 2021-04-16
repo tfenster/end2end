@@ -7,6 +7,8 @@ permalink: /presentations/
 Just my presentations, publications (from 2020 on) and source code which worked at the time I did them, but no guarantees that any of this works anymore. Also recordings, if available
 
 ## 2021
+- 2021-04 **Get started with Windows Containers using Portainer and Traefik on an Azure VM** at [Global Azure 2021][202104globalazure1]: [presentation][202104globalazurepres1] and [recording][202104globalazurerec1]
+- 2021-04 **Using Traefik as reverse proxy for Windows container based environments** at [Global Azure 2021][202104globalazure2]: [presentation][202104globalazurepres2] and [recording][202104globalazurerec2]
 - 2021-04 Interview about **Move2SaaS - The future** in [Unternehmen&Trends DIGITAL][unternehmentrends]: [English][202104uten] and [German][202104utde]
 - 2021-03 Guest on the **Portainer Ambassador** video series by [Portainer][portainer]: [recording][202103portainer]
 - 2021-03 Panelist at the **"Expanding Microsoft's Partner Service Economy" TweetJam** by [Christian Buckley][buckleyplanet]: [link][202103tweetjam]
@@ -124,3 +126,9 @@ Just my presentations, publications (from 2020 on) and source code which worked 
 [unternehmentrends]: https://www.vek-onlineservice.de/publikation/unternehmen-trends-2021 
 [202104uten]: https://www.vek-onlineservice.de/publikation/unternehmen-trends-2021/28/
 [202104utde]: https://www.vek-onlineservice.de/publikation/unternehmen-trends-2021/20/
+[202104globalazure1]: https://globalazure.net/sessions/248182
+[202104globalazurepres1]: https://github.com/tfenster/presentations/raw/master/docs/202104globalazure/202104globalazurepres1.pdf
+[202104globalazurerec1]: https://youtu.be/9_ImUD8RiO8
+[202104globalazure2]: https://globalazure.net/sessions/248181
+[202104globalazurepres2]: https://github.com/tfenster/presentations/raw/master/docs/202104globalazure/202104globalazurepres2.pdf
+[202104globalazurerec2]: https://youtu.be/W-B832v7jLo
