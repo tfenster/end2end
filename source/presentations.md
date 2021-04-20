@@ -7,6 +7,7 @@ permalink: /presentations/
 Just my presentations, publications (from 2020 on) and source code which worked at the time I did them, but no guarantees that any of this works anymore. Also recordings, if available
 
 ## 2021
+- 2021-04 **Calculating Azure Cost by Using the Pricing API, a Command Line Tool and Excel** as webinar for [Areopa][Areopa]: [presentation][202104areopapres] and [recording][202104areoparec]
 - 2021-04 **Get started with Windows Containers using Portainer and Traefik on an Azure VM** at [Global Azure 2021][202104globalazure1]: [presentation][202104globalazurepres1] and [recording][202104globalazurerec1]
 - 2021-04 **Using Traefik as reverse proxy for Windows container based environments** at [Global Azure 2021][202104globalazure2]: [presentation][202104globalazurepres2] and [recording][202104globalazurerec2]
 - 2021-04 Interview about **Move2SaaS - The future** in [Unternehmen&Trends DIGITAL][unternehmentrends]: [English][202104uten] and [German][202104utde]
@@ -132,3 +133,5 @@ Just my presentations, publications (from 2020 on) and source code which worked 
 [202104globalazure2]: https://globalazure.net/sessions/248181
 [202104globalazurepres2]: https://github.com/tfenster/presentations/raw/master/docs/202104globalazure/202104globalazurepres2.pdf
 [202104globalazurerec2]: https://youtu.be/W-B832v7jLo
+[202104areopapres]: https://www.youtube.com/watch?v=_2vyg8PhxVY
+[202104areoparec]: https://github.com/tfenster/presentations/raw/master/docs/202104areopa/202104areopa.pdf
