@@ -139,4 +139,4 @@ Just my presentations, publications (from 2020 on) and source code which worked 
 [202104areopasrc]: https://github.com/cosmoconsult/azure-calculator
 [202104d365meetupde]: https://www.meetup.com/de-DE/Microsoft-Dynamics-Meetup-of-Berlin/events/277091500/
 [202104d365meetupdepres]: https://github.com/tfenster/presentations/raw/master/docs/202104d365meetupde/202104d365meetupdepres.pdf
-[202104d365meetupderec]:
+[202104d365meetupderec]: https://youtu.be/a5bwo2ZCOJs
