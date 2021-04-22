@@ -7,6 +7,7 @@ permalink: /presentations/
 Just my presentations, publications (from 2020 on) and source code which worked at the time I did them, but no guarantees that any of this works anymore. Also recordings, if available
 
 ## 2021
+- 2021-04 **Overview Business Central technology** at the [D365 Community Meetup Germany - April 20201][202104d365meetupde] (German): [presentation][202104d365meetupdepres] and [recording][202104d365meetupderec]
 - 2021-04 **Calculating Azure Cost by Using the Pricing API, a Command Line Tool and Excel** as webinar for [Areopa][Areopa]: [presentation][202104areopapres], [recording][202104areoparec] and [sources][202104areopasrc]
 - 2021-04 **Get started with Windows Containers using Portainer and Traefik on an Azure VM** at [Global Azure 2021][202104globalazure1]: [presentation][202104globalazurepres1] and [recording][202104globalazurerec1]
 - 2021-04 **Using Traefik as reverse proxy for Windows container based environments** at [Global Azure 2021][202104globalazure2]: [presentation][202104globalazurepres2] and [recording][202104globalazurerec2]
@@ -133,6 +134,9 @@ Just my presentations, publications (from 2020 on) and source code which worked 
 [202104globalazure2]: https://globalazure.net/sessions/248181
 [202104globalazurepres2]: https://github.com/tfenster/presentations/raw/master/docs/202104globalazure/202104globalazurepres2.pdf
 [202104globalazurerec2]: https://youtu.be/W-B832v7jLo
-[202104areopapres]: https://www.youtube.com/watch?v=_2vyg8PhxVY
-[202104areoparec]: https://github.com/tfenster/presentations/raw/master/docs/202104areopa/202104areopa.pdf
+[202104areopapres]: https://github.com/tfenster/presentations/raw/master/docs/202104areopa/202104areopa.pdf
+[202104areoparec]: https://www.youtube.com/watch?v=_2vyg8PhxVY
 [202104areopasrc]: https://github.com/cosmoconsult/azure-calculator
+[202104d365meetupde]: https://www.meetup.com/de-DE/Microsoft-Dynamics-Meetup-of-Berlin/events/277091500/
+[202104d365meetupdepres]: https://github.com/tfenster/presentations/raw/master/docs/202104d365meetupde/202104d365meetupdepres.pdf
+[202104d365meetupderec]:
