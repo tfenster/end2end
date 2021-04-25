@@ -87,19 +87,27 @@ New-NAVServerUserPermissionSet -UserName admin -PermissionSetId SUPER BC
 After that has finished, you can go to [http://bclinux/BC][bc] and log in in with the username and password above. Your BC server is running on Windows, but the connected SQL Server is now running on Linux!
 
 ## The details: Managing it with Portainer
-The only thing which isn't ideal in my opinion is that you have to switch back and forth with Docker Desktop to manage both the Windows and the Linux containers. [Portainer][portainer] allows you to manage multiple so-called "endpoints" at the same time, and we can use that functionality to make life a bit easier in our scenario. Portainer can either connect through TCP or through named pipes (Windows) / sockets (Linux), so I decided to expose the Windows daemon via TCP, while connecting to the Linux container using sockets. All I needed to do for that was to open Settings -> Docker Engine in Docker Desktop and add the following line which exposes the Engine on port 2375 for everyone. Please be aware that this is a very insecure setup that you should only consider for dev/test on your local laptop!
-
-{% highlight JSON linenos %}
-"hosts": ["tcp://0.0.0.0:2375", "npipe:////./pipe/docker_engine_windows"]
-{% endhighlight %}
-
-Back in my Linux bash, I ran the following command to start a Portainer container:
+The only thing which isn't ideal in my opinion is that you have to switch back and forth with Docker Desktop to manage both the Windows and the Linux containers. [Portainer][portainer] allows you to manage multiple so-called "endpoints" at the same time, and we can use that functionality to make life a bit easier in our scenario. Portainer can either connect through TCP or through named pipes (Windows) / sockets (Linux), so I decided to run a portainer agent on the Windows side, while connecting to the Linux container using sockets. To get my Portainer container, I ran the following command in the Linux shell:
 
 {% highlight bash linenos %}
 docker run -d -p 9000:9000 --name=portainer --restart=always -v /var/run/docker.sock:/var/run/docker.sock portainer/portainer-ce
 {% endhighlight %}
 
-Using `ifconfig`, I found the IP address of the Linux environment and connected to `http://<ip>:9000` where I found the Portainer initialization screen. I set up a password, logged in, selected "Docker - Manage the local Docker environment" and hit connect. The last step was to not only have the Linux endpoint, but to add the Windows endpoint as well. For that I identified the Windows IP using `ipconfig` in a Windows terminal (`192.168.1.130` in my case), clicked "endpoints" -> "add endpoint" ->  "Docker - Directly connect to the Docker API", gave it "Windows" as name and entered the endpoint URL `192.168.1.130:2375`. Afterwards I went back to "endpoints" and renamed the initial "local" one to "Linux" to immediately identify the OS. Now the Portainer home page looked like this and I could easily and quickly switch between the environments:
+As the portainer GUI port 9000 is mapped to port 9000 on the host, I connected to `http://localhost:9000` where I found the Portainer initialization screen. I set up a password, logged in, selected "Docker - Manage the local Docker environment" and hit connect. The last step was to not only have the Linux endpoint, but to add the Windows endpoint as well. 
+
+For that, I first started the agent on the Windows side like this:
+
+{% highlight PowerShell linenos %}
+docker run -d --name portainer_agent --restart=always -v \\.\pipe\docker_engine_windows:\\.\pipe\docker_engine portainer/agent
+{% endhighlight %}
+
+I then found the IP address of the agent container with the following command, so that we can later connect to it
+
+{% highlight PowerShell linenos %}
+docker inspect -f '{{range.NetworkSettings.Networks}}{{.IPAddress}}{{end}}' portainer_agent
+{% endhighlight %}
+
+With that, I went to "endpoints" in portainer, clicked on "Add agent", entered "Windows" as the name and the IP address from above with port 9001 as endpoint URL and clicked "Add endpoint". Afterwards I went back to "endpoints" and renamed the initial "local" one to "Linux" to immediately identify the OS. Now the Portainer home page looked like this and I could easily and quickly switch between the environments:
 
 ![portainer with both a Windows and a Linux endpoint](/images/portainer-linux-windows.png)
 {: .centered}
