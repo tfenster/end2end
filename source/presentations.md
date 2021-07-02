@@ -7,6 +7,7 @@ permalink: /presentations/
 Just my presentations, publications (from 2020 on) and source code which worked at the time I did them, but no guarantees that any of this works anymore. Also recordings, if available
 
 ## 2021
+- 2021-06 **Beginner's guide video series for Node.js** (German localization) at [Techwiese Know-How][techwiese-knowhow]: [Landing page][202106nodejslanding] and [YouTube playlist][202106nodejsyt]
 - 2021-06 **Develop Azure DevOps extensions** (German) at [Microsoft Germany Cloud Native Community Blog][techwiese-cncb]: [blog post][202106techwiese]
 - 2021-04 **Overview Business Central technology** at the [D365 Community Meetup Germany - April 20201][202104d365meetupde] (German): [presentation][202104d365meetupdepres] and [recording][202104d365meetupderec]
 - 2021-04 **Calculating Azure Cost by Using the Pricing API, a Command Line Tool and Excel** as webinar for [Areopa][Areopa]: [presentation][202104areopapres], [recording][202104areoparec] and [sources][202104areopasrc]
@@ -142,3 +143,6 @@ Just my presentations, publications (from 2020 on) and source code which worked 
 [202104d365meetupdepres]: https://github.com/tfenster/presentations/raw/master/docs/202104d365meetupde/202104d365meetupdepres.pdf
 [202104d365meetupderec]: https://youtu.be/a5bwo2ZCOJs
 [202106techwiese]: https://www.microsoft.com/de-de/techwiese/cloud-native-community-blog/einfach-azure-devops-extensions-in-einem-vs-code-dev-container-entwickeln-und-debuggen.aspx
+[202106nodejslanding]: https://www.microsoft.com/de-de/techwiese/know-how/nodejs-fuer-anfanger.aspx
+[202106nodejsyt]: https://www.youtube.com/watch?v=NzQL_fCPLz8&list=PLjYQiPd6tgcdfP2vh2tSja-fhn8Sv2tp3
+[techwiese-knowhow]: https://www.microsoft.com/de-de/techwiese/know-how/default.aspx
