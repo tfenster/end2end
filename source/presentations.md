@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "My Presentations / publications"
+title: "My Presentations & publications"
 permalink: /presentations/
 ---
 
