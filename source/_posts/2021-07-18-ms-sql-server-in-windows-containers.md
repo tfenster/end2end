@@ -183,5 +183,5 @@ I hope some of you will find this useful and if you have ideas for improvement o
 [nav-docker]: https://github.com/microsoft/nav-docker/tree/37f46a5ff31b4e31918ada62c289780f4e321022
 [choco]: https://www.chocolatey.org
 [hub-dev]: https://hub.docker.com/r/tobiasfenster/mssql-server-dev-unsupported
-[hub-exp]: https://hub.docker.com/repository/docker/tobiasfenster/mssql-server-exp-unsupported
+[hub-exp]: https://hub.docker.com/r/tobiasfenster/mssql-server-exp-unsupported
 [github-image]: https://github.com/tfenster/mssql-image/
