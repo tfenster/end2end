@@ -18,15 +18,15 @@ Running databases in containers is maybe not the most intuitive usage of contain
 ## The TL;DR
 There are two image types, one for the enterprise edition and one for the developer edition. But most importantly: **Both are completely unsupported, come as-is and are in no way connected to Microsoft!** If you run into any issues, I am happy to take a look if time permits, but you won't have any luck when asking Microsoft support for help. To run them, you need to reference the name and the version, either as technical version number or as &lt;major&gt;-cu&lt;cu&gt;. As a first release, I have 2019 CU 11 (15.0.4138.2). I plan to add new versions when they appear, but if you need another one, feel free to get in touch. To run it exposed on port 1433 of the container host with an SA password of "Super5ecret!", do the following for the developer edition image:
 
-```
+{% highlight bash linenos %}
 docker run -p 1433:1433 -e accept_eula=y -e sa_password=Super5ecret! tobiasfenster/mssql-server-dev-unsupported:2019-cu11
-```
+{% endhighlight %}
 
 For the express edition, it looks like this:
 
-```
+{% highlight bash linenos %}
 docker run -p 1433:1433 -e accept_eula=y -e sa_password=Super5ecret! tobiasfenster/mssql-server-exp-unsupported:2019-cu11
-```
+{% endhighlight %}
 
 Afterwards, you can use e.g. the Azure Data Studio to connect to your database server using your container hostname as server, SA as user and Super5ecret! as password. The home screen should have a part like this:
 
@@ -164,11 +164,11 @@ The first thing worth mentioning is the base image, which is the runtime of .NET
 
 After some variables and labels, I install vim (you never know when you want to edit a file), 7zip as I use an ISO later and sqlpackage for the client stuff. For the installation, I use [chocolatey][choco] (lines 27-31). I then use a build arg `DEV_ISO` to share the download path of the developer edition iso file or `EXP_EXE` to share the download path of the Express Edition installer. Those are downloaded, extracted, setup is started and the source files are deleted again (lines 33-40 for the dev edition, lines 42-48 for the Express Edition. After that, the services, especially their startup behavior and some registry settings are done (lines 50-81). Last but not least, a potential CU is also downloaded and installed (lines 83-114). To trigger the build for a 20H2 image of SQL Server 2019 Express Edition CU 11, you would run something like this:
 
-```
+{% highlight bash linenos %}
 docker build --build-arg BASE=20H2 --build-arg EXP_EXE=https://download.microsoft.com/download/7/c/1/7c14e92e-bdcb-4f89-b7cf-93543e7112d1/SQLEXPR_x64_ENU.exe 
 --build-arg CU=https://download.microsoft.com/download/6/e/7/6e72dddf-dfa4-4889-bc3d-e5d3a0fd11ce/SQLServer2019-KB5003249-x64.exe 
 --build-arg VERSION=15.0.4138.2 --build-arg TYPE=exp -t tobiasfenster/mssql-server-exp-unsupported:2019-CU11 .
-```
+{% endhighlight %}
 
 Of course I am also sharing them through the Docker hub ([Developer Edition][hub-dev] and [Express Edition][hub-exp]), so you don't need to build them and instead just can run them with the commands explained above. 
 
