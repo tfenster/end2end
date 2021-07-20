@@ -15,6 +15,8 @@ tags:
 
 Running databases in containers is maybe not the most intuitive usage of containers, but certainly stateful containers in general are no longer completely out of limits, and that means that databases in containers are also becoming more relevant. If you are working in the Microsoft ecosystem, then chances are that you will have at least some workloads running on MS SQL Server and as weird as that sounds, there are only supported container images for MS SQL Server on Linux. I am not kidding... Anyway, I had a need for it, so I decided to create a container image for it and share both the sources and the resulting images with the community.
 
+Edit: There now also is an [official blog post][msft-blog] explaining the current status.
+
 ## The TL;DR
 There are two image types, one for the enterprise edition and one for the developer edition. But most importantly: **Both are completely unsupported, come as-is and are in no way connected to Microsoft!** If you run into any issues, I am happy to take a look if time permits, but you won't have any luck when asking Microsoft support for help. To run them, you need to reference the name and the version, either as technical version number or as &lt;major&gt;-cu&lt;cu&gt;. As a first release, I have 2019 CU 11 (15.0.4138.2). I plan to add new versions when they appear, but if you need another one, feel free to get in touch. To run it exposed on port 1433 of the container host with an SA password of "Super5ecret!", do the following for the developer edition image:
 
@@ -35,6 +37,8 @@ Afterwards, you can use e.g. the Azure Data Studio to connect to your database s
 
 ## The details: A bit of background and how the image works
 As I wrote above, there is an [official, supported MS SQL Server container image for Linux][linux-image], but none for Windows. There used to be one for the [Express edition][windows-image-exp] and one for the [Developer edition][windows-image-dev] or actually they are still available, but the latest one is three years old for SQL Server 2017 CU3 and intended for Windows Server 2016. Not a particularly attractive proposition... There also was a private preview for SQL Server 2019 containers on Windows which had produced working images, but the preview ended without every going public and from what I heard, there probably won't be an official image soon.
+
+Edit: An [official blog post][msft-blog] by Microsoft explains it like this: *Due to the existing ecosystem challenges and usage patterns we have decided to suspend the SQL Server on Windows Containers beta program for foreseeable future. Should the circumstances change, we will revisit the decision at appropriate time and make relevant announcement.*
 
 When I built my images, I leaned heavily on the [Microsoft Github repo for SQL in Docker][msft-github] as well as on the [Microsoft Github repo for Business Central in Docker][nav-docker] as the latter also comes with SQL Express. The only fundamentally different thing I did is to include a step to optionally install a CU. The full Dockerfile looks like this:
 
@@ -185,3 +189,4 @@ I hope some of you will find this useful and if you have ideas for improvement o
 [hub-dev]: https://hub.docker.com/r/tobiasfenster/mssql-server-dev-unsupported
 [hub-exp]: https://hub.docker.com/r/tobiasfenster/mssql-server-exp-unsupported
 [github-image]: https://github.com/tfenster/mssql-image/
+[msft-blog]: https://techcommunity.microsoft.com/t5/sql-server/update-beta-program-for-sql-server-on-windows-container-is/bc-p/2564521
