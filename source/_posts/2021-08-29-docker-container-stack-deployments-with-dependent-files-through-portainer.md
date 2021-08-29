@@ -96,7 +96,7 @@ services:
     image: "redis:alpine"
 {% endhighlight %}
 
-Line 4 tells the Docker engine to look into the current folder for a Dockerfile and build the image. I don't want to go into details who this particular image works because that is not the point of this blog post, but feel free to explore the [repo][github] as it is really simple. Now if I make a change to the Flask web app in the repo, I need to delete the container and image to allow a rebuild, and after that, I can just click "Pull and redeploy" to get the latest files and create an image again. 
+Line 4 tells the Docker engine to look into the current folder for a Dockerfile and build the image. I don't want to go into details how this particular image works because that is not the point of this blog post, but feel free to explore the [repo][github] as it is really simple. Now if I make a change to the Flask web app in the repo, I need to delete the container and image to allow a rebuild, and after that, I can just click "Pull and redeploy" to get the latest files and create an image again. 
 
 As I wrote, we are not actively using this mechanism at the moment, but I am pretty sure we will at some point in the future because like with so many features in Portainer, it just works well and is easy to use!
 
