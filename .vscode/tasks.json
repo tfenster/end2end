@@ -8,7 +8,8 @@
                 "exec",
                 "jekyll",
                 "serve",
-                "--incremental"
+                "--incremental",
+                "--no-watch"
             ],
             "type": "shell",
             "problemMatcher": []
