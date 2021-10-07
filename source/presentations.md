@@ -149,4 +149,4 @@ Just my presentations, publications (from 2020 on) and source code which worked 
 [techwiese-knowhow]: https://www.microsoft.com/de-de/techwiese/know-how/default.aspx
 [2021vacd]: https://fr.azureday.community/
 [2021vacdrec]: https://youtu.be/lIlL1SovGUA?t=8703
-[2021vacpres]: https://github.com/tfenster/presentations/raw/master/docs/202110vacd/2021vacdpres.pdf
+[2021vacdpres]: https://github.com/tfenster/presentations/raw/master/docs/202110vacd/2021vacdpres.pdf
