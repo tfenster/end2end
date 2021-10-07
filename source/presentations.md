@@ -7,6 +7,7 @@ permalink: /presentations/
 Just my presentations, publications (from 2020 on) and source code which worked at the time I did them, but no guarantees that any of this works anymore. Also recordings, if available
 
 ## 2021
+- 2021-10 **Calculate Azure cost conveniently** at [Virtual Azure Community Day][2021vacd]: [presentation][2021vacdpres] and [recording][2021vacdrec]
 - 2021-06 **Beginner's guide video series for Node.js** (German localization) at [Techwiese Know-How][techwiese-knowhow]: [Landing page][202106nodejslanding] and [YouTube playlist][202106nodejsyt]
 - 2021-06 **Develop Azure DevOps extensions** (German) at [Microsoft Germany Cloud Native Community Blog][techwiese-cncb]: [blog post][202106techwiese]
 - 2021-04 **Overview Business Central technology** at the [D365 Community Meetup Germany - April 20201][202104d365meetupde] (German): [presentation][202104d365meetupdepres] and [recording][202104d365meetupderec]
@@ -146,3 +147,6 @@ Just my presentations, publications (from 2020 on) and source code which worked 
 [202106nodejslanding]: https://www.microsoft.com/de-de/techwiese/know-how/nodejs-fuer-anfanger.aspx
 [202106nodejsyt]: https://www.youtube.com/watch?v=NzQL_fCPLz8&list=PLjYQiPd6tgcdfP2vh2tSja-fhn8Sv2tp3
 [techwiese-knowhow]: https://www.microsoft.com/de-de/techwiese/know-how/default.aspx
+[2021vacd]: https://fr.azureday.community/
+[2021vacdrec]: https://youtu.be/lIlL1SovGUA?t=8703
+[2021vacpres]: https://github.com/tfenster/presentations/raw/master/docs/202110vacd/2021vacdpres.pdf
