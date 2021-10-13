@@ -7,6 +7,7 @@ permalink: /presentations/
 Just my presentations, publications (from 2020 on) and source code which worked at the time I did them, but no guarantees that any of this works anymore. Also recordings, if available
 
 ## 2021
+- 2021-10 **Introduction to Azure DevOps** (in German) at [Microsoft Germany Hochschul Community][hochschul] (higher education)
 - 2021-10 **Calculate Azure cost conveniently** at [Virtual Azure Community Day][2021vacd]: [presentation][2021vacdpres] and [recording][2021vacdrec]
 - 2021-06 **Beginner's guide video series for Node.js** (German localization) at [Techwiese Know-How][techwiese-knowhow]: [Landing page][202106nodejslanding] and [YouTube playlist][202106nodejsyt]
 - 2021-06 **Develop Azure DevOps extensions** (German) at [Microsoft Germany Cloud Native Community Blog][techwiese-cncb]: [blog post][202106techwiese]
@@ -150,3 +151,4 @@ Just my presentations, publications (from 2020 on) and source code which worked 
 [2021vacd]: https://fr.azureday.community/
 [2021vacdrec]: https://youtu.be/lIlL1SovGUA?t=8703
 [2021vacdpres]: https://github.com/tfenster/presentations/raw/master/docs/202110vacd/2021vacdpres.pdf
+[hochschul]: https://www.microsoft.com/de-de/education/higher-education/hochschul-community
