@@ -9,7 +9,7 @@ Just my presentations, publications (from 2020 on) and source code which worked 
 ## 2021
 - 2021-10 **Introduction to Azure DevOps** (in German) at [Microsoft Germany Hochschul Community][hochschul] (higher education)
 - 2021-10 **Calculate Azure cost conveniently** at [Virtual Azure Community Day][2021vacd]: [presentation][2021vacdpres] and [recording][2021vacdrec]
-- 2021-09 **BC on Docker: Basics, Tools and Advanced Scenarios** at [DynamicsCon][dynamicscon]: [recording][2021dynconrec]
+- 2021-09 **BC on Docker: Basics, Tools and Advanced Scenarios** at [DynamicsCon][dynamicscon]: [presentation][2021dynconpres] and [recording][2021dynconrec]
 - 2021-06 **Beginner's guide video series for Node.js** (German localization) at [Techwiese Know-How][techwiese-knowhow]: [Landing page][202106nodejslanding] and [YouTube playlist][202106nodejsyt]
 - 2021-06 **Develop Azure DevOps extensions** (German) at [Microsoft Germany Cloud Native Community Blog][techwiese-cncb]: [blog post][202106techwiese]
 - 2021-04 **Overview Business Central technology** at the [D365 Community Meetup Germany - April 20201][202104d365meetupde] (German): [presentation][202104d365meetupdepres] and [recording][202104d365meetupderec]
@@ -154,3 +154,4 @@ Just my presentations, publications (from 2020 on) and source code which worked 
 [2021vacdpres]: https://github.com/tfenster/presentations/raw/master/docs/202110vacd/2021vacdpres.pdf
 [hochschul]: https://www.microsoft.com/de-de/education/higher-education/hochschul-community
 [2021dynconrec]: https://www.youtube.com/watch?v=SRg2XzwpZd0&list=PLihbooUf2JIzGbL2tqvlvepEi0OA1lPxd&index=16
+[2021dynconpres]: https://dynamicscon.com/wp-content/uploads/2021/09/Tobias-Fenster-BC-on-Docker_-Basics-Tools-and-Advanced-Scenarios.pdf
