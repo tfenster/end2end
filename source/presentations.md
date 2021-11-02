@@ -7,6 +7,12 @@ permalink: /presentations/
 Just my presentations, publications (from 2020 on) and source code which worked at the time I did them, but no guarantees that any of this works anymore. Also recordings, if available
 
 ## 2021
+- 2021-10 Multiple sessions at [Directions EMEA][diremea]:
+    - **How to get your customer cloud-ready - a partner discussion** hosted by 1ClickFactory: [session link][2021diremeapanel]
+    - **Running SQL in a container and connection Business Central to it**: [session link][2021diremeasql] and [presentation][2021diremeasqlpres]
+    - **When Azure DevOps is not enough: Creating your own Azure DevOps web extension**: [session link][2021diremeaazdevops] and [presentation][2021diremeaazdevopspres]
+    - **Townhall: Meet the MVPs** hosted by Microsoft: [session link][2021diremeamvps]
+    - **Expo Theater: COSMO Azure DevOps & Docker Self-Service**: [session link][2021diremeaexpo] and [presentation][2021diremeaexpopres]
 - 2021-10 **Introduction to Azure DevOps** (in German) at [Microsoft Germany Hochschul Community][hochschul] (higher education)
 - 2021-10 **Calculate Azure cost conveniently** at [Virtual Azure Community Day][2021vacd]: [presentation][2021vacdpres] and [recording][2021vacdrec]
 - 2021-09 **BC on Docker: Basics, Tools and Advanced Scenarios** at [DynamicsCon][dynamicscon]: [presentation][2021dynconpres] and [recording][2021dynconrec]
@@ -155,3 +161,12 @@ Just my presentations, publications (from 2020 on) and source code which worked 
 [hochschul]: https://www.microsoft.com/de-de/education/higher-education/hochschul-community
 [2021dynconrec]: https://www.youtube.com/watch?v=SRg2XzwpZd0&list=PLihbooUf2JIzGbL2tqvlvepEi0OA1lPxd&index=16
 [2021dynconpres]: https://dynamicscon.com/wp-content/uploads/2021/09/Tobias-Fenster-BC-on-Docker_-Basics-Tools-and-Advanced-Scenarios.pdf
+[diremea]: https://directions4partners.com/events/directions-emea/
+[2021diremeasql]: https://directions4partners.com/events/directions-emea/sessions/?tid=S022
+[2021diremeasqlpres]: https://github.com/tfenster/presentations/raw/master/docs/202110diremea/sql.pdf
+[2021diremeapanel]: https://directions4partners.com/events/directions-emea/sessions/?tid=S041
+[2021diremeamvps]: https://directions4partners.com/events/directions-emea/sessions/?tid=MS125
+[2021diremeaazdevops]: https://directions4partners.com/events/directions-emea/sessions/?tid=S021
+[2021diremeaazdevopspres]: https://github.com/tfenster/presentations/blob/master/docs/202110diremea/azdevops.pdf
+[2021diremeaexpo]: https://directions4partners.com/events/directions-emea/sessions/?tid=ET10
+[2021diremeaexpopres]: https://github.com/tfenster/presentations/blob/master/docs/202110diremea/selfservice.pdf
