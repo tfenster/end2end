@@ -9,7 +9,9 @@
                 "jekyll",
                 "serve",
                 "--incremental",
-                "--no-watch"
+                "--watch",
+                "--force_polling",
+                "--livereload"
             ],
             "type": "shell",
             "problemMatcher": []
