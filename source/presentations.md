@@ -7,6 +7,7 @@ permalink: /presentations/
 Just my presentations, publications (from 2020 on) and source code which worked at the time I did them, but no guarantees that any of this works anymore. Also recordings, if available
 
 ## 2021
+- 2021-11 **Windows Server Container - Was ist das und wozu braucht man das?** (German) at [Windows Server User Group Berlin][wsugberlin]: [meetup][2021wsugberlin] and [presentation][2021wsugberlinpres]
 - 2021-10 Multiple sessions at [Directions EMEA][diremea]:
     - **How to get your customer cloud-ready - a partner discussion** hosted by 1ClickFactory: [session link][2021diremeapanel]
     - **Running SQL in a container and connection Business Central to it**: [session link][2021diremeasql] and [presentation][2021diremeasqlpres]
@@ -170,3 +171,6 @@ Just my presentations, publications (from 2020 on) and source code which worked 
 [2021diremeaazdevopspres]: https://github.com/tfenster/presentations/blob/master/docs/202110diremea/azdevops.pdf
 [2021diremeaexpo]: https://directions4partners.com/events/directions-emea/sessions/?tid=ET10
 [2021diremeaexpopres]: https://github.com/tfenster/presentations/blob/master/docs/202110diremea/selfservice.pdf
+[2021wsugberlin]: https://www.meetup.com/de-DE/Windows-Server-User-Group-Berlin/events/279787728/
+[2021wsugberlinpres]: https://github.com/tfenster/presentations/raw/master/docs/202111wsugberlin/2021wsugberlinpres.pdf
+[wsugberlin]: https://www.meetup.com/de-DE/Windows-Server-User-Group-Berlin
