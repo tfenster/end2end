@@ -21,60 +21,60 @@ If you want to just use it, here is the quick rundown:
 
 - Wait until a version of [bccontainerhelper][bcch] with [this PR][pr] included appears. That should be either 3.0.1 when it is released or 3.0.1-preview357.
 - If you have the rights to create an Azure AD [app registration][appreg] and want to run the container locally, then you can use a script like this:
-    {% highlight powershell linenos %}
-    $containerName = "bcserver"
-    $credential = New-Object pscredential -ArgumentList 'admin', (ConvertTo-SecureString -String '<your-secret-password>' -AsPlainText -Force)
-    $AadUserName = '<your-add-user>'
-    $aadCredential = New-Object pscredential -ArgumentList $AadUserName, (ConvertTo-SecureString -String '<your-other-secret-password>' -AsPlainText -Force)
+{% highlight powershell linenos %}
+$containerName = "bcserver"
+$credential = New-Object pscredential -ArgumentList 'admin', (ConvertTo-SecureString -String '<your-secret-password>' -AsPlainText -Force)
+$AadUserName = '<your-add-user>'
+$aadCredential = New-Object pscredential -ArgumentList $AadUserName, (ConvertTo-SecureString -String '<your-other-secret-password>' -AsPlainText -Force)
 
-    $publicDns = $containerName
-    $publicWebBaseUrl = "http://$publicDns/BC"
+$publicDns = $containerName
+$publicWebBaseUrl = "http://$publicDns/BC"
 
-    $appIdUri = "https://$($containerName).$($AadUserName.Split('@')[1])/BC"
-    $AdProperties = Create-AadAppsForBC -AadAdminCredential $aadCredential -appIdUri $appIdUri -publicWebBaseUrl $publicWebBaseUrl
+$appIdUri = "https://$($containerName).$($AadUserName.Split('@')[1])/BC"
+$AdProperties = Create-AadAppsForBC -AadAdminCredential $aadCredential -appIdUri $appIdUri -publicWebBaseUrl $publicWebBaseUrl
 
-    New-BcContainer `
-        -containerName $containerName `
-        -accept_eula `
-        -artifact (Get-BCArtifactUrl -country de -type OnPrem) `
-        -auth AAD `
-        -Credential $credential `
-        -imageName "mybc" `
-        -authenticationEMail $AadUserName `
-        -PublicDnsName $publicDns `
-        -AadTenant "$($AadUserName.Split('@')[1])" `
-        -AadAppId "$($AdProperties.SsoAdAppId)" `
-        -AadAppIdUri $appIdUri
-    {% endhighlight %}
+New-BcContainer `
+    -containerName $containerName `
+    -accept_eula `
+    -artifact (Get-BCArtifactUrl -country de -type OnPrem) `
+    -auth AAD `
+    -Credential $credential `
+    -imageName "mybc" `
+    -authenticationEMail $AadUserName `
+    -PublicDnsName $publicDns `
+    -AadTenant "$($AadUserName.Split('@')[1])" `
+    -AadAppId "$($AdProperties.SsoAdAppId)" `
+    -AadAppIdUri $appIdUri
+{% endhighlight %}
 Of course you will need to change the password in line 2 (although it won't be used as we use AAD for authentication), the user in line 3 (this will be used both for login in BC and for creating the app registration, so this accounts needs the necessary permissions for that) and the password in line 4, corresponding to the user in line 3.
 - Try to open the BC web client in a browser at http://bcserver/BC.
 - If you do this for the first time, you will be asked to consent to the app registration. If and when [this][grant] gets resolved, this step will no longer be needed
 - After that, you should see Business Central in all its glory, authenticated through Azure AD. Now on to VS Code...
 - Create a launch.json file that looks something like this:
-    {% highlight json linenos %}
-    {
-        "version": "0.2.0",
-        "configurations": [
-            {
-                "name": "Your own server",
-                "request": "launch",
-                "type": "al",
-                "environmentType": "OnPrem",
-                "server": "http://bcserver/",
-                "serverInstance": "BC",
-                "authentication": "AAD",
-                "startupObjectId": 22,
-                "startupObjectType": "Page",
-                "breakOnError": true,
-                "launchBrowser": true,
-                "enableLongRunningSqlStatements": true,
-                "enableSqlInformationDebugger": true,
-                "tenant": "default",
-                "primaryTenantDomain": "<your-primary-tenant-domain>"
-            }
-        ]
-    }
-    {% endhighlight %}
+{% highlight json linenos %}
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Your own server",
+            "request": "launch",
+            "type": "al",
+            "environmentType": "OnPrem",
+            "server": "http://bcserver/",
+            "serverInstance": "BC",
+            "authentication": "AAD",
+            "startupObjectId": 22,
+            "startupObjectType": "Page",
+            "breakOnError": true,
+            "launchBrowser": true,
+            "enableLongRunningSqlStatements": true,
+            "enableSqlInformationDebugger": true,
+            "tenant": "default",
+            "primaryTenantDomain": "<your-primary-tenant-domain>"
+        }
+    ]
+}
+{% endhighlight %}
 
 - Again, replace the primary tenant domain in line 19 with the correct value. If you are not sure, go to the [Azure Portal][portal] -> Azure Active Directory and you will find it directly on the overview page. It might be something with .onmicrosoft.com in the end, it might be something different.
 - Run "AL: Download symbols". You will get a notification that asks you to sign in by clicking "Copy & Open". With that, a new browser window will open where you can paste the code, click "Next", select the Azure AD account and confirm with "Continue".
