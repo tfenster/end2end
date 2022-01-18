@@ -13,7 +13,7 @@ tags:
 
 ---
 
-Since a long time, it is possible to use [Azure AD][aad] [authentication][auth] in your Business Central OnPrem environment, whether containerized or not. But what isn't possible - or at least is [documented as impossible][https://docs.microsoft.com/en-us/dynamics365/business-central/dev-itpro/developer/devenv-json-files#publish-to-local-server-settings] - is to use AAD authentication when developing in VS Code and publishing extension, downloading symbols, debugging etc.. If you are like me and get annoyed very quickly if you have to do things that aren't exactly necessary (and not fun...), you were probably as frustrated as I that this seemingly easy option to avoid juggling with users and passwords wasn't available. But thanks to a post in the BC Development Yammer community, I found out that it actually works and with some help by Kalman Beres and Steffen Balslev of Microsoft (thank you!), managed to get it up and running. So, finally we have SSO for development as well! 
+Since a long time, it is possible to use [Azure AD][aad] [authentication][auth] in your Business Central OnPrem environment, whether containerized or not. But what isn't possible - or at least is [documented as impossible][docs] - is to use AAD authentication when developing in VS Code and publishing extension, downloading symbols, debugging etc.. If you are like me and get annoyed very quickly if you have to do things that aren't exactly necessary (and not fun...), you were probably as frustrated as I that this seemingly easy option to avoid juggling with users and passwords wasn't available. But thanks to a post in the BC Development Yammer community, I found out that it actually works and with some help by Kalman Beres and Steffen Balslev of Microsoft (thank you!), managed to get it up and running. So, finally we have SSO for development as well! 
 
 ## The TL;DR
 
@@ -108,6 +108,7 @@ However, at some point in my tests I forgot to add it, and it turns out that I d
 
 [aad]: https://docs.microsoft.com/en-us/azure/active-directory/fundamentals/active-directory-whatis
 [auth]: https://docs.microsoft.com/en-us/dynamics365/business-central/dev-itpro/administration/users-credential-types#credential-types
+[docs]: https://docs.microsoft.com/en-us/dynamics365/business-central/dev-itpro/developer/devenv-json-files#publish-to-local-server-settings
 [bcch]: https://www.powershellgallery.com/packages/bccontainerhelper
 [pr]: https://github.com/microsoft/navcontainerhelper/pull/2270
 [appreg]: https://docs.microsoft.com/en-us/azure/active-directory/develop/quickstart-register-app
