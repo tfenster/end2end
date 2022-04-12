@@ -6,6 +6,9 @@ permalink: /presentations/
 
 Just my presentations, publications (from 2020 on) and source code which worked at the time I did them, but no guarantees that any of this works anymore. Also recordings, if available
 
+## 2022
+- 2022-04 **Applied IaC: Deploying Business Central in an Azure Container Instance using Bicep** as webinar for [Areopa][Areopa]: [presentation][202204areopapres] and [recording][202204areoparec]
+
 ## 2021
 - 2021-11 **Developing a web application with Visual Studio Code devcontainers** (German) at [Azure Developer Community Day][azdevcomday]: [session link][2021azdevcomday], [recording][2021azdevcomdayrec] and [presentation][2021azdevcomdaypres]
 - 2021-11 **Windows Server containers - What is that and why do you need it?** (German) at [Windows Server User Group Berlin][wsugberlin]: [meetup][2021wsugberlin] and [presentation][2021wsugberlinpres]
@@ -179,3 +182,5 @@ Just my presentations, publications (from 2020 on) and source code which worked 
 [2021azdevcomday]: https://evntz.live/azure-developer-community-day-2021/cloud-native-and-serverless/entwicklung-von-webanwendungen-mit-visual-studio-code-entwicklungs-containern/
 [2021azdevcomdayrec]: https://www.youtube.com/watch?v=zCfH1JEO6BI
 [azdevcomday]: https://www.azuredev.org/
+[202204areopapres]: https://github.com/tfenster/presentations/raw/master/docs/202204areopa/202204areopa.pdf
+[202204areoparec]: https://www.youtube.com/watch?v=_2vyg8PhxVY
