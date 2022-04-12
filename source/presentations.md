@@ -183,6 +183,6 @@ Just my presentations, publications (from 2020 on) and source code which worked 
 [2021azdevcomdayrec]: https://www.youtube.com/watch?v=zCfH1JEO6BI
 [azdevcomday]: https://www.azuredev.org/
 [202204areopapres]: https://github.com/tfenster/presentations/raw/master/docs/202204areopa/202204areopa.pdf
-[202204areoparec]: https://www.youtube.com/watch?v=_2vyg8PhxVY
+[202204areoparec]: https://www.youtube.com/watch?v=wCmAnRbVBxs
 [quickstart-win-ssh]: https://azure.microsoft.com/en-us/resources/templates/vm-windows-ssh/
 [quickstart-aci-bc]: https://azure.microsoft.com/en-us/resources/templates/aci-bc/
