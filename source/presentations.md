@@ -7,7 +7,7 @@ permalink: /presentations/
 Just my presentations, publications (from 2020 on) and source code which worked at the time I did them, but no guarantees that any of this works anymore. Also recordings, if available
 
 ## 2022
-- 2022-04 **Applied IaC: Deploying Business Central in an Azure Container Instance using Bicep** as webinar for [Areopa][Areopa]: [presentation][202204areopapres] and [recording][202204areoparec]
+- 2022-04 **Applied IaC: Deploying Business Central in an Azure Container Instance using Bicep** as webinar for [Areopa][Areopa]: [presentation][202204areopapres], [recording][202204areoparec] and sources (Bicep templates for [Windows VM with SSH][quickstart-win-ssh] and [Business Central Azure Container Instance][quickstart-aci-bc])
 
 ## 2021
 - 2021-11 **Developing a web application with Visual Studio Code devcontainers** (German) at [Azure Developer Community Day][azdevcomday]: [session link][2021azdevcomday], [recording][2021azdevcomdayrec] and [presentation][2021azdevcomdaypres]
@@ -184,3 +184,5 @@ Just my presentations, publications (from 2020 on) and source code which worked 
 [azdevcomday]: https://www.azuredev.org/
 [202204areopapres]: https://github.com/tfenster/presentations/raw/master/docs/202204areopa/202204areopa.pdf
 [202204areoparec]: https://www.youtube.com/watch?v=_2vyg8PhxVY
+[quickstart-win-ssh]: https://azure.microsoft.com/en-us/resources/templates/vm-windows-ssh/
+[quickstart-aci-bc]: https://azure.microsoft.com/en-us/resources/templates/aci-bc/
