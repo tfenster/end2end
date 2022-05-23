@@ -10,7 +10,9 @@
                 "serve",
                 "--watch",
                 "--force_polling",
-                "--livereload"
+                "--livereload",
+                "--incremental",
+                "--profile"
             ],
             "type": "shell",
             "problemMatcher": []
