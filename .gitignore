@@ -3,3 +3,4 @@ _site
 bourbon
 source/.jekyll-cache/*
 source/.jekyll-metadata
+source/js/JekyllWebmentionIO.js
