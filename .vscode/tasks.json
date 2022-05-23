@@ -11,7 +11,6 @@
                 "--watch",
                 "--force_polling",
                 "--livereload",
-                "--incremental",
                 "--profile"
             ],
             "type": "shell",
