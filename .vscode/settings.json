@@ -1,4 +1,10 @@
 {
     "editor.formatOnSave": false,
-    "search.useIgnoreFiles": false
+    "search.useIgnoreFiles": false,
+    "languageToolLinter.serviceType": "public",
+    "languageToolLinter.lintOnSave": false,
+    "languageToolLinter.languageTool.ignoredWordsInWorkspace": [
+        "hyperv",
+        "traefik"
+    ]
 }
