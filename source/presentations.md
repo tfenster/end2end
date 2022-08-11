@@ -7,6 +7,7 @@ permalink: /presentations/
 Just my presentations, publications (from 2020 on) and source code which worked at the time I did them, but no guarantees that any of this works anymore. Also recordings, if available
 
 ## 2022
+- 2022-08 **A practical overview of Azure DevOps** at [Azure Meetup Düsseldorf][azuremeetupdus]: [presentation][2022doknordicspres]
 - 2022-06 **Creating and maintaining Azure infrastructure professionally** at [Days of Knowledge Nordics][doknordics]: [presentation][2022doknordicspres]
 - 2022-05 **Serverless development using VS Code in the browser, GitHub codespaces and VS Code dev containers** (German) for [Microsoft Build Germany Spotlight][2022builddespot]: [presentation][2022builddespotpres] and [recording][2022builddespotrec]
 - 2022-04 **Applied IaC: Deploying Business Central in an Azure Container Instance using Bicep** as webinar for [Areopa][Areopa]: [presentation][202204areopapres], [recording][202204areoparec] and sources (Bicep templates for [Windows VM with SSH][quickstart-win-ssh] and [Business Central Azure Container Instance][quickstart-aci-bc])
@@ -193,3 +194,4 @@ Just my presentations, publications (from 2020 on) and source code which worked 
 [2022builddespotrec]: https://mybuild.microsoft.com/en-US/sessions/abb25c92-76c4-43b5-b4ca-f97d79d46ce3
 [doknordics]: https://directions4partners.com/events/days-of-knowledge-nordic/
 [2022doknordicspres]: https://github.com/tfenster/presentations/raw/master/docs/2022doknordics/2022doknordicspres.pdf
+[azuremeetupdus]: https://www.meetup.com/de-DE/Azure-Dusseldorf-Meetup/
