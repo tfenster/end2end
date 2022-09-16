@@ -10,7 +10,7 @@ Just my presentations, publications (from 2020 on) and source code which worked 
 - 2022-09 Multiple sessions at [BC TechDays][bctd]:
   - **Being more efficient with VS Code**: [recording to come]
   - **Above and beyond - When BC is not enough**: [recording to come]
-- 2022-09 **How to create a frontend-only Docker extension to get the size of public images** at [Docker Community all-hands 6][dcah6]:
+- 2022-09 **How to create a frontend-only Docker extension to get the size of public images** at [Docker Community all-hands 6][202209dcah]: [recording][202209dcahrec]
 - 2022-08 **A practical overview of Azure DevOps** at [Azure Meetup Düsseldorf][azuremeetupdus]: [presentation][2022doknordicspres]
 - 2022-06 **Creating and maintaining Azure infrastructure professionally** at [Days of Knowledge Nordics][doknordics]: [presentation][2022doknordicspres]
 - 2022-05 **Serverless development using VS Code in the browser, GitHub codespaces and VS Code dev containers** (German) for [Microsoft Build Germany Spotlight][2022builddespot]: [presentation][2022builddespotpres] and [recording][2022builddespotrec]
