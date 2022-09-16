@@ -7,6 +7,10 @@ permalink: /presentations/
 Just my presentations, publications (from 2020 on) and source code which worked at the time I did them, but no guarantees that any of this works anymore. Also recordings, if available
 
 ## 2022
+- 2022-09 Multiple sessions at [BC TechDays][bctd]:
+  - **Being more efficient with VS Code**: [recording to come]
+  - **Above and beyond - When BC is not enough**: [recording to come]
+- 2022-09 **How to create a frontend-only Docker extension to get the size of public images** at [Docker Community all-hands 6][dcah6]:
 - 2022-08 **A practical overview of Azure DevOps** at [Azure Meetup Düsseldorf][azuremeetupdus]: [presentation][2022doknordicspres]
 - 2022-06 **Creating and maintaining Azure infrastructure professionally** at [Days of Knowledge Nordics][doknordics]: [presentation][2022doknordicspres]
 - 2022-05 **Serverless development using VS Code in the browser, GitHub codespaces and VS Code dev containers** (German) for [Microsoft Build Germany Spotlight][2022builddespot]: [presentation][2022builddespotpres] and [recording][2022builddespotrec]
@@ -195,3 +199,6 @@ Just my presentations, publications (from 2020 on) and source code which worked 
 [doknordics]: https://directions4partners.com/events/days-of-knowledge-nordic/
 [2022doknordicspres]: https://github.com/tfenster/presentations/raw/master/docs/2022doknordics/2022doknordicspres.pdf
 [azuremeetupdus]: https://www.meetup.com/de-DE/Azure-Dusseldorf-Meetup/
+[202209dcah]: https://www.docker.com/blog/docker-community-all-hands-6-highlights/
+[202209dcahrec]: https://www.youtube.com/watch?v=0r2epZzT2DA&list=PLkA60AVN3hh-AYsvgjVuB13DiVao-UBl5&index=3
+[bctd]: https://bctechdays.com/
