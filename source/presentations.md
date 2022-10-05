@@ -8,8 +8,8 @@ Just my presentations, publications (from 2020 on) and source code which worked 
 
 ## 2022
 - 2022-09 Multiple sessions at [BC TechDays][bctd]:
-  - **Being more efficient with VS Code**: [recording to come]
-  - **Above and beyond - When BC is not enough**: [recording to come]
+  - **Being more efficient with VS Code**: [recording][2022bctd1]
+  - **Above and beyond - When BC is not enough**: [recording][2022bctd2]
 - 2022-09 **How to create a frontend-only Docker extension to get the size of public images** at [Docker Community all-hands 6][202209dcah]: [recording][202209dcahrec]
 - 2022-08 **A practical overview of Azure DevOps** at [Azure Meetup Düsseldorf][azuremeetupdus]: [presentation][2022doknordicspres]
 - 2022-06 **Creating and maintaining Azure infrastructure professionally** at [Days of Knowledge Nordics][doknordics]: [presentation][2022doknordicspres]
@@ -202,3 +202,5 @@ Just my presentations, publications (from 2020 on) and source code which worked 
 [202209dcah]: https://www.docker.com/blog/docker-community-all-hands-6-highlights/
 [202209dcahrec]: https://www.youtube.com/watch?v=0r2epZzT2DA&list=PLkA60AVN3hh-AYsvgjVuB13DiVao-UBl5&index=3
 [bctd]: https://bctechdays.com/
+[2022bctd1]: https://www.youtube.com/watch?v=q7pr6l60B34&list=PLI1l3dMI8xlCxIcZPT8v3D29tzSNqowbf&index=6
+[2022bctd2]: https://www.youtube.com/watch?v=6lq7mMa6l7U&list=PLI1l3dMI8xlCxIcZPT8v3D29tzSNqowbf&index=18
