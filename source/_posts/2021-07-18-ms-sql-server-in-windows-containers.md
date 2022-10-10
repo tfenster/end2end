@@ -174,9 +174,11 @@ docker build --build-arg BASE=20H2 --build-arg EXP_EXE=https://download.microsof
 --build-arg VERSION=15.0.4138.2 --build-arg TYPE=exp -t tobiasfenster/mssql-server-exp-unsupported:2019-CU11 .
 {% endhighlight %}
 
-Of course I am also sharing them through the Docker hub ([Developer Edition][hub-dev] and [Express Edition][hub-exp]), so you don't need to build them and instead just can run them with the commands explained above. 
+~~Of course I am also sharing them through the Docker hub ([Developer Edition][hub-dev] and [Express Edition][hub-exp]), so you don't need to build them and instead just can run them with the commands explained above.~~ 
 
-Maybe also interesting: I created a multi-arch manifest for the three base image versions (Windows Server 2019 LTSC, 2004 and 20H2), which means that you can just reference `tobiasfenster/mssql-server-dev-unsupported:2019-cu11` and you will get e.g. `tobiasfenster/mssql-server-dev-unsupported:2019-cu11-20H2` on a 20H2 container host.
+~~Maybe also interesting: I created a multi-arch manifest for the three base image versions (Windows Server 2019 LTSC, 2004 and 20H2), which means that you can just reference `tobiasfenster/mssql-server-dev-unsupported:2019-cu11` and you will get e.g. `tobiasfenster/mssql-server-dev-unsupported:2019-cu11-20H2` on a 20H2 container host.~~
+
+**Update**: I was told by Microsoft that sharing the images violates the EULA, so I have to remove them. If you follow the instruction above, you can still create them for your own usage and I will continue to maintain the links and and scripts. To find the right URLs for the docker build command above, check https://github.com/tfenster/mssql-image/blob/main/cu-overview.md.
 
 I hope some of you will find this useful and if you have ideas for improvement or find bugs that neeed to be fixed, please let me know through the [Github repo][github-image]
 
