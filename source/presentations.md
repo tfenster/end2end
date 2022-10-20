@@ -7,6 +7,7 @@ permalink: /presentations/
 Just my presentations, publications (from 2020 on) and source code which worked at the time I did them, but no guarantees that any of this works anymore. Also recordings, if available
 
 ## 2022
+- 2022-10 **Container-based development for C# developers** (German) at [BASTA!][basta]: [session link][2022basta], [presentation][2022bastapres] and [sources][2022bastasrc]
 - 2022-09 Multiple sessions at [BC TechDays][bctd]:
   - **Being more efficient with VS Code**: [recording][2022bctd1]
   - **Above and beyond - When BC is not enough**: [recording][2022bctd2]
@@ -204,3 +205,7 @@ Just my presentations, publications (from 2020 on) and source code which worked 
 [bctd]: https://bctechdays.com/
 [2022bctd1]: https://www.youtube.com/watch?v=q7pr6l60B34&list=PLI1l3dMI8xlCxIcZPT8v3D29tzSNqowbf&index=6
 [2022bctd2]: https://www.youtube.com/watch?v=6lq7mMa6l7U&list=PLI1l3dMI8xlCxIcZPT8v3D29tzSNqowbf&index=18
+[basta]: https://basta.net/
+[2022basta]: https://basta.net/net-framework-c/container-basierte-entwicklung-fuer-net-entwickler/
+[2022bastapres]: https://github.com/tfenster/presentations/raw/master/docs/2022basta/202210bastapres.pdf
+[2022bastasrc]: https://github.com/tfenster/presentations/tree/master/2022-10%20basta
