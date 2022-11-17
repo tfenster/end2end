@@ -13,7 +13,7 @@ tags:
 
 ---
 
-Looking at the [Azure DevOps Roadmap][azdevops-roadmap] with lots of planned improvements across the board (pun intended) for 2023 and even further, it seems clear to me that Microsoft has ramped up their investment into the product again and as much as I love GitHub, I really love to see that. At the same time, the official [vscode-azdevops-msft-extension][VS Code Azure DevOps (Repositories) extension] has been deprecated. And while I get that to a degree, because there is amazing Git support directly in VS Code (and no one uses TFVC anymore[^1]), there are also missing features like assigning a work item to a commit or creating a branch connected to a work item. But don't despair, the great [David Feldhoff][david] (author of the amazing [AL CodeActions extension][al-codeactions]) and I created a small VS Code extension to help with that. We proudly present: [Azure DevOps Simplify - the community extension to work more efficiently with Azure DevOps from VS Code!][azdevops-vscode-simplify]. Of course, this is open source, and we are happy to take community contributions at the corresponding [GitHub repository tfenster/azdevops-vscode-simplify][github]
+Looking at the [Azure DevOps Roadmap][azdevops-roadmap] with lots of planned improvements across the board (pun intended) for 2023 and even further, it seems clear to me that Microsoft has ramped up their investment into the product again and as much as I love GitHub, I really love to see that. At the same time, the official [VS Code Azure DevOps (Repositories) extension][vscode-azdevops-msft-extension] has been deprecated. And while I get that to a degree, because there is amazing Git support directly in VS Code (and no one uses TFVC anymore[^1]), there are also missing features like assigning a work item to a commit or creating a branch connected to a work item. But don't despair, the great [David Feldhoff][david] (author of the amazing [AL CodeActions extension][al-codeactions]) and I created a small VS Code extension to help with that. We proudly present: [Azure DevOps Simplify - the community extension to work more efficiently with Azure DevOps from VS Code!][azdevops-vscode-simplify]. Of course, this is open source, and we are happy to take community contributions at the corresponding [GitHub repository tfenster/azdevops-vscode-simplify][github]
 
 ## The TL;DR
 
@@ -207,7 +207,7 @@ We hope the extension will help you in your daily dev life and if you see anythi
 [azdevops-roadmap]: https://learn.microsoft.com/en-us/azure/devops/release-notes/features-timeline
 [vscode-azdevops-msft-extension]: https://github.com/microsoft/azure-repos-vscode
 [david]: https://twitter.com/FeldhoffDavid
-[al-code-actions]: https://marketplace.visualstudio.com/items?itemName=davidfeldhoff.al-codeactions
+[al-codeactions]: https://marketplace.visualstudio.com/items?itemName=davidfeldhoff.al-codeactions
 [azdevops-vscode-simplify]: tbd
 [alpaca]: https://marketplace.cosmoconsult.com/product/?id=345E2CCC-C480-4DB3-9309-3FCD4065CED4&stext=alpaca
 [ext-docs]: https://code.visualstudio.com/api/get-started/your-first-extension
