@@ -28,7 +28,7 @@ TBD
 
 Please note that if you want a more comprehensive integration of Azure DevOps into VS Code (and much more) for Business Central developers, I can only recommend to take a look at [COSMO Alpaca][alpaca].
 
-There are a lot of sessions (including my own), blog posts and the great [official VS Code docs][ext-docs] about creating VS Code extensions, so I don't want to go more deeply into that. Instead, I want to focus on the interaction with Azure DevOps and Git in the detail sections.
+That's *what* you can do with it. In the details sections of this blog post I'm now going into *how* we did it to make it more easy for you to contribute. But there are already a lot of sessions (including my own), blog posts and the great [official VS Code docs][ext-docs] about creating VS Code extensions, so I don't want to go more deeply into that. Instead, I want to focus on the interaction with Azure DevOps and Git.
 
 ## The details: Fetching the Azure DevOps tree
 The interaction with Azure DevOps is completely built using the [Azure DevOps REST API][azdevops-rest] and the code can be found in [azdevops-api.ts][azdevops-api.ts]. As one example, here is how we fetch the organizations:
@@ -101,7 +101,7 @@ async function loadWorkItems(query: string, orgUrl: string, projectUrl: string, 
 
 ## The details: Interacting with the VS Code git extension
 
-The interaction with the (built-in) VS Code git extension is maybe a bit more interesting although even easier to implement, because it uses a very powerful mechanism. Again, this is all on one file, this time [git-api.ts][git-api.ts]. By getting a reference to the git extension, we can use a lot of the functionality that is already included, but from out own extension:
+The interaction with the (built-in) VS Code git extension is maybe a bit more interesting although even easier to implement, because it uses a very powerful mechanism. Again, this is all on one file, this time [git-api.ts][git-api.ts]. By getting a reference to the git extension, we can use a lot of the functionality that is already included, but from our own extension:
 
 {% highlight TypeScript linenos %}
 if (GitExtension.gitApi === undefined) {
