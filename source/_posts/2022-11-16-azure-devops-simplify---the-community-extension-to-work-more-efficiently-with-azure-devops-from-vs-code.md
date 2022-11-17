@@ -24,7 +24,9 @@ With this extension, you can currently do three things:
 
 As a small bonus feature, you can also open a work item in your browser. Here is what it looks like:
 
-TBD
+<video width="100%" controls>
+  <source type="video/mp4" src="/images/azdevops-simplify-walkthrough.mp4">
+</video>
 
 Please note that if you want a more comprehensive integration of Azure DevOps into VS Code (and much more) for Business Central developers, I can only recommend to take a look at [COSMO Alpaca][alpaca].
 
