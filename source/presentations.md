@@ -7,6 +7,11 @@ permalink: /presentations/
 Just my presentations, publications (from 2020 on) and source code which worked at the time I did them, but no guarantees that any of this works anymore. Also recordings, if available
 
 ## 2022
+- 2022-11 Multiple sessions at [Directions EMEA][2022diremea]:
+    - **Being more efficient with VS Code**: [session link][2022diremeavscode] and [presentation][2022diremeavscodepres]
+    - **DevOps is the goal, but which way to choose**: [session link][2022diremeadevops] and [presentation][2022diremeadevopspres]
+    - **Microsoft roundtable: DevOps and CI/CD**: [session link][2022diremeartdevops]
+    - **Hosted by Microsoft: Meet the MVPs**: [session link][2022diremeamvps]
 - 2022-10 **Container-based development for C# developers** (German) at [BASTA!][basta]: [session link][2022basta], [presentation][2022bastapres] and [sources][2022bastasrc]
 - 2022-09 Multiple sessions at [BC TechDays][bctd]:
   - **Being more efficient with VS Code**: [recording][2022bctd1]
@@ -20,7 +25,7 @@ Just my presentations, publications (from 2020 on) and source code which worked 
 ## 2021
 - 2021-11 **Developing a web application with Visual Studio Code devcontainers** (German) at [Azure Developer Community Day][azdevcomday]: [session link][2021azdevcomday], [recording][2021azdevcomdayrec] and [presentation][2021azdevcomdaypres]
 - 2021-11 **Windows Server containers - What is that and why do you need it?** (German) at [Windows Server User Group Berlin][wsugberlin]: [meetup][2021wsugberlin] and [presentation][2021wsugberlinpres]
-- 2021-10 Multiple sessions at [Directions EMEA][diremea]:
+- 2021-10 Multiple sessions at [Directions EMEA][2021diremea]:
     - **How to get your customer cloud-ready - a partner discussion** hosted by 1ClickFactory: [session link][2021diremeapanel]
     - **Running SQL in a container and connection Business Central to it**: [session link][2021diremeasql] and [presentation][2021diremeasqlpres]
     - **When Azure DevOps is not enough: Creating your own Azure DevOps web extension**: [session link][2021diremeaazdevops] and [presentation][2021diremeaazdevopspres]
@@ -174,7 +179,7 @@ Just my presentations, publications (from 2020 on) and source code which worked 
 [hochschul]: https://www.microsoft.com/de-de/education/higher-education/hochschul-community
 [2021dynconrec]: https://www.youtube.com/watch?v=SRg2XzwpZd0&list=PLihbooUf2JIzGbL2tqvlvepEi0OA1lPxd&index=16
 [2021dynconpres]: https://dynamicscon.com/wp-content/uploads/2021/09/Tobias-Fenster-BC-on-Docker_-Basics-Tools-and-Advanced-Scenarios.pdf
-[diremea]: https://directions4partners.com/events/directions-emea/
+[2021diremea]: https://directions4partners.com/events/directions-emea-2021/
 [2021diremeasql]: https://directions4partners.com/events/directions-emea/sessions/?tid=S022
 [2021diremeasqlpres]: https://github.com/tfenster/presentations/raw/master/docs/202110diremea/sql.pdf
 [2021diremeapanel]: https://directions4partners.com/events/directions-emea/sessions/?tid=S041
@@ -209,3 +214,10 @@ Just my presentations, publications (from 2020 on) and source code which worked 
 [2022basta]: https://basta.net/net-framework-c/container-basierte-entwicklung-fuer-net-entwickler/
 [2022bastapres]: https://github.com/tfenster/presentations/raw/master/docs/2022basta/202210bastapres.pdf
 [2022bastasrc]: https://github.com/tfenster/presentations/tree/master/2022-10%20basta
+[2022diremea]: https://directions4partners.com/events/directions-emea-2022/
+[2022diremeamvps]: https://directions4partners.com/events/directions-emea-2022/session-schedule/?tid=395232
+[2022diremeartdevops]: https://directions4partners.com/events/directions-emea-2022/session-schedule/?tid=388887
+[2022diremeadevopspres]: https://github.com/tfenster/presentations/raw/master/docs/2022diremea/2022diremeadevopspres.pdf
+[2022diremeadevops]: https://directions4partners.com/events/directions-emea-2022/session-schedule/?tid=349062
+[2022diremeavscodepres]: https://github.com/tfenster/presentations/raw/master/docs/2022diremea/2022diremeavscodepres.pdf
+[2022diremeavscode]: https://directions4partners.com/events/directions-emea-2022/session-schedule/?tid=375311
