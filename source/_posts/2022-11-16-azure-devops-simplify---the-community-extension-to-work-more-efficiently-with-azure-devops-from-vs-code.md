@@ -208,7 +208,7 @@ We hope the extension will help you in your daily dev life and if you see anythi
 [vscode-azdevops-msft-extension]: https://github.com/microsoft/azure-repos-vscode
 [david]: https://twitter.com/FeldhoffDavid
 [al-codeactions]: https://marketplace.visualstudio.com/items?itemName=davidfeldhoff.al-codeactions
-[azdevops-vscode-simplify]: tbd
+[azdevops-vscode-simplify]: https://marketplace.visualstudio.com/items?itemName=tfenster.azdevops-vscode-simplify
 [alpaca]: https://marketplace.cosmoconsult.com/product/?id=345E2CCC-C480-4DB3-9309-3FCD4065CED4&stext=alpaca
 [ext-docs]: https://code.visualstudio.com/api/get-started/your-first-extension
 [github]: https://github.com/tfenster/azdevops-vscode-simplify
