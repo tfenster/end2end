@@ -8,7 +8,7 @@ Just my presentations, publications (from 2020 on) and source code which worked 
 
 ## 2022
 - 2022-12 **Best practices for production-ready .NET Docker images** [Docker Community all-hands 7][202212dcah]: [recording][202212dcahrec]
-- 2022-12 Azure Developer Community Day
+- 2022-12 **Container-based development for C# developers** (German) at [Azure Developer Community Day][2022azdevcomday]: [presentation][2022azdevcomdaypres]
 - 2022-11 Multiple sessions at [Directions EMEA][2022diremea]:
     - **Being more efficient with VS Code**: [session link][2022diremeavscode] and [presentation][2022diremeavscodepres]
     - **DevOps is the goal, but which way to choose**: [session link][2022diremeadevops] and [presentation][2022diremeadevopspres]
