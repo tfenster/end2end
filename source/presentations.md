@@ -7,6 +7,8 @@ permalink: /presentations/
 Just my presentations, publications (from 2020 on) and source code which worked at the time I did them, but no guarantees that any of this works anymore. Also recordings, if available
 
 ## 2022
+- 2022-12 **Best practices for production-ready .NET Docker images** [Docker Community all-hands 7][202212dcah]: [recording][202212dcahrec]
+- 2022-12 Azure Developer Community Day
 - 2022-11 Multiple sessions at [Directions EMEA][2022diremea]:
     - **Being more efficient with VS Code**: [session link][2022diremeavscode] and [presentation][2022diremeavscodepres]
     - **DevOps is the goal, but which way to choose**: [session link][2022diremeadevops] and [presentation][2022diremeadevopspres]
@@ -221,3 +223,7 @@ Just my presentations, publications (from 2020 on) and source code which worked 
 [2022diremeadevops]: https://directions4partners.com/events/directions-emea-2022/session-schedule/?tid=349062
 [2022diremeavscodepres]: https://github.com/tfenster/presentations/raw/master/docs/2022diremea/2022diremeavscodepres.pdf
 [2022diremeavscode]: https://directions4partners.com/events/directions-emea-2022/session-schedule/?tid=375311
+[2022azdevcomday]: https://azuredev.org/sessions/container-basierte-entwicklung-fur-.net-entwickler
+[2022azdevcomdaypres]: https://github.com/tfenster/presentations/raw/master/docs/202212azdevcomday/2022azdevcomdaypres.pdf
+[202212dcah]: https://docker.github.io/community-all-hands/
+[202212dcahrec]: https://www.youtube.com/watch?v=7Bl6lDHzwiY&t=5465s
