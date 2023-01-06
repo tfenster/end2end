@@ -1,4 +1,4 @@
-FROM debian:buster
+FROM debian:bullseye
 
 # Avoid warnings by switching to noninteractive
 ENV DEBIAN_FRONTEND=noninteractive

@@ -2,7 +2,7 @@
 permalink: /blog/:year/:title/
 markdown: kramdown
 highlighter: rouge
-plugins: [jekyll-paginate-v2]
+plugins: [jekyll-paginate-v2, jekyll/mastodon_webfinger]
 
 pagination:
   enabled: true
@@ -56,3 +56,7 @@ navbar:
 exclude: ["config.rb", "src", "Gemfile", "Gemfile.lock", "package.json","README.md", "Rakefile"]
 
 include: [ "/.well-known" ]
+
+mastodon:
+  username: tobiasfenster
+  instance: hachyderm.io

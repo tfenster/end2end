@@ -60,6 +60,7 @@ As you can see, you can interact with the Docker CLI in a Docker extension throu
 As the second step, the results are transformed into a [`Tree view`][tree]. Because I have created [interfaces] for the result of the `docker manifest` call, I can call properties of the result in a typed way. First, the root element is created: 
 
 {% highlight typescript linenos %}
+{% raw %}
 <TreeView
 aria-label="image size view"
 defaultCollapseIcon={<ExpandMoreIcon />}
@@ -69,6 +70,7 @@ disableSelection={true}
 >
 ...
 </TreeView>
+{% endraw %}
 {% endhighlight %}
 
 Then, I get a reference which has the full name of the image, the OS and the OS version (relevant on Windows):

@@ -104,7 +104,9 @@ docker run -d --name portainer_agent --restart=always -v \\.\pipe\docker_engine_
 I then found the IP address of the agent container with the following command, so that we can later connect to it
 
 {% highlight PowerShell linenos %}
+{% raw %}
 docker inspect -f '{{range.NetworkSettings.Networks}}{{.IPAddress}}{{end}}' portainer_agent
+{% endraw %}
 {% endhighlight %}
 
 With that, I went to "endpoints" in portainer, clicked on "Add agent", entered "Windows" as the name and the IP address from above with port 9001 as endpoint URL and clicked "Add endpoint". Afterwards I went back to "endpoints" and renamed the initial "local" one to "Linux" to immediately identify the OS. Now the Portainer home page looked like this and I could easily and quickly switch between the environments:
