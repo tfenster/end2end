@@ -12,3 +12,5 @@ prod: rake
 rake post title="Welcome to my new blog" 
 rake page name="test.md"
 rake page name="what/test.md"
+
+icons from https://icomoon.io/app/
