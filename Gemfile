@@ -11,7 +11,7 @@ source "https://rubygems.org"
 gem "jekyll", "~>4.3.1"
 gem "rake", "~>13.0.3"
 gem "sass", "~>3.4"
-gem "json", "~> 2"
+gem "json", "~> 2.6.3"
 
 
 # If you want to use GitHub Pages, remove the "gem "jekyll"" above and
