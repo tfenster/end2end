@@ -2,7 +2,7 @@
 permalink: /blog/:year/:title/
 markdown: kramdown
 highlighter: rouge
-plugins: [jekyll-paginate-v2, jekyll/mastodon_webfinger]
+plugins: [jekyll-paginate-v2]
 
 pagination:
   enabled: true

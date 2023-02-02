@@ -28,5 +28,4 @@ group :jekyll_plugins do
 #  gem "jekyll-compose"
   gem "kramdown"
   gem "jekyll-webmention_io", git: "git@github.com:aarongustafson/jekyll-webmention_io", branch: "main"
-  gem "jekyll-mastodon_webfinger"
 end
