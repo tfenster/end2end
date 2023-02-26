@@ -101,7 +101,7 @@ I hope this helps some of you, either because you just want to use it or because
 [o365]: https://www.microsoft.com/en-us/microsoft-365
 [my-day]: https://support.microsoft.com/en-us/office/use-my-day-in-outlook-com-and-outlook-1ca75cf8-6bfb-4ccb-8efc-7ee5831aef8d
 [planner-ics]: https://support.microsoft.com/en-us/office/see-your-planner-schedule-in-outlook-calendar-9f0eb699-cf2b-45be-a464-83f005d82547
-[flow]: https://powerautomate.microsoft.com/en-us/
+[automate]: https://powerautomate.microsoft.com/en-us/
 [t2c]: https://github.com/tfenster/Task2Calendar
 [pac]: https://learn.microsoft.com/en-us/power-platform/developer/cli/introduction
 [tb]: https://en.wikipedia.org/wiki/Timeboxing
