@@ -7,6 +7,9 @@ permalink: /presentations/
 Just my presentations, publications (from 2020 on) and source code which worked at the time I did them, but no guarantees that any of this works anymore. Also recordings, if available
 
 ## 2023
+- 2023-02 Muliple sessions at [BASTA!][basta]:
+    - **Basics of containers** (German): [session link][202302basta1] and [presentation][202302bastapres1]
+    - **Container-based development for C# developers** (German): [session link][202302basta2] and [presentation][202302bastapres2]
 - 2023-02 **Containerized CI/CD agents for Azure DevOps and GitHub** as webinar for [Areopa][Areopa]: [presentation][202302areopapres] and [recording][202302areoparec]
 
 ## 2022
@@ -232,3 +235,7 @@ Just my presentations, publications (from 2020 on) and source code which worked 
 [202212dcahrec]: https://www.youtube.com/watch?v=7Bl6lDHzwiY&t=5465s
 [202302areoparec]: https://www.youtube.com/watch?v=0INOdEhXd38
 [202302areopapres]: https://github.com/tfenster/presentations/raw/master/docs/202302areopa/202302areopapres.pdf
+[202302basta1]: https://basta.net/cloud-azure-serverless/grundlagen-containerisierung/
+[202302bastapres1]: https://github.com/tfenster/presentations/raw/master/docs/2023basta/202302bastapres1.pdf
+[202302basta2]: https://basta.net/cloud-azure-serverless/container-dotnet/
+[202302bastapres2]: https://github.com/tfenster/presentations/raw/master/docs/2023basta/202302bastapres2.pdf
