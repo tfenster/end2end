@@ -69,7 +69,7 @@ That's it, that's the list of my "problems" when creating it. Bottom line: With 
 [^2]: And this is Germany, so that could lead to serious problems. One might wonder whether open data could lead to more applications like mine, which in turn might lead to more interest in the league, but past experience shows that the league doesn't necessarily agree to such progressive ideas.
 
 [ecbbl]: https://www.easycredit-bbl.de
-[vs]: https://www.34spiele.de
+[vs]: https://34spiele.de
 [blazor]: https://learn.microsoft.com/en-us/aspnet/core/blazor/hosting-models?view=aspnetcore-7.0#blazor-server
 [antblazor]: https://antblazor.com/
 [devc]: https://code.visualstudio.com/docs/devcontainers/containers
