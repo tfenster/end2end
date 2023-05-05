@@ -7,6 +7,7 @@ permalink: /presentations/
 Just my presentations, publications (from 2020 on) and source code which worked at the time I did them, but no guarantees that any of this works anymore. Also recordings, if available
 
 ## 2023
+- 2023-04 **Task management and Timeboxing within the Microsoft ecosystem, driven by a Power Automate flow** at the [M365 & Power Platform Dev Community Call][pnpcommcall]: [session link][202304pnpcommcall] and [recording][202304pnpcommcallrec]
 - 2023-03 Multiple sessions at [Days of Knowledge UK][2023dokuk]:
     - **DevOps is the goal, but which way to choose**: [session link][2023dokuk1] and [presentation][2023dokukpres1]
     - **Onboarding from the perspective of an ISV**: [session link][2023dokuk2] and [presentation][2023dokukpres2]
@@ -247,3 +248,6 @@ Just my presentations, publications (from 2020 on) and source code which worked 
 [2023dokuk2]: https://directions4partners.com/days-of-knowledge/uk-2023/schedule/?tid=435472
 [2023dokukpres2]: https://github.com/tfenster/presentations/raw/master/docs/2023dokuk/2023dokukpres2.pdf
 [2023dokuk]: https://directions4partners.com/days-of-knowledge/uk-2023/
+[pnpcommcall]: https://aka.ms/sppnp
+[202304pnpcommcall]: https://pnp.github.io/blog/microsoft-365-and-power-platform-development-community-call/2023-04-27/
+[202304pnpcommcallrec]: https://youtu.be/eoWS-0Fgo8w?t=1445
