@@ -39,7 +39,7 @@ That's what I wanted to share this time. As I wrote in the beginning, not much, 
 
 [freddy]: https://freddysblog.com/2021/03/02/restoring-your-online-business-central-database-locally/
 [export]: https://learn.microsoft.com/en-us/dynamics365/business-central/dev-itpro/administration/tenant-admin-center-database-export
-[alpaca]: https://cosmoconsult.com/alpaca
+[alpaca]: https://cosmoconsult.com/cosmo-alpaca
 [dd]: https://www.docker.com/products/docker-desktop/
 [wsl]: https://docs.docker.com/desktop/windows/wsl/
 [ads]: https://azure.microsoft.com/en-us/products/data-studio
