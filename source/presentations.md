@@ -8,9 +8,9 @@ Just my presentations, publications (from 2020 on) and source code which worked 
 
 ## 2023
 - 2023-04 **Task management and Timeboxing within the Microsoft ecosystem, driven by a Power Automate flow** at the [M365 & Power Platform Dev Community Call][pnpcommcall]: [session link][202304pnpcommcall] and [recording][202304pnpcommcallrec]
-- 2023-03 Multiple sessions at [Days of Knowledge UK][2023dokuk]:
-    - **DevOps is the goal, but which way to choose**: [session link][2023dokuk1] and [presentation][2023dokukpres1]
-    - **Onboarding from the perspective of an ISV**: [session link][2023dokuk2] and [presentation][2023dokukpres2]
+- 2023-03,05,06 Multiple sessions at [Days of Knowledge UK][2023dokuk], [Days of Knowledge Central][2023dokcentral] and [Days of Knowledge Nordic][2023doknordic]:
+    - **DevOps is the goal, but which way to choose**: session link [UK][2023dokuk1], [Central][2023dokcentral1], [Nordic][2023doknordic1] and [presentation][2023dokukpres1]
+    - **Onboarding from the perspective of an ISV**: session link [UK][2023dokuk2], [Central][2023dokcentral2], [Nordic][2023doknordic2] and [presentation][2023dokukpres2]
 - 2023-02 Multiple sessions at [BASTA!][basta]:
     - **Basics of containers** (German): [session link][202302basta1] and [presentation][202302bastapres1]
     - **Container-based development for C# developers** (German): [session link][202302basta2] and [presentation][202302bastapres2]
@@ -251,3 +251,9 @@ Just my presentations, publications (from 2020 on) and source code which worked 
 [pnpcommcall]: https://aka.ms/sppnp
 [202304pnpcommcall]: https://pnp.github.io/blog/microsoft-365-and-power-platform-development-community-call/2023-04-27/
 [202304pnpcommcallrec]: https://youtu.be/eoWS-0Fgo8w?t=1445
+[2023dokcentral1]: https://directions4partners.com/days-of-knowledge/central-2023/schedule/?tid=429001
+[2023dokcentral2]: https://directions4partners.com/days-of-knowledge/central-2023/schedule/?tid=471752
+[2023dokcentral]: https://directions4partners.com/days-of-knowledge/central-2023/
+[2023doknordic1]: https://directions4partners.com/days-of-knowledge/nordic-2023/schedule/?tid=415040
+[2023doknordic2]: https://directions4partners.com/days-of-knowledge/nordic-2023/schedule/?tid=471753
+[2023doknordic]: https://directions4partners.com/days-of-knowledge/nordic-2023/
