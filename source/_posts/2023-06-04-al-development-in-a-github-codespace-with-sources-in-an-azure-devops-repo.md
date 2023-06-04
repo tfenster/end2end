@@ -20,7 +20,7 @@ tags:
 In the end, I have a GitHub Codespace connected to an Azure DevOps repo and I can debug (against a [COSMO Alpaca][alpaca] development container in this demo, but that could also be something else):
 
 <video width="100%" controls="">
-  <source type="video/mp4" src="/images/al-codespaces.mp4" />
+  <source type="video/mp4" src="/images/al-codespace.mp4" />
 </video>
 
 As you can see, debugging against the Customer List via a .dal file works fine, so with a breakpoint set in code where I only have the symbols in this workspace. Unfortunately, for my own Customer List page extension, for which I have the sources in my workspace, debugging fails. Let's see, maybe someone in the community or I myself might find a workaround.
