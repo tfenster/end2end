@@ -7,6 +7,7 @@ permalink: /presentations/
 Just my presentations, publications (from 2020 on) and source code which worked at the time I did them, but no guarantees that any of this works anymore. Also recordings, if available
 
 ## 2023
+- 2023-06 **BC TechDays 2023 - Experiments for BC - Wasm? Codespaces? Linux? Wtf!** at [BC TechDays][bctd]: [Recording][2023bctd]
 - 2023-04 **Task management and Timeboxing within the Microsoft ecosystem, driven by a Power Automate flow** at the [M365 & Power Platform Dev Community Call][pnpcommcall]: [session link][202304pnpcommcall] and [recording][202304pnpcommcallrec]
 - 2023-03,05,06 Multiple sessions at [Days of Knowledge UK][2023dokuk], [Days of Knowledge Central][2023dokcentral] and [Days of Knowledge Nordic][2023doknordic]:
     - **DevOps is the goal, but which way to choose**: session link [UK][2023dokuk1], [Central][2023dokcentral1], [Nordic][2023doknordic1] and [presentation][2023dokukpres1]
@@ -257,3 +258,4 @@ Just my presentations, publications (from 2020 on) and source code which worked 
 [2023doknordic1]: https://directions4partners.com/days-of-knowledge/nordic-2023/schedule/?tid=415040
 [2023doknordic2]: https://directions4partners.com/days-of-knowledge/nordic-2023/schedule/?tid=471753
 [2023doknordic]: https://directions4partners.com/days-of-knowledge/nordic-2023/
+[2023bctd]: https://youtu.be/gZyAREvm4Q0
