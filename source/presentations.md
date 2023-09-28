@@ -7,6 +7,9 @@ permalink: /presentations/
 Just my presentations, publications (from 2020 on) and source code which worked at the time I did them, but no guarantees that any of this works anymore. Also recordings, if available
 
 ## 2023
+- 2023-02 Multiple sessions at [BASTA!][basta]:
+    - **Containerized CI/CD agents for Azure DevOps and GitHub** (German): [session link][202302basta1] and [presentation][202302bastapres1]
+    - **Container-based development for C# developers** (German): [session link][202302basta2] and [presentation][202302bastapres2]
 - 2023-06 **BC TechDays 2023 - Experiments for BC - Wasm? Codespaces? Linux? Wtf!** at [BC TechDays][bctd]: [Recording][2023bctd]
 - 2023-04 **Task management and Timeboxing within the Microsoft ecosystem, driven by a Power Automate flow** at the [M365 & Power Platform Dev Community Call][pnpcommcall]: [session link][202304pnpcommcall] and [recording][202304pnpcommcallrec]
 - 2023-03,05,06 Multiple sessions at [Days of Knowledge UK][2023dokuk], [Days of Knowledge Central][2023dokcentral] and [Days of Knowledge Nordic][2023doknordic]:
@@ -259,3 +262,7 @@ Just my presentations, publications (from 2020 on) and source code which worked 
 [2023doknordic2]: https://directions4partners.com/days-of-knowledge/nordic-2023/schedule/?tid=471753
 [2023doknordic]: https://directions4partners.com/days-of-knowledge/nordic-2023/
 [2023bctd]: https://youtu.be/gZyAREvm4Q0
+[202309basta1]: https://basta.net/agile-devops/azure-devops-github/
+[202309bastapres1]: https://github.com/tfenster/presentations/raw/master/docs/2023basta2/202309bastapres1.pdf
+[202309basta2]: https://basta.net/cloud-azure-serverless/container-dotnet/
+[202309bastapres2]: https://github.com/tfenster/presentations/raw/master/docs/2023basta2/202309bastapres2.pdf
