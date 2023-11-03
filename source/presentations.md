@@ -7,7 +7,10 @@ permalink: /presentations/
 Just my presentations, publications (from 2020 on) and source code which worked at the time I did them, but no guarantees that any of this works anymore. Also recordings, if available
 
 ## 2023
-- 2023-02 Multiple sessions at [BASTA!][basta]:
+- 2023-11 Multiple sessions at [Directions EMEA][2023diremea]:
+    - **Microsoft presents: What's new on GitHub and how is the code contribution model evolving?**: [session link][2023diremeasess1] and [presentation][2023diremeapres1]
+    - **Create your AL solutions the right way: With design paaterns and architecture best practives in mind**: [session link][2023diremeasess2] and [presentation][2023diremeapres2]
+- 2023-09 Multiple sessions at [BASTA!][basta]:
     - **Containerized CI/CD agents for Azure DevOps and GitHub** (German): [session link][202302basta1] and [presentation][202302bastapres1]
     - **Container-based development for C# developers** (German): [session link][202302basta2] and [presentation][202302bastapres2]
 - 2023-06 **BC TechDays 2023 - Experiments for BC - Wasm? Codespaces? Linux? Wtf!** at [BC TechDays][bctd]: [Recording][2023bctd]
@@ -266,3 +269,8 @@ Just my presentations, publications (from 2020 on) and source code which worked 
 [202309bastapres1]: https://github.com/tfenster/presentations/raw/master/docs/2023basta2/202309bastapres1.pdf
 [202309basta2]: https://basta.net/cloud-azure-serverless/container-dotnet/
 [202309bastapres2]: https://github.com/tfenster/presentations/raw/master/docs/2023basta2/202309bastapres2.pdf
+[2023diremea]: https://directions4partners.com/events/directions-emea-2023/
+[2023diremeasess1]: https://directions4partners.com/events/directions-emea-2023/session-schedule/?tid=555177
+[2023diremeapres1]: https://github.com/tfenster/presentations/raw/master/docs/2023diremea/2023diremeapres1.pdf
+[2023diremeasess2]: https://directions4partners.com/events/directions-emea-2023/session-schedule/?tid=511126
+[2023diremeapres2]: https://github.com/tfenster/presentations/raw/master/docs/2023diremea/2023diremeapres2.pdf
