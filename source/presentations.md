@@ -7,13 +7,14 @@ permalink: /presentations/
 Just my presentations, publications (from 2020 on) and source code which worked at the time I did them, but no guarantees that any of this works anymore. Also recordings, if available
 
 ## 2023
+- 2023-11 **Using containers for development** (German) at [ContainerConf][containerconf]: [session link][2023containerconfsess] and [presentation][2023containerconfpres]
 - 2023-11 Multiple sessions at [Directions EMEA][2023diremea]:
     - **Microsoft presents: What's new on GitHub and how is the code contribution model evolving?**: [session link][2023diremeasess1] and [presentation][2023diremeapres1]
-    - **Create your AL solutions the right way: With design paaterns and architecture best practives in mind**: [session link][2023diremeasess2] and [presentation][2023diremeapres2]
+    - **Create your AL solutions the right way: With design patterns and architecture best practives in mind**: [session link][2023diremeasess2] and [presentation][2023diremeapres2]
 - 2023-09 Multiple sessions at [BASTA!][basta]:
     - **Containerized CI/CD agents for Azure DevOps and GitHub** (German): [session link][202302basta1] and [presentation][202302bastapres1]
     - **Container-based development for C# developers** (German): [session link][202302basta2] and [presentation][202302bastapres2]
-- 2023-06 **BC TechDays 2023 - Experiments for BC - Wasm? Codespaces? Linux? Wtf!** at [BC TechDays][bctd]: [Recording][2023bctd]
+- 2023-06 **Experiments for BC - Wasm? Codespaces? Linux? Wtf!** at [BC TechDays][bctd]: [Recording][2023bctd]
 - 2023-04 **Task management and Timeboxing within the Microsoft ecosystem, driven by a Power Automate flow** at the [M365 & Power Platform Dev Community Call][pnpcommcall]: [session link][202304pnpcommcall] and [recording][202304pnpcommcallrec]
 - 2023-03,05,06 Multiple sessions at [Days of Knowledge UK][2023dokuk], [Days of Knowledge Central][2023dokcentral] and [Days of Knowledge Nordic][2023doknordic]:
     - **DevOps is the goal, but which way to choose**: session link [UK][2023dokuk1], [Central][2023dokcentral1], [Nordic][2023doknordic1] and [presentation][2023dokukpres1]
@@ -274,3 +275,6 @@ Just my presentations, publications (from 2020 on) and source code which worked 
 [2023diremeapres1]: https://github.com/tfenster/presentations/raw/master/docs/2023diremea/2023diremeapres1.pdf
 [2023diremeasess2]: https://directions4partners.com/events/directions-emea-2023/session-schedule/?tid=511126
 [2023diremeapres2]: https://github.com/tfenster/presentations/raw/master/docs/2023diremea/2023diremeapres2.pdf
+[containerconf]: https://www.containerconf.de/
+[2023containerconfsess]: https://www.containerconf.de/veranstaltung-20910-0-containerisierung-schon-in-der-lokalen-entwicklungsumgebung-warum-und-wie.html
+[2023containerconfpres]: https://github.com/tfenster/presentations/raw/master/docs/2023containerconf/2023containerconf.pdf
