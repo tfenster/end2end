@@ -51,5 +51,13 @@
 			"$0",
 			"{% endhighlight %}"
 		]
+	},
+	"PowerShell source code": {
+		"prefix": "powershell",
+		"body": [
+			"{% highlight powershell linenos %}",
+			"$0",
+			"{% endhighlight %}"
+		]
 	}
 }
