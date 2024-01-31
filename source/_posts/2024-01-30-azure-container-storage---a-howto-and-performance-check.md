@@ -12,28 +12,37 @@ categories:
 tags:
 
 ---
-[Azure Container Storage (ACS)][acstor] is a storage solution for containers on the [Azure Kubernetes Service][aks]. While the preview was already running for a while, a [recent update][acstor-update] caught my eye, because it had a line with a lot of potential to help us:
+[Azure Container Storage (ACS)][acstor] is a storage solution for containers on the [Azure Kubernetes Service][aks]. While the preview was already running for a while, a [recent update][acstor-update] caught my eye because it had a line with a lot of potential to help us:
 
 *With ACS, you can,*
 *...*
 - *Optimize price-performance, with small volumes that require higher input/output operations per second (IOPS).*
 
-And that indeed turned out to be true in my tests. If you want to understand how to set up and use ACS, as well as how I exactly looked at the perfomance, see the details below.
+And that indeed turned out to be true in my tests. If you want to understand how to set up and use ACS, as well as how I exactly looked at the performance, see the details below.
 
 ## The TL;DR
 
 I mainly took two measures, always comparing ACS with "traditional" [Premium SSD Azure Disk][ssds]
 
-- I looked at Input/output operations per second (IOPS) using [fio][fio] as that is a performance metric often used for storage solutions. 
+- I looked at InputOoutput operations per second (IOPS) using [fio][fio] as that is a performance metric often used for storage solutions. 
 - I also looked at restoring a [bacpac][bacpac] file as my main scenario on AKS with a need for performant storage is running MS SQL Server in a MS Dynamics365 Business Central container, which sometimes requires bacpac restores.
 
 The results for the IOPS checks show the following results:
 
-- When only reading from the disk (`fio` with param `--rw=randread`), somewhat to my surprise I saw 3.261 GB read in an hour for the ACS solution, which translates to 59.365 IOPS, compared to 4.512 GB read in an hour for the Azure Disk based solution, which translates to 82.138 IOPS. That means that in my test setup (details below, if you are interested), the Azure Disk based solution actually performed noticably better in pure read performance. Whether that is due to caching, [bursting][bursting], or something else, I don't know.
-- When only writing to the disk (`fio` with param `--rw=randwrite`), I got 452 GB for ACS, which means 8.228 IOPS, and 109 GB for Azure disks, which means 1.984 IOPS. So in this scenario, ACS showed a multiple of the performance of the Azure Disk.
-- When combining read/write at 50/50 (`fio` with param `--rw=randrw`), I got 453 GB read / 452 GB writteen for ACS, equalling 8.247 read IOPS / 8.228 write IOPS, and - and this is crazy - 7.184 MB (!) read / 7.175 MB (!) write, equaling 128 read IOPS / 128 write IOPS. Again, I was a bit surprised, so I did this multiple times, but with the same result of ACS outperforming Azure Disks by a factor of > 60. This is not even the same ballpark!
+|Test type|Storage type|Total read data|Read IOPS|Total written data|Write IOPS|`fio` param|
+|---|---|---|---|---|---|---|
+|Only reading|ACS|3.261 GB|59.365|||`--rw=randread`|
+|Only reading|Azure Disk|4.512 GB|82.138|||`--rw=randread`|
+|Only writing|ACS|||452 GB|8.228|`--rw=randwrite`|
+|Only writing|Azure Disk|||109 GB|1.984|`--rw=randwrite`|
+|50/50 read/write|ACS|453 GB|8.247|452 GB|8.228|`--rw=randrw`|
+|50/50 read/write|Azure Disk|7.184 MB|128|7.175 MB|128|`--rw=randrw`|
 
-To give you an idea, here is a graphical representation of the results. You can't compare read, write and read/write with each other, but the results with more IOPS between ACS and Azure Disk are 100 % and the lesser one the relative portion. 
+- When only reading from the disk, somewhat to my surprise, I saw that the Azure Disk based solution actually performed noticeably better in pure read performance. Whether that is due to caching, [bursting][bursting], or something else, I don't know.
+- When only writing to the disk, ACS showed a multiple of the performance of the Azure Disk.
+- When combining read/write at 50/50 ACS outperformed Azure Disks by a factor of > 60. Again, I was a bit surprised, so I did this multiple times, but with the same result. This is not even the same ballpark!
+
+To give you an idea, here is a graphical representation of the results. You can't compare read, write and read/write with each other, but the results are calibrated to ACS so that ACS is always 100%, and you can see where Azure Disks perform better or worse.
 
 ![graphical represenation of the IOPS results explained above](/images/azure disk vs acs.png)
 {: .centered}
@@ -42,10 +51,10 @@ As I wrote above, I am still not sure if I did something wrong here as the dispa
 
 The results for the "real-life" bacpac test show the following results:
 
-- The ACS solution took an average time of XXX to restore the bacpac.
-- The Azure Disk based solution took an average tome of YYY to restore the bacpac.
+- The ACS solution took an average time of 3h 14min 14sec to restore the bacpac.
+- The Azure Disk based solution took an average tome of 3h 12min 19sec to restore the bacpac.
 
-CONCLUSION
+So in this test, the two solutions performed basically identically. Interestingly, both the fastest (3h 3m 58sec) and the slowest time (3h 25min 27sec) were on Azure Disks while ACS only varied between 3h 10min 56sec and 3h 19min 9sec. So it seems, at least in my tests, like ACS is a bit more consistent, but for this scenario there is no relevant performance difference. 
 
 ## The details: Setting it up
 
@@ -81,7 +90,7 @@ aks-nodepool1-42164658-vmss000002   Ready    agent   36m   v1.27.7
 {% endhighlight %}
 
 The base setup for ACS follows the [official docs][acstor-disks]:
-- First we need to set a label on the nodepool so that we can use ACS
+- First, we need to set a label on the nodepool so that we can use ACS
 {% highlight powershell linenos %}
 az aks nodepool update --resource-group $rgAndClusterName --cluster-name $rgAndClusterName --name nodepool1 --labels acstor.azure.com/io-engine=acstor
 {% endhighlight %}
@@ -278,7 +287,7 @@ Events:
 
 If you take a closer look at the events in the end, you can also see an interesting side effect of ACS: While the ACS volume `pvc-46806a95-1ae9-4df5-8f92-8054d08f060b` is attached immediately after the pod is assigned to a node, the Azure Disk volume `pvc-ceb1e00c-7243-42a9-adbc-1611ea876359` takes 12 seconds to attach. My experience with bigger volumes is that it can take even longer, so ACS also gives you faster startup times. 
 
-Once the container has successfully started as you can see in the last event, we can connect with something like `kubectl exec -it fiopod -- bash` and run the tests with `fio`. I have to say that I am not a `fio` expert, but I more or less directly followed the [docs][ms-fio], step 5. I changed the block size to 16k, which is the default for SQL Server and I tested pure read, pure write and mixed read/write performance. I used a runtime of 3600 seconds = 1 hour to avoid any temporary effects and I ran the tests twice, but discarded the first run to avoid any first-time effects.
+Once the container has successfully started, as you can see in the last event, we can connect with something like `kubectl exec -it fiopod -- bash` and run the tests with `fio`. I have to say that I am not a `fio` expert, but I more or less directly followed the [docs][ms-fio], step 5. I changed the block size to 16k, which is the default for SQL Server, and I tested pure read, pure write and mixed read/write performance. I used a runtime of 3600 seconds = 1 hour to avoid any temporary effects and I ran the tests twice, but discarded the first run to avoid any first-time effects.
 
 {% highlight bash linenos %}
 fio --name=benchtest --size=800m --filename=/acstor-volume/test --direct=1 --rw=randread --ioengine=libaio --bs=16k --iodepth=16 --numjobs=8 --time_based --runtime=3600
@@ -338,13 +347,13 @@ Run status group 0 (all jobs):
 
 To repeat the analysis of the TL;DR above:
 - The runs where we are only reading data (lines 1-6 for ACS and lines 23-28 for Azure Disk) show 3.261 GB read in an hour for the ACS solution and 4.512 GB read in an hour for the Azure Disk based solution. That means 59.365 IOPS for ACS and 82.138 IOPS for Azure Disk. To put that into perspective, those are astronomical numbers, almost certainly heavily influenced by caching and [bursting][bursting]. Or something is wrong with my setup, which certainly also could be the case. If anyone has ideas, please let me know.
-- When we only write data (lines 8-13 for ACS, lines 30-35 for Azure Disk), we get 452 GB for ACS and 109 GB for Azure Disks, which means 8.228 IOPS for ACS and 1.984 IOPS for Azure Disks. Still impressive numbers, but somewhat more expected. The fact that ACS is able to provide more than 4 times more performance if we look at IOPS is more than I would have expected, but I ran this multiple times, so it seems to be solid.
-- The last type of runs where we read and write data at a 50/50 ratio (lines 15-21 for ACS and lines 37-43 for Azure Disk) show 453 GB read / 452 GB written for ACS, and only 7.184 MB read / 7.175 MB write. Notice the difference between GB for ACS and MB for Azure Disk!. This means 8.247 read IOPS / 8.228 write IOPS for ACS vs. 128 read IOPS / 128 write IOPS for Azure Disks. This is completely out of proportion, again maybe because the Azure Disk could no longer burst or indeed a vastly superior performance for ACS, I am honestly not sure. But again, I ran this multiple times with comparable results.
+- When we only write data (lines 8-13 for ACS, lines 30-35 for Azure Disk), we get 452 GB for ACS and 109 GB for Azure Disks, which means 8.228 IOPS for ACS and 1.984 IOPS for Azure Disks. Still impressive numbers, but somewhat more expected. The fact that ACS can provide more than 4 times more performance if we look at IOPS is more than I would have expected, but I ran this multiple times, so it appears to be solid.
+- The last type of runs where we read and write data at a 50/50 ratio (lines 15-21 for ACS and lines 37-43 for Azure Disk) show 453 GB read / 452 GB written for ACS, and only 7.184 MB read / 7.175 MB write. Notice the difference between GB for ACS and MB for Azure Disk! This means 8.247 read IOPS / 8.228 write IOPS for ACS vs. 128 read IOPS / 128 write IOPS for Azure Disks. This is completely out of proportion, again maybe because the Azure Disk could no longer burst or indeed a vastly superior performance for ACS, I am honestly not sure. But again, I ran this multiple times with comparable results.
 
 Keep in mind that IOPS are a nice metric for storage devices, but don't always translate to real-life performance of your storage solution. Which is why I went into my second test scenario as follows.
 
 ## The details: Getting "real-life" execution times with bacpac restores
-As mentioned in the TL;DR, the main resource-intensive workload for me on AKS are MS SQL Servers working on Business Central databases. And the "killer" scenario comes up when we have to get a Business Central Online export - technically a .bacpac file - and restore that. The runtimes are insanely long even for small databases, so we first convert them from .bacpac to .bak, which means we restore the .bacpac to a database and the create a backup of that database as .bak. As I suspected that at least some of those very long runtimes are I/O bound, I decided to use that as my second, "real-life" scenario. 
+As mentioned in the TL;DR, the main resource-intensive workload for me on AKS are MS SQL Servers working on Business Central databases. And the "killer" scenario comes up when we have to get a Business Central Online export - technically a .bacpac file - and restore that. The runtimes are insanely long even for small databases, so we first convert them from .bacpac to .bak, which means we restore the .bacpac to a database and then create a backup of that database as .bak. As I suspected that at least some of those very long runtimes are I/O bound, I decided to use that as my second, "real-life" scenario. 
 
 Because I knew that I would look at very long runtimes, I decided to use a somewhat different approach: This time I used two pods, one with a container using an ACS volume and one with a container using an Azure Disk volume. They look like this:
 
@@ -435,8 +444,8 @@ spec:
 
 Things to note here:
 - The `volumes` and `volumeMounts` in lines 12-14 and 19/20 or 11-13 and 18/19 respectively show you that the `sqlpod-acstor` pod uses the ACS PVC and the `sqlpod-azdisk` uses the Azure Disk PVC.
-- The `podAntiAffinity` parts (lines 29-39 or 28-38 respectively) make sure that the two pods end up on different nodes, so that they don't interfere with each other. If you want to learn more about the concept, check the [docs][affinity]. This allowed me to run the tests in parallel, so that the overall runtime was more or less half than if I had done them sequentially. If tests run for a day and then you found out that you made a mistake, that is pretty annoying...
-- You can also spot the `tobiasfenster/mssql-with-sqlpackage:2022-latest` image being used in line 17 or line 16 respectively. This is just a small addition to the standard MS SQL image which brings in the `sqlpackage` tool used to restore bacpacs. This uses a [simplified version][dockerfile] of a Dockerfile created by [Markus Lippert][ml]. Far away from production-ready, but sufficient for this test.
+- The `podAntiAffinity` parts (lines 29-39 or 28-38 respectively) make sure that the two pods end up on different nodes so that they don't interfere with each other. If you want to learn more about the concept, check the [docs][affinity]. This allowed me to run the tests in parallel so that the overall runtime was more or less half than if I had done them sequentially. If tests run for a day, and then you find out that you made a mistake, that is pretty annoying...
+- You can also spot the `tobiasfenster/mssql-with-sqlpackage:2022-latest` image being used in line 17 or line 16 respectively. This is just a small addition to the standard MS SQL image, which brings in the `sqlpackage` tool used to restore bacpacs. This uses a [simplified version][dockerfile] of a Dockerfile created by [Markus Lippert][ml]. Far away from production-ready, but sufficient for this test.
 
 After applying those objects, I connected to the containers with `kubectl exec` as explained in the `fio` tests above and did the following preparation. I am only showing the ACS version, but the Azure Disk version works basically identically, just with the different mount path:
 
@@ -462,9 +471,67 @@ do
 done
 {% endhighlight %}
 
-This is a for loop with 5 iterations which in line 3 outputs the current run number and then creates a new database with the backing files in the right folders. Line 5 uses `sqlpackage` to restore the .bacpac that was initially downloaded and gets the runtime with the `time` command. Line 6 then drops the database again, so that it can be re-created in the next iteration.
+This is a for loop with 5 iterations, which in line 3 outputs the current run number and then creates a new database with the backing files in the right folders. Line 5 uses `sqlpackage` to restore the .bacpac that was initially downloaded and gets the runtime with the `time` command. Line 6 then drops the database again so that it can be re-created in the next iteration.
 
-ZZZ explain output
+The output I got looks like this for ACS
+{% highlight bash linenos %}
+Import 1 dbacstor
+
+real    190m56.505s
+user    92m14.391s
+sys     1m23.157s
+Import 2 dbacstor
+
+real    191m57.523s
+user    93m11.703s
+sys     1m24.109s
+Import 3 dbacstor
+
+real    194m11.333s
+user    94m51.367s
+sys     1m22.619s
+Import 4 dbacstor
+
+real    199m9.945s
+user    96m48.777s
+sys     1m25.807s
+Import 5 dbacstor
+
+real    194m56.491s
+user    94m2.945s
+sys     1m23.855s
+{% endhighlight %}
+
+And for Azure Disks, it looks like this
+{% highlight bash linenos %}
+Import 1 dbazdisk
+
+real    183m58.631s
+user    95m20.392s
+sys     1m20.951s
+Import 2 dbazdisk
+
+real    185m40.838s
+user    93m44.357s
+sys     1m22.865s
+Import 3 dbazdisk
+
+real    205m27.441s
+user    96m53.005s
+sys     1m26.078s
+Import 4 dbazdisk
+
+real    188m33.670s
+user    97m23.513s
+sys     1m25.220s
+Import 5 dbazdisk
+
+real    197m59.949s
+user    97m22.984s
+sys     1m24.528s
+{% endhighlight %}
+
+As I already wrote in the TL;DR, not a really relevant difference, with the biggest observation that Azure Disks seem to fluctuate a bit more while ACS is a bit slower on average for this scenario.
 
 ## The details: A failed attempt with diskspd
 Just a brief note on something else that I have tried: Microsoft also provides [diskspd][diskspd] as a tool for storage benchmarks. However, because we are bound to Linux with ACS, we have to use the less well maintained [Linux version][diskspd-linux]. This version has [open][1] [issues][2] since the end of 2021, which I tried to [solve][fork] with the somewhat blunt approach of ignoring the errors. This allowed me to successfully use a [GitHub action][gha] to put it into a [container image][ci] and run that in my AKS cluster, but the results were completely off. Repeats of test runs fluctuated between 100 IOPS and 100.000 IOPS and I couldn't figure out how to stabilize the results. In the end, I decided to stick with the two scenarios mentioned above.
@@ -474,7 +541,7 @@ Just a brief note on something else that I have tried: Microsoft also provides [
 [acstor]: https://azure.microsoft.com/en-us/products/container-storage/
 [acstor-update]: https://techcommunity.microsoft.com/t5/azure-storage-blog/azure-container-storage-preview-updates-now-available/ba-p/3972914
 [iops-calc]: https://community.splunk.com/t5/Monitoring-Splunk/Calculating-IOPS-using-FIO-testing/m-p/455055
-[acstor-disks]: https://learn.microsoft.com/en-us/azure/storage/container-storage/use-container-storage-with-managed-disks
+[acstor-disks]: https://learn.microsoft.com/en-us/azure/storage/container-storage/use-container-storage-with-managed-disks#create-a-storage-pool
 [bacpac]: https://learn.microsoft.com/en-us/sql/relational-databases/data-tier-applications/data-tier-applications?view=sql-server-ver16&redirectedfrom=MSDN#Anchor_4
 [ssds]: https://learn.microsoft.com/en-us/azure/virtual-machines/disks-types#premium-ssds
 [fio]: https://github.com/axboe/fio
@@ -492,5 +559,5 @@ Just a brief note on something else that I have tried: Microsoft also provides [
 [fork]: https://github.com/microsoft/diskspd-for-linux/compare/master...tfenster:diskspd-for-linux:master
 [gha]: https://github.com/tfenster/diskspd-for-linux/blob/master/.github/workflows/image-build.yaml
 [ci]: https://github.com/tfenster/diskspd-for-linux/blob/master/Dockerfile
-[^1]: Note that you would have to add the `--windows-admin-username` and `--windows-admin-password` parameters if you wanted to later also create a Windows-based nodepool, but unfortunately ACS is not supported on Windows. You can run the commands, it doesn't look too bad in the beginning, but then it crashes and burns spectacularly with no recognizable attempt to fail in a controlled manner. As so often in the container space even with Microsoft, Linux is leading the way and Windows may or may not follow.
+[^1]: Note that you would have to add the `--windows-admin-username` and `--windows-admin-password` parameters if you wanted to later also create a Windows-based nodepool, but unfortunately ACS is not supported on Windows. You can run the commands, it doesn't look too bad in the beginning, but then it crashes and burns spectacularly with no recognizable attempt to fail in a controlled manner. As so often in the container space, even with Microsoft, Linux is leading the way and Windows may or may not follow.
 [^2]: The `-linux` suffix also shows you my initial willingness to check this also on Windows. Never lose hope, right?
