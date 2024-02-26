@@ -6,6 +6,9 @@ permalink: /presentations/
 
 Just my presentations, publications (from 2020 on) and source code which worked at the time I did them, but no guarantees that any of this works anymore. Also recordings, if available
 
+## 2024
+- 2024-02 **Running .NET Apps in Containers** on [Visual Studio Toolbox Live][vstlive]: [recording][202402vstlive]
+
 ## 2023
 - 2023-11 **Using containers for development** (German) at [ContainerConf][containerconf]: [session link][2023containerconfsess] and [presentation][2023containerconfpres]
 - 2023-11 Multiple sessions at [Directions EMEA][2023diremea]:
@@ -278,3 +281,5 @@ Just my presentations, publications (from 2020 on) and source code which worked 
 [containerconf]: https://www.containerconf.de/
 [2023containerconfsess]: https://www.containerconf.de/veranstaltung-20910-0-containerisierung-schon-in-der-lokalen-entwicklungsumgebung-warum-und-wie.html
 [2023containerconfpres]: https://github.com/tfenster/presentations/raw/master/docs/2023containerconf/2023containerconf.pdf
+[vstlive]: https://youtube.com/playlist?list=PLReL099Y5nRcZjb0s3Qu7cOH7jv5gF9P_&si=C1wFiJJrvs8s55qX
+[202402vstlive]: https://www.youtube.com/live/voQvQQKX8ew?si=wtL4fhTfLLs8FlxR
