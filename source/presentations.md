@@ -7,6 +7,7 @@ permalink: /presentations/
 Just my presentations, publications (from 2020 on) and source code which worked at the time I did them, but no guarantees that any of this works anymore. Also recordings, if available
 
 ## 2024
+- 2024-04 **What the heck is AL? The basics of Business Central development for Non-Business-Central developers** (German) at [ColorCloud]: [sesion link][2024colorcloudsess] and [presentation][2024colorcloudpres]
 - 2024-02 **Running .NET Apps in Containers** on [Visual Studio Toolbox Live][vstlive]: [recording][202402vstlive]
 
 ## 2023
@@ -283,3 +284,6 @@ Just my presentations, publications (from 2020 on) and source code which worked 
 [2023containerconfpres]: https://github.com/tfenster/presentations/raw/master/docs/2023containerconf/2023containerconf.pdf
 [vstlive]: https://youtube.com/playlist?list=PLReL099Y5nRcZjb0s3Qu7cOH7jv5gF9P_&si=C1wFiJJrvs8s55qX
 [202402vstlive]: https://www.youtube.com/live/voQvQQKX8ew?si=wtL4fhTfLLs8FlxR
+[colorcloud]: https://colorcloud.rocks/
+[2024colorcloudpres]: https://raw.githubusercontent.com/tfenster/presentations/master/docs/2024colorcloud/2024colorcloudpres.pdf
+[2024colorcloudsess]: https://colorcloud.rocks/schedule/
