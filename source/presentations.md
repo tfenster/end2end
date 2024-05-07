@@ -7,7 +7,10 @@ permalink: /presentations/
 Just my presentations, publications (from 2020 on) and source code which worked at the time I did them, but no guarantees that any of this works anymore. Also recordings, if available
 
 ## 2024
-- 2024-04 **What the heck is AL? The basics of Business Central development for Non-Business-Central developers** (German) at [ColorCloud]: [sesion link][2024colorcloudsess] and [presentation][2024colorcloudpres]
+- 2024-05 Multiple sessions at the [Advanced Developers Conference][2024adc]:
+    - **Containerization for .NET developers** (German): [session link][2024adcsess] and [presentation][2024adcpres1]
+    - **Using containers for development** (German): [session link][2024adcsess] and [presentation][2024adcpres2]
+- 2024-04 **What the heck is AL? The basics of Business Central development for Non-Business-Central developers** (German) at [ColorCloud]: [session link][2024colorcloudsess] and [presentation][2024colorcloudpres]
 - 2024-02 **Running .NET Apps in Containers** on [Visual Studio Toolbox Live][vstlive]: [recording][202402vstlive]
 
 ## 2023
@@ -287,3 +290,7 @@ Just my presentations, publications (from 2020 on) and source code which worked 
 [colorcloud]: https://colorcloud.rocks/
 [2024colorcloudpres]: https://raw.githubusercontent.com/tfenster/presentations/master/docs/2024colorcloud/2024colorcloudpres.pdf
 [2024colorcloudsess]: https://colorcloud.rocks/schedule/
+[2024adc]: https://adc.ms/24
+[2024adcsess]: https://adc.ms/24/Session
+[2024adcpres1]: https://raw.githubusercontent.com/tfenster/presentations/master/docs/2024adc/2024adcspres1.pdf
+[2024adcpres2]: https://raw.githubusercontent.com/tfenster/presentations/master/docs/2024adc/2024adcspres2.pdf
