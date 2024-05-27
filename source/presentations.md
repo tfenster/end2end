@@ -7,6 +7,7 @@ permalink: /presentations/
 Just my presentations, publications (from 2020 on) and source code which worked at the time I did them, but no guarantees that any of this works anymore. Also recordings, if available
 
 ## 2024
+- 2024-05 **How everyone can contribute to the Business Central standard code** at [DynamicsMinds][dm]: [session link][2024dmsess] and [presentation][2024dmpres]
 - 2024-05 Multiple sessions at the [Advanced Developers Conference][2024adc]:
     - **Containerization for .NET developers** (German): [session link][2024adcsess] and [presentation][2024adcpres1]
     - **Using containers for development** (German): [session link][2024adcsess] and [presentation][2024adcpres2]
@@ -294,3 +295,6 @@ Just my presentations, publications (from 2020 on) and source code which worked 
 [2024adcsess]: https://adc.ms/24/Session
 [2024adcpres1]: https://raw.githubusercontent.com/tfenster/presentations/master/docs/2024adc/2024adcspres1.pdf
 [2024adcpres2]: https://raw.githubusercontent.com/tfenster/presentations/master/docs/2024adc/2024adcspres2.pdf
+[dm]: https://dynamicsminds.com
+[2024dmsess]: https://www.dynamicsminds.com/agenda/
+[2024dmpres]: https://raw.githubusercontent.com/tfenster/presentations/master/docs/2024dm/2024dmpres.pdf
