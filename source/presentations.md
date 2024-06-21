@@ -7,7 +7,7 @@ permalink: /presentations/
 Just my presentations, publications (from 2020 on) and source code which worked at the time I did them, but no guarantees that any of this works anymore. Also recordings, if available
 
 ## 2024
-- 2024-06 **A webservice here, an additional frontend there, but how do we ensure quality?** at [BC TechDays][bctd]: [Presentation][2024bctdpres]
+- 2024-06 **A webservice here, an additional frontend there, but how do we ensure quality?** at [BC TechDays][bctd]: [recording][2024bctdrec] and [presentation][2024bctdpres]
 - 2024-05 **How everyone can contribute to the Business Central standard code** at [DynamicsMinds][dm]: [session link][2024dmsess] and [presentation][2024dmpres]
 - 2024-05 Multiple sessions at the [Advanced Developers Conference][2024adc]:
     - **Containerization for .NET developers** (German): [session link][2024adcsess] and [presentation][2024adcpres1]
@@ -300,3 +300,4 @@ Just my presentations, publications (from 2020 on) and source code which worked 
 [2024dmsess]: https://www.dynamicsminds.com/agenda/
 [2024dmpres]: https://raw.githubusercontent.com/tfenster/presentations/master/docs/2024dm/2024dmpres.pdf
 [2024bctdpres]: https://raw.githubusercontent.com/tfenster/presentations/master/docs/2024bctd/2024bctdpres.pdf
+[2024bctdrec]: https://www.youtube.com/watch?v=tIYimZtijq0
