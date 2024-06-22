@@ -1,10 +1,10 @@
 ---
 layout: post
-title: "Set up certificates for Azure Key Vault access during development"
+title: "Set up certificates for Azure Key Vault access during development in a dev container"
 permalink: set-up-certificates-for-azure-key-vault-access-during-development
 date: 2024-06-22 13:36:02
 comments: false
-description: "Set up certificates for Azure Key Vault access during development"
+description: "Set up certificates for Azure Key Vault access during development in a dev container"
 keywords: ""
 image: /images/dotnet-keyvault.png
 categories:
