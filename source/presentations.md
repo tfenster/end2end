@@ -7,6 +7,7 @@ permalink: /presentations/
 Just my presentations, publications (from 2020 on) and source code which worked at the time I did them, but no guarantees that any of this works anymore. Also recordings, if available
 
 ## 2024
+- 2024-11 **Serverless development and deployment: A practical end-to-end scenario** at [Directions EMEA][2024diremea]: [session link][2024diremeasess] and [presentation][2024diremeapres]
 - 2024-10 **Working with devcontainers** on [Visual Studio Toolbox Live][vstlive]: [recording][202410vstlive]
 - 2024-06 **A webservice here, an additional frontend there, but how do we ensure quality?** at [BC TechDays][bctd]: [recording][2024bctdrec] and [presentation][2024bctdpres]
 - 2024-05 **How everyone can contribute to the Business Central standard code** at [DynamicsMinds][dm]: [session link][2024dmsess] and [presentation][2024dmpres]
@@ -303,3 +304,6 @@ Just my presentations, publications (from 2020 on) and source code which worked 
 [2024bctdpres]: https://raw.githubusercontent.com/tfenster/presentations/master/docs/2024bctd/2024bctdpres.pdf
 [2024bctdrec]: https://www.youtube.com/watch?v=tIYimZtijq0
 [202410vstlive]: https://www.youtube.com/watch?si=kh6wZ67prsJqGSdA&v=lYu_Acpjaq0&feature=youtu.be
+[2024diremea]: https://www.directionsforpartners.com/conferences-and-events/directions/emea-2024
+[2024diremeasess]: https://www.directionsforpartners.com/conferences-and-events/directions/emea-2024/schedule?day=08-11-2024&categories=274440&session=744392
+[2024diremeapres]: https://raw.githubusercontent.com/tfenster/presentations/master/docs/2024diremea/202411diremeapres.pdf
