@@ -7,6 +7,7 @@ permalink: /presentations/
 Just my presentations, publications (from 2020 on) and source code which worked at the time I did them, but no guarantees that any of this works anymore. Also recordings, if available
 
 ## 2024
+- 2024-11 **Professional deployment of (server-side) WebAssembly applications** (German) at [ContainerConf][containerconf]: [session link][2024containerconfsess] and [presentation][2024containerconfpres]
 - 2024-11 **Serverless development and deployment: A practical end-to-end scenario** at [Directions EMEA][2024diremea]: [session link][2024diremeasess] and [presentation][2024diremeapres]
 - 2024-10 **Working with devcontainers** on [Visual Studio Toolbox Live][vstlive]: [recording][202410vstlive]
 - 2024-06 **A webservice here, an additional frontend there, but how do we ensure quality?** at [BC TechDays][bctd]: [recording][2024bctdrec] and [presentation][2024bctdpres]
@@ -307,3 +308,5 @@ Just my presentations, publications (from 2020 on) and source code which worked 
 [2024diremea]: https://www.directionsforpartners.com/conferences-and-events/directions/emea-2024
 [2024diremeasess]: https://www.directionsforpartners.com/conferences-and-events/directions/emea-2024/schedule?day=08-11-2024&categories=274440&session=744392
 [2024diremeapres]: https://raw.githubusercontent.com/tfenster/presentations/master/docs/2024diremea/202411diremeapres.pdf
+[2024containerconfsess]: https://www.continuouslifecycle.de/veranstaltung-22403-0-webassembly-erobert-die-container-welt-im-sturm-aber-wie-betreibt-man-das-am-besten.html
+[2024containerconfpres]: https://github.com/tfenster/presentations/raw/master/docs/2024containerconf/2024containerconfsess.pdf
