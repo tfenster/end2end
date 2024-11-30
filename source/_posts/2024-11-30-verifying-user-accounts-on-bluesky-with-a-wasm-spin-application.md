@@ -54,6 +54,8 @@ allowed_outbound_hosts = ["redis://*:*", "mysql://*:*", "postgres://*:*"]
 key_value_stores = ["default"]
 {% endhighlight %}
 
+These two 'external' components perfectly illustrate one of the strengths of WebAssembly and Spin applications: I can pull other components into my application, cleanly isolated, without having to worry about programming languages or execution environments. It just works, in a secure and performant way.
+
 Local testing is also very smooth with a running application just a `spin up` (to run already built code) or `spin build --up` (to build and then run) away. And deployment is just as easy using `spin cloud deploy` to bring your application to the [Fermyon Cloud][cloud] to make it publicly available. But of course, I also wanted to set up Continuous Integration and Continuous Delivery. Thanks to the recently announced [Spin GitHub plugin][spin-gh], all I had to do was `spin gh create-action` to get a working GitHub action for CI that installs the prerequisites and runs the build:
 
 {% highlight yaml linenos %}
