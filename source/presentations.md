@@ -7,7 +7,7 @@ permalink: /presentations/
 Just my presentations, publications (from 2020 on) and source code which worked at the time I did them, but no guarantees that any of this works anymore. Also recordings, if available
 
 ## 2024
-- 2024-12 **Container-based development for C# developers** at [dotnetsheff][dotnetsheff]: [session link][2024dotnetsheff]
+- 2024-12 **Container-based development for C# developers** at [dotnetsheff][dotnetsheff]: [recording][2024dotnetsheffrec] and [session link][2024dotnetsheff]
 - 2024-12 **Working with multiple devcontainers** on [Visual Studio Toolbox Live][vstlive]: [recording][202412vstlive]
 - 2024-11 **Professional deployment of (server-side) WebAssembly applications** (German) at [ContainerConf][containerconf]: [session link][2024containerconfsess] and [presentation][2024containerconfpres]
 - 2024-11 **Serverless development and deployment: A practical end-to-end scenario** at [Directions EMEA][2024diremea]: [session link][2024diremeasess] and [presentation][2024diremeapres]
@@ -315,3 +315,4 @@ Just my presentations, publications (from 2020 on) and source code which worked 
 [202412vstlive]: https://youtu.be/pAbfv9dglyo?si=ECwQZDd6-w6Uya4d
 [2024dotnetsheff]: https://www.meetup.com/en-US/dotnetsheff/events/303387223/
 [dotnetsheff]: https://www.meetup.com/en-US/dotnetsheff
+[2024dotnetsheffrec]: https://www.youtube.com/watch?v=_55tJgoAKok
