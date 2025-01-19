@@ -1,20 +1,9 @@
 {
-	"name": "Jekyll",
-	"dockerFile": "Dockerfile",
-	"postCreateCommand": "bundle install"
-
-	// Use 'appPort' to create a container with published ports. If the port isn't working, be sure
-	// your server accepts connections from all interfaces (0.0.0.0 or '*'), not just localhost.
-	// "appPort": ["3000:3000"],
-
-	// Uncomment the next line to run commands after the container is created.
-	// "postCreateCommand": "cd ${input:projectName} && bundle install",
-
-	// Uncomment the next line to use a non-root user. On Linux, this will prevent
-	// new files getting created as root, but you may need to update the USER_UID
-	// and USER_GID in .devcontainer/Dockerfile to match your user if not 1000.
-	// "runArgs": [ "-u", "vscode" ],
-
-	// Add the IDs of extensions you want installed when the container is created in the array below.
-
+	"name": "Debian",
+	"image": "mcr.microsoft.com/devcontainers/base:bookworm",
+	"features": {
+		"ghcr.io/devcontainers/features/node:1": {}
+	},
+	"postCreateCommand": "bash -c 'curl -sSL https://get.rvm.io | bash && source /etc/profile.d/rvm.sh && rvm pkg install openssl && rvm install 2.7.8 --with-openssl-dir=/usr/local/rvm/usr && rvm --default use 2.7.8 && bundle install'",
+	"remoteUser": "root"
 }
