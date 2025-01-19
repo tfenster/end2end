@@ -4,6 +4,6 @@
 	"features": {
 		"ghcr.io/devcontainers/features/node:1": {}
 	},
-	"postCreateCommand": "bash -c 'curl -sSL https://get.rvm.io | bash && source /etc/profile.d/rvm.sh && rvm pkg install openssl && rvm install 2.7.8 --with-openssl-dir=/usr/local/rvm/usr && rvm --default use 2.7.8 && bundle install'",
+	"postCreateCommand": "bash -c 'curl -sSL https://get.rvm.io | bash && source /etc/profile.d/rvm.sh && rvm pkg install openssl && rvm install 2.7.8 --with-openssl-dir=/usr/local/rvm/usr && rvm --default use 2.7.8 && bundle install && echo \"source /etc/profile.d/rvm.sh\" >> /etc/bash.bashrc' && echo \"You need to reload the window once for this to work\"",
 	"remoteUser": "root"
 }
