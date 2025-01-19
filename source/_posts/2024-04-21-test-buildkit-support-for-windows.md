@@ -109,9 +109,10 @@ This message shows that your installation appears to be working correctly.
 "@
 
 Write-Host "Add builder"
-if (-not (docker buildx ls --format "{{.Name}}" | Where-Object { $_ -eq "buildkit-exp" })) { 
+{% raw %}if (-not (docker buildx ls --format "{{.Name}}" | Where-Object { $_ -eq "buildkit-exp" })) { 
   docker buildx create --name buildkit-exp --use --driver=remote npipe:////./pipe/buildkitd 
 }
+{% endraw %}
 docker buildx inspect
 docker buildx build -t buildkit-sample --load . 
 
