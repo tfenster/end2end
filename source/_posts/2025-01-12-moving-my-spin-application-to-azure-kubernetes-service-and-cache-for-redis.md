@@ -15,6 +15,8 @@ tags:
 
 Due to a technical limitation[^1] in the [Fermyon][fermyon] [Cloud][fermyon-cloud], I decided to move [Verified Bluesky][vb] to the [Azure Kubernetes Service][aks] with [SpinKube][fermyon-spinkube], using[Azure Cache for Redis][azredis] as backend for the [Spin][fermyon-spin] [Key-Value store][spin-kv], and finally using a dedicated domain (verifiedbsky.net) for it. In this blog post, I'll explain the infrastructure setup, how to use it in Spin, the Continuous Deployment setup and the configuration of the domain.
 
+**Update:** The technical limitation mentioned above has been lifted, so Verified Bluesky is now running in the Fermyon Cloud again! If you for whatever reason want to run you application in AKS, the explanation below is still valid.
+
 ## The TL;DR
 
 All the steps are explained in bits and pieces somewhere, so I didn't invent any of the following and I'll cite my sources, but I want to give you a complete end-to-end picture. Follow the detailed steps below and you will see:
