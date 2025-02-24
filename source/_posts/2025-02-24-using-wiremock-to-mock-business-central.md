@@ -13,7 +13,7 @@ tags:
 
 ---
 
-Developing and testing solutions that consist of multiple components is inherently more difficult. Even more so when you need a "big" component like MS Dynamics 365 Business Central, such as when you're building an optimized front end or something else that talks to the BC API. In these scenarios, it can be very helpful to mock the backend, both during development and continuous integration. Typically, this is done either in code or with a tool that replaces the backend with something that behaves as close to the actual backend as possible. The following post explains the basics of a tool called [WireMock][wm] and how it can be used from a [devcontainer][devc] for an easy setup. I may go into more detail in a future post, but this is the starting point.
+Developing and testing solutions that consist of multiple components is inherently more difficult. Even more so when you need a "big" component like MS Dynamics 365 Business Central, such as when you're building an optimized front end or something else that talks to the BC API. In these scenarios, it can be very helpful to mock the backend, both during development and continuous integration. Typically, this is done either in code or with a tool that replaces the backend with something that behaves as close to the actual backend as possible. The following post explains the basics of a tool called [WireMock][wm] and how it can be used from a [devcontainer][devc] for an easy setup, using [Docker Desktop][dd] to easily enable [WSL][wsl] on Windows and really boost developer productivity. I may go into more detail in a future post, but this is the starting point.
 
 ## The TL;DR
 
@@ -519,3 +519,5 @@ I hope this post gave you some inspiration for API mocking and how smoothly it c
 [ifmatch]: https://learn.microsoft.com/en-us/dynamics365/business-central/dev-itpro/api-reference/v2.0/api/dynamics_customer_update#request-headers
 [state]: https://wiremock.org/docs/stateful-behaviour/
 [statemachine]: https://en.wikipedia.org/wiki/Finite-state_machine
+[dd]: https://www.docker.com/products/docker-desktop/
+[wsl]: https://learn.microsoft.com/en-us/windows/wsl/about
