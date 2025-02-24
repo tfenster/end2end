@@ -2,7 +2,7 @@
 layout: post
 title: "Using WireMock to mock Business Central"
 permalink: using-wiremock-to-mock-business-central
-date: 2025-02-22 21:14:07
+date: 2025-02-24 12:14:07
 comments: false
 description: "Using WireMock to mock Business Central"
 keywords: ""
