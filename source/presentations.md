@@ -6,6 +6,10 @@ permalink: /presentations/
 
 Just my presentations, publications (from 2020 on) and source code which worked at the time I did them, but no guarantees that any of this works anymore. Also recordings, if available
 
+## 2025
+- 2025-01 **Grabbing BC artifacts in your pipelines via an Azure Function and how all of this works** at [Areopa][Areopa]: [recording][202501areopa]
+- 2025-01 **Using Spin to run verifiedbsky.net on AKS and Azure Managed Cache for Redis** at [Fermyon Live][fermyonlive]: [recording][202501fermyonlive]
+
 ## 2024
 - 2024-12 **Container-based development for C# developers** at [dotnetsheff][dotnetsheff]: [recording][2024dotnetsheffrec] and [session link][2024dotnetsheff]
 - 2024-12 **Working with multiple devcontainers** on [Visual Studio Toolbox Live][vstlive]: [recording][202412vstlive]
@@ -316,3 +320,6 @@ Just my presentations, publications (from 2020 on) and source code which worked 
 [2024dotnetsheff]: https://www.meetup.com/en-US/dotnetsheff/events/303387223/
 [dotnetsheff]: https://www.meetup.com/en-US/dotnetsheff
 [2024dotnetsheffrec]: https://www.youtube.com/watch?v=_55tJgoAKok
+[fermyonlive]: https://www.youtube.com/@fermyontech/streams
+[202501fermyonlive]: https://www.youtube.com/live/KtZzu3uVNjA?si=EziPVPfYt7nTEeVf
+[202501areopa]: https://www.youtube.com/watch?v=7i1h9XJZUF8
