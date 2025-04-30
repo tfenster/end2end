@@ -7,6 +7,7 @@ permalink: /presentations/
 Just my presentations, publications (from 2020 on) and source code which worked at the time I did them, but no guarantees that any of this works anymore. Also recordings, if available
 
 ## 2025
+- 2025-04 **Bye bye boilerplate - generate REST API clients for BC with Kiota** (German) together with Simon Fischer at [ColorCloud]: [session link][2025colorcloudsess] and [presentation][2025colorcloudpres]
 - 2025-01 **Grabbing BC artifacts in your pipelines via an Azure Function and how all of this works** at [Areopa][Areopa]: [recording][202501areopa]
 - 2025-01 **Using Spin to run verifiedbsky.net on AKS and Azure Managed Cache for Redis** at [Fermyon Live][fermyonlive]: [recording][202501fermyonlive]
 
@@ -21,7 +22,7 @@ Just my presentations, publications (from 2020 on) and source code which worked 
 - 2024-05 Multiple sessions at the [Advanced Developers Conference][2024adc]:
     - **Containerization for .NET developers** (German): [session link][2024adcsess] and [presentation][2024adcpres1]
     - **Using containers for development** (German): [session link][2024adcsess] and [presentation][2024adcpres2]
-- 2024-04 **What the heck is AL? The basics of Business Central development for Non-Business-Central developers** (German) at [ColorCloud]: [session link][2024colorcloudsess] and [presentation][2024colorcloudpres]
+- 2024-04 **What the heck is AL? The basics of Business Central development for Non-Business-Central developers** (German) together with Simon Fischer at [ColorCloud]: [session link][2024colorcloudsess] and [presentation][2024colorcloudpres]
 - 2024-02 **Running .NET Apps in Containers** on [Visual Studio Toolbox Live][vstlive]: [recording][202402vstlive]
 
 ## 2023
@@ -323,3 +324,5 @@ Just my presentations, publications (from 2020 on) and source code which worked 
 [fermyonlive]: https://www.youtube.com/@fermyontech/streams
 [202501fermyonlive]: https://www.youtube.com/live/KtZzu3uVNjA?si=EziPVPfYt7nTEeVf
 [202501areopa]: https://www.youtube.com/watch?v=7i1h9XJZUF8
+[2025colorcloudpres]: https://raw.githubusercontent.com/tfenster/presentations/master/docs/2025colorcloud/2025colorcloudpres.pdf
+[2025colorcloudsess]: https://colorcloud.rocks/schedule/
