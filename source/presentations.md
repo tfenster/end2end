@@ -7,6 +7,9 @@ permalink: /presentations/
 Just my presentations, publications (from 2020 on) and source code which worked at the time I did them, but no guarantees that any of this works anymore. Also recordings, if available
 
 ## 2025
+- 2025-05 **An introduction to BC development and delivery** at [BizApps Summit][bizappssummit]: [session link][2025bizappssummitsess] and [presentation][2025bizappssummitpres]
+- 2025-05 **From local to the Cloud: developing in containers** at [AI & Cloud Summit][cloudsummit]: [session link][2025cloudsummitsess] and [presentation][2025cloudsummitpres]
+- 2025-05 **An introduction to BC development and delivery** at [DynamicsMinds][dm]: [session link][2025dmsess] and [presentation][2025dmpres]
 - 2025-04 **Bye bye boilerplate - generate REST API clients for BC with Kiota** (German) together with Simon Fischer at [ColorCloud]: [session link][2025colorcloudsess] and [presentation][2025colorcloudpres]
 - 2025-01 **Grabbing BC artifacts in your pipelines via an Azure Function and how all of this works** at [Areopa][Areopa]: [recording][202501areopa]
 - 2025-01 **Using Spin to run verifiedbsky.net on AKS and Azure Managed Cache for Redis** at [Fermyon Live][fermyonlive]: [recording][202501fermyonlive]
@@ -326,3 +329,11 @@ Just my presentations, publications (from 2020 on) and source code which worked 
 [202501areopa]: https://www.youtube.com/watch?v=7i1h9XJZUF8
 [2025colorcloudpres]: https://raw.githubusercontent.com/tfenster/presentations/master/docs/2025colorcloud/2025colorcloudpres.pdf
 [2025colorcloudsess]: https://colorcloud.rocks/schedule/
+[2025dmsess]: https://www.dynamicsminds.com/agenda/
+[2025dmpres]: https://raw.githubusercontent.com/tfenster/presentations/master/docs/2024dm/2024dmpres.pdf
+[bizappssummit]: https://bizappssummit.eu/
+[cloudsummit]: https://cloudsummit.eu/
+[2025bizappssummitsess]: https://bizappssummit.eu/en/session?guid=137acaea-d791-4735-b6e0-91c7fd399d06
+[2025bizappssummitpres]: https://raw.githubusercontent.com/tfenster/presentations/master/docs/2025bizappscloudsummit/2025bizappscloudsummitpres1.pdf
+[2025cloudsummitsess]: https://cloudsummit.eu/en/session?guid=56f1bb30-01de-4e8f-b6df-7cb5bf9b4269
+[2025cloudsummitpres]: https://raw.githubusercontent.com/tfenster/presentations/master/docs/2025bizappscloudsummit2025bizappscloudsummitpres2.pdf
