@@ -6,7 +6,7 @@ date: 2025-05-28 17:45:33
 comments: false
 description: "Docker AI models are available on Windows laptops now"
 keywords: ""
-image:
+image: /images/dmr.png
 categories:
 
 tags:
