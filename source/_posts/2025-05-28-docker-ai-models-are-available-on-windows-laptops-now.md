@@ -13,7 +13,7 @@ tags:
 
 ---
 
-Docker recently revealed a new feature of [Docker Desktop][dd]: The [Docker Model Runner][dmr]. Initially it was only available on Mac, but with the upcoming release 4.42 of Docker Desktop, also Windows laptops with Qualcomm / ARM GPUs are supported. As I have such a laptop and got a chance to test a pre-release version of 4.42, I could finally join in on the fun.
+Docker recently revealed a new feature of [Docker Desktop][dd]: The [Docker Model Runner][dmr]. Initially it was only available on Mac and Windows with Nvidia GPUs, but with the upcoming release 4.42 of Docker Desktop, also Windows laptops with Qualcomm / ARM GPUs are supported. As I have such a laptop and got a chance to test a pre-release version of 4.42, I could finally join in on the fun.
 
 ## The TL;DR
 
@@ -31,7 +31,7 @@ To see which models are available, you can go to the [AI section of the Docker H
 
 ## The details: using it in a .NET Blazor application
 
-While that is a nice demo case, we probably want to use it for application development. Therefore, I have also created a small example of how it works from a .NET application using the [OpenAI][oa] package. The most relevant part is probably the endpoint where the model runner is reachable or at least it took me the longest to figure that out and put it correctly into my code. As [explained in the docs][endpoint], you need to enable it with `docker desktop enable model-runner`. Afterwards it is available from within a container at `http://model-runner.docker.internal` or from the host at `http://localhost:11434`. For example to query for the available models, you could make an HTTP call like this
+While that is a nice demo case, we probably want to use it for application development. Therefore, I have also created a small example of how it works from a .NET application using the [OpenAI][oa] package. The most relevant part is probably the endpoint where the model runner is reachable or at least it took me the longest to figure that out and put it correctly into my code. As [explained in the docs][endpoint], you need to enable it with `docker desktop enable model-runner`. Afterwards it is available from within a container at `http://model-runner.docker.internal` or from the host at `http://localhost:11434`. If you want a different port, you can also change that using `docker desktop enable model-runner --tcp <port>`. For example to query for the available models, you could make an HTTP call like this
 
 {% highlight http linenos %}
 GET http://localhost:11434/engines/llama.cpp/v1/models
