@@ -23,6 +23,8 @@ If you have a compatible laptop and Docker Desktop 4.42, here's an example of wh
   <source type="video/mp4" src="/images/docker model runner.mp4" />
 </video>
 
+Note that you have to enable the Model Runner either through Settings -> Beta Features where you also have to enable the GPU-backed inference. Enabling the Model Runner itself is also possible from the CLI with `docker desktop enable model-runner`, but enabling the GPU support only works from the UI for now. Also note that only models with a tag `*-Q4_0` make use of it, something I learned only afterwards :)
+
 ## The details: interacting with a model
 
 As you can see, I used a [SmolLM2] model with 135 million parameters, so it's a very lightweight model. This is visible through the docker command: I executed `docker model run ai/smollm2:135M-Q2_K`, so the `smollm2` indicates the model's name and the `135M` shows that it is the 135M parameter variation. With a simple `docker model run`, you can get an interactive chat session with the model. If you want to learn more about that, I recommend the [official Docker docs][dmr-docs].
@@ -31,7 +33,7 @@ To see which models are available, you can go to the [AI section of the Docker H
 
 ## The details: using it in a .NET Blazor application
 
-While that is a nice demo case, we probably want to use it for application development. Therefore, I have also created a small example of how it works from a .NET application using the [OpenAI][oa] package. The most relevant part is probably the endpoint where the model runner is reachable or at least it took me the longest to figure that out and put it correctly into my code. As [explained in the docs][endpoint], you need to enable it with `docker desktop enable model-runner`. Afterwards it is available from within a container at `http://model-runner.docker.internal` or from the host at `http://localhost:11434`. If you want a different port, you can also change that using `docker desktop enable model-runner --tcp <port>`. For example to query for the available models, you could make an HTTP call like this
+While that is a nice demo case, we probably want to use it for application development. Therefore, I have also created a small example of how it works from a .NET application using the [OpenAI][oa] package. The most relevant part is probably the endpoint where the model runner is reachable or at least it took me the longest to figure that out and put it correctly into my code. It is available from within a container at `http://model-runner.docker.internal` or from the host at `http://localhost:11434`. If you want a different port, you can also change that using `docker desktop enable model-runner --tcp <port>` or through the settings UI. For example to query for the available models, you could make an HTTP call like this
 
 {% highlight http linenos %}
 GET http://localhost:11434/engines/llama.cpp/v1/models
