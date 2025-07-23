@@ -7,6 +7,7 @@ permalink: /presentations/
 Just my presentations, publications (from 2020 on) and source code which worked at the time I did them, but no guarantees that any of this works anymore. Also recordings, if available
 
 ## 2025
+- 2025-07 **From OpenAPI to AL Auto Generating Strongly Typed REST API Clients for BC with Kiota** at [Areopa][Areopa]: [recording][202507areopa]
 - 2025-05 **An introduction to BC development and delivery** at [BizApps Summit][bizappssummit]: [session link][2025bizappssummitsess] and [presentation][2025bizappssummitpres]
 - 2025-05 **From local to the Cloud: developing in containers** at [AI & Cloud Summit][cloudsummit]: [session link][2025cloudsummitsess] and [presentation][2025cloudsummitpres]
 - 2025-05 **An introduction to BC development and delivery** at [DynamicsMinds][dm]: [session link][2025dmsess] and [presentation][2025dmpres]
@@ -337,3 +338,4 @@ Just my presentations, publications (from 2020 on) and source code which worked 
 [2025bizappssummitpres]: https://raw.githubusercontent.com/tfenster/presentations/master/docs/2025bizappscloudsummit/2025bizappscloudsummitpres1.pdf
 [2025cloudsummitsess]: https://cloudsummit.eu/en/session?guid=56f1bb30-01de-4e8f-b6df-7cb5bf9b4269
 [2025cloudsummitpres]: https://raw.githubusercontent.com/tfenster/presentations/master/docs/2025bizappscloudsummit2025bizappscloudsummitpres2.pdf
+[202507areopa]: https://www.youtube.com/watch?v=Xi9nxXKshcI
