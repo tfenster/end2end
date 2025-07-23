@@ -25,6 +25,8 @@ To see how it works locally, do the following:
 - Run a container with that image and expose the default IIS port 80 on port 8080 of your localhost by using the following command: `docker run -p 8080:80 -ti nanoserver-iis`.
 - You can then access your IIS running in a Nano Server container at [http://localhost:8080](http://localhost:8080)
 
+While this runs only locally, it is a crucial first step to bringing a better overall experience to e.g. Azure Kubernetes Service when running Windows workloads. Once Windows Server 2025 is supported there, I'll follow up again.
+
 ## The details: The Dockerfile
 
 The [Dockerfile][df] to make this happen looks like this
