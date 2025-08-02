@@ -13,14 +13,14 @@ tags:
 
 ---
 
-If you are using [Azure DevOps][azdo], you may have wanted for some kind of customization that wasn't available out of the box. E.g. we want the area path of a work item to automatically change once it has reached a certain column in a board[^1], but there is no feature to make that happen out of the box. But Azure DevOps does have [Webhooks][webhooks], which we could use to achieve that. Setting up such a webhook is [well documented][setup] and quite easy, so I won't get into the details here. But how does a backend need to look like to respond to that call? This I'll explain in this blog post.
+If you use [Azure DevOps][azdo], you may have wanted for some kind of customization that wasn't available out of the box. E.g. we want the area path of a work item to automatically change once it has reached a certain column in a board[^1], but there is no feature that can do that. However, Azure DevOps does have [Webhooks][webhooks] that we could use to achieve this. Setting up such a webhook is [well-documented][setup] and quite easy, so I won't get into the details here. But how does a backend need to look like to respond to that call? This I'll explain thath in this blog post.
 
 ## The TL;DR
 
 If you just want to give it a try using a [GitHub Codespace][codespace], fork my repository [https://github.com/tfenster/azdevops-webhook-explorer](https://github.com/tfenster/azdevops-webhook-explorer) and start the codespace. Everything should be preconfigured through the [devcontainer.json][devc] configuration file. Then do the following:
 
 - Hit F5 to start debugging
-- Once the application has started, you should see two ports come up. Change the visibility on the second one (8443) to "public" via the right-click menu and copy the address, again via the right-click menu. This should put something like `https://cuddly-capybara-q74jxp677rj24q7j-8443.app.github.dev/` into your clipboard, but with different random names and numbers.
+- Once the application has started, you should see two ports appear. Change the visibility of the second port (8443) to "public" via the right-click menu, then copy the address via the right-click menu. This will put an address like `https://cuddly-capybara-q74jxp677rj24q7j-8443.app.github.dev/` into your clipboard, but with different random names and numbers.
 ![a screenshot showing the ports of a GitHub Codespace](images/azdevops-webhook-ports.png)
 {: .centered}
 - Use that URL with the additional path `/webhook/inspect` as URL when configuring your webhook, e.g. when a work item is updated.
@@ -30,7 +30,7 @@ If you just want to give it a try using a [GitHub Codespace][codespace], fork my
 
 ## The details: The code for inspecting
 
-The first step to analyze what is happening when such a webhook is executed ist to take a look at the payload. The official docs mentioned above suggest to use a public service like pastebin, but that maybe you can't or dont want to use that. Instead you can run the little application mentioned above to just inspect the payload. The code is trivial:
+The first step in analyzing what happens when a webhook is executed is to examine the payload. The official documentation mentioned above suggests using a public service like Pastebin, but you may not be able to or want to use it. Instead, you can run the aforementioned small application to inspect the payload. The code is trivial:
 
 {% highlight csharp linenos %}
 var app = WebApplication.CreateBuilder().Build();
@@ -44,7 +44,7 @@ app.MapPost("/webhook/inspect", async (HttpRequest request) =>
 });
 {% endhighlight %}
 
-That's it. It just creates an endpoint that reacts to a POST request and writes the content to the console. So really nothing fancy, but it helps to understand what is shared to a webhook. To pick up our example from above, if this is called after a work item is updated, the (abbreviated) log would show something like this:
+That's it. It simply creates an endpoint that responds to a POST request and writes the content to the console. It's nothing fancy, but it helps to understand what is shared to a webhook. Using our previous example, if this is called after a work item is updated, the abbreviated log would show something like this:
 
 {% highlight json linenos %}
 {
@@ -183,17 +183,17 @@ That's it. It just creates an endpoint that reacts to a POST request and writes 
 
 A few things to highlight:
 
-- The `eventType` in line 5 shows you which kind of event triggered the webhook call, in this case `workitem.updated`. You can find a full list across "Build and release", "Pipeline", "Code", Service connection", "Work item" and "Advanced security" events in the [documentation][events]
+- The `eventType` in line 5 shows which type of event triggered the webhook call, in this case `workitem.updated`. You can find a full list across "Build and release", "Pipeline", "Code", Service connection", "Work item" and "Advanced security" events in the [documentation][events]
 - The `revisedBy` gives you a way to figure out who made the change (from line 21 onwards)
 - In my scenario, I am interested in fields that changed, which is why I would look at the `fields` from line 36 onwards, where I can see the old and new values for every changed field.
 
-Depending on the event you listen to, this will of course be different, but that is why having a little "inspector" handy is so useful: You just run the service, configure the webhook and take a look at the payload to understand what is coming in and how you can make the most of it.
+This will, of course, be different depending on the event you listen to, but that is why having a handy "inspector" is so useful. You just run the service, configure the webhook, and examine the payload to understand what's coming in and how to make the most of it.
 
 ## The details: The code for reacting to a work item update
 
-Now if you figured out what exactly you want, it makes sense to create a model class so that you can interact with the payload in a strongly typed way. The easiest way nowadays in my opionion is to just ask [GitHub Copilot][ghc] to create it based on the payload you get through an inspection as explained above. I won't bore you with the details as it is just a C# representation of the JSON payload above, but you can find it [here][model] if you want to take a look at it.
+Once you have a clear idea of what you want, it makes sense to create a model class so that you can interact with the payload in a strongly typed way. The easiest way nowadays, in my opionion, is to just ask [GitHub Copilot][ghc] to create it based on the payload you get through an inspection as explained above. I won't bore you with the details as it is just a C# representation of the JSON payload above, but you can find it [here][model] if you want to take a look.
 
-Handling the content would look something like this if you want to e.g. react on a changed title:
+Handling the content would look something like this if you wanted to e.g. react to a changed title:
 
 {% highlight csharp linenos %}
 app.MapPost("webhook/updatedWorkItem", async (HttpRequest request) =>
