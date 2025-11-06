@@ -35,6 +35,8 @@ For example, this is what it looks like in VS Code:
 
 The BC MCP Proxy is a .NET 8 application, which means that you need a .NET SDK to compile it. To make that easier, I have created a [pull request][pr] that adds [devcontainer][devc] support as well as build tasks for VS Code to make building self-contained executables easier. Until that PR is merged (if at all), you can clone [my fork][fork] and open the `samples/BcMCPProxy` folder in a dev container. Once it has started, you can run the build tasks and select your operating system. In my case, this is Windows-ARM64, but of course your setup may differ. You will then have an executable file that you can copy to your host machine and use it in the MCP setup later.
 
+**Update**: Thanks to a very fast review and merge by Microsoft, this is now part of Microsoft's repo, so you can use that functionality directly without a need to go through my fork!
+
 ## Configuring VS Code
 
 One way to configure an MCP Server in VS Code is to use a `.vscode/mcp.json` file (see the [official docs][vsc-docs] for all options). As explained in the repo mentioned above for [Claude Desktop][claude], you need to add some configuration options. It should look like this:
