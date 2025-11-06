@@ -74,7 +74,7 @@ You can then click on "Start" and use the tools in GitHub Copilot Chat within VS
 
 Another client that works well is [Docker's cagent][cagent]. In this case, the configuration is very similar, we only need to also add the LLM that we want to use. An example could look like this, using an Azure AI Foundry model:
 
-{% highlight json linenos %}
+{% highlight yaml linenos %}
 version: "1"
 
 agents:
