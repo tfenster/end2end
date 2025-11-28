@@ -7,6 +7,7 @@ permalink: /presentations/
 Just my presentations, publications (from 2020 on) and source code which worked at the time I did them, but no guarantees that any of this works anymore. Also recordings, if available
 
 ## 2025
+- 2025-11 Host for **43 dev tips in 45 minutes** at [Areopa][Areopa]: [recording][202511areopa]
 - 2025-11 Multiple sessions at [Directions EMEA][2025diremea]:
     - **What is GitOps and why should you care?** together with Markus Lippert: [session link][2025diremeasess1] and [presentation][2025diremeapres1]
     - **How to NOT depend on 3rd parties when consuming APIs (and make your life easier when producing)**: [session link][2025diremeasess2] and [presentation][2025diremeapres2]
@@ -349,3 +350,4 @@ Just my presentations, publications (from 2020 on) and source code which worked 
 [2025diremeapres1]: https://github.com/tfenster/presentations/raw/master/docs/2025diremea/2025diremeapres1.pdf
 [2025diremeasess2]: https://www.directionsforpartners.com/conferences-and-events/directions/emea2025/session-list?speaker=12537652-1ac8-447c-afe2-02219963123e&session=978414
 [2025diremeapres2]: https://github.com/tfenster/presentations/raw/master/docs/2025diremea/2025diremeapres2.pdf
+[202511areopa]: https://www.youtube.com/watch?v=XJXOledBObA
