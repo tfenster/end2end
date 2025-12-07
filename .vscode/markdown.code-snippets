@@ -59,5 +59,22 @@
 			"$0",
 			"{% endhighlight %}"
 		]
+	},
+	"Image": {
+		"prefix": "image",
+		"body": [
+			"![${1:alt text}](${2:image path})",
+			"{: .centered}"
+		],
+		"description": "Insert an image"
+	},
+	"Video": {
+		"prefix": "video",
+		"body": [
+			"<video width=\"100%\" controls=\"\">",
+			"  <source type=\"video/mp4\" src=\"${1:video path}\" />",
+			"</video>"
+		],
+		"description": "Insert a video"
 	}
 }
